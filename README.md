@@ -2,4 +2,5 @@
 
 This is Pippin Barr's coursework repository for CART253
 
-! [Banner](image/IMG_3245.jpeg)
+! [Banner](image/IMG_3245.JPG)
+
