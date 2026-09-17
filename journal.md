@@ -1,4 +1,4 @@
-# Reflextive Journal
+# Reflective Journal
 
 ## Thursday, September 17, 2026
 
