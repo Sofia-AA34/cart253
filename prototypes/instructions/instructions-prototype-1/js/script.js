@@ -34,14 +34,16 @@ function draw() {
  * Draws the butterfly using functions
  */
 function drawButterfly() {
+    drawHead();
     drawBody();
     drawWings();
 }
 
 /**
- * Draws the butterfly's body 
+ * Draws the butterfly's head
  */
-function drawBody() {
+function drawHead() {
+
     //Butterfly's head
     push();
     stroke(50);
@@ -50,6 +52,13 @@ function drawBody() {
     circle(375, 177, 25);
     pop();
 
+
+}
+
+/**
+ * Draws the butterfly's body 
+ */
+function drawBody() {
     //Butterfly's middle 1
     push();
     stroke(50);
