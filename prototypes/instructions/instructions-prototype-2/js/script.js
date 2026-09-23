@@ -1,6 +1,6 @@
 /**
  * Title of Project
- * Sofia Allashukurova
+ * Author Name
  * 
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
@@ -9,10 +9,10 @@
 "use strict";
 
 /**
- * Creates the Canvas
+ * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-    createCanvas(640, 480);
+
 }
 
 
