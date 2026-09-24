@@ -1,12 +1,12 @@
-# TITLE OF PROJECT
+# Smell the Flowers
 
-AUTHOR NAME
+Sofia Allashukurova
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+This is a freeze-frame of a butterfly that came to drink nectar and rest on some flowers. Be the butterfly! Rest, eat and take a moment to unwind. This project isn't interractive. It is your cue to take a breather!
 
 ## Attribution
 
