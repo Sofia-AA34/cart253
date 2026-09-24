@@ -8,9 +8,7 @@
 
 "use strict";
 
-/**
- * Value for the mouse clicked function
- */
+//Value for the mouse clicked function of the pupil
 let value = 0
 
 /**
@@ -41,11 +39,29 @@ function drawEye() {
 /**
  * Draw the iris of the eye 
  */
+
 function drawIris() {
     //draw the shape of the iris
     push();
     fill(128, 128, 128);
     circle(200, 200, 400);
+    pop();
+
+    //create an array of colors for the iris colors 
+    push();
+    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'black', 'white'];
+
+    //creat an array for circle sizes
+    let sizes = [375, 350, 325, 300, 275, 250, 225, 200, 175];
+
+    //shuffle the array 
+    shuffle(colors, true);
+
+    //draw the circles using the array 
+    for (let i = 0; i < colors.length; i += 1) {
+        fill(colors[i]);
+        circle(200, 200, sizes[i]);
+    }
     pop();
 
     //add more definition to the iris by adding more circles around it
@@ -63,6 +79,8 @@ function drawIris() {
     circle(200, 200, 350);
     circle(200, 200, 375);
     pop();
+
+
 }
 
 /**
@@ -73,16 +91,16 @@ function drawPupil() {
 
     //draw the pupil
     push();
-    fill(value);
+    fill(value, 0, 0);
     circle(200, 200, 150);
     pop();
 }
 // toggle the iris color when the user clicks 
 function mouseClicked() {
-    if (value === 0) {
-        value = 255
+    if (value === 255) {
+        value = 0
     } else {
-        value = 0;
+        value = 255;
     }
 }
 
