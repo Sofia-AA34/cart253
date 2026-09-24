@@ -23,7 +23,6 @@ function draw() {
     background(0, 0, 0);
 
     drawEye()
-
 }
 
 /**
@@ -31,6 +30,7 @@ function draw() {
  */
 function drawEye() {
     drawIris();
+    drawPupil();
 
 }
 
@@ -43,3 +43,14 @@ function drawIris() {
     circle(200, 200, 400);
     pop();
 }
+
+/**
+ * Draw the pupil of the eye
+ */
+function drawPupil() {
+    push();
+    fill(0, 0, 0);
+    circle(200, 200, 150);
+    pop();
+}
+
