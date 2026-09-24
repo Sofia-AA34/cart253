@@ -34,6 +34,7 @@ function draw() {
 function drawCharacter() {
     drawShape();
     drawEyes();
+    drawMouth();
 
 }
 
@@ -106,4 +107,24 @@ function drawEyes() {
     ellipse(150, 145, 5, 10);
     ellipse(250, 155, 5, 10);
     pop();
+}
+
+/**
+ * Draw the mouth of the character 
+ */
+function drawMouth() {
+    //makes the character smile / nos smile 
+
+    let mouthbiteSize = PI / 16;
+    let startAngle = PI / 2 * mouthbiteSize * sin(frameCount * 0.1) + mouthbiteSize;
+    let endAngle = PI - startAngle;
+
+    //draw the shape of the mouth 
+    push();
+    stroke('black');
+    strokeWeight(3);
+    fill(255, 179, 179);
+    arc(200, 230, 110, 30, startAngle, endAngle, PIE);
+    pop();
+
 }
