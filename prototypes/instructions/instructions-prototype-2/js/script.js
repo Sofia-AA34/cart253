@@ -1,7 +1,8 @@
 /**
  * Hypnosis
  * Sofia Allashukurova
- * It is a flickering iris that hypnotizes the user. It is made to catch the eye (haha just like what is represents) and be a fun Halloween preview. It is made to be interactive as the color of the pupil turns red when pressed.
+ * It is a flickering iris that hypnotizes the user. It is made to catch the eye (haha just like what is represents) 
+ * and be a fun Halloween preview. It is made to be interactive as the color of the pupil turns red when pressed.
  */
 
 "use strict";
