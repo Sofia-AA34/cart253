@@ -34,11 +34,11 @@ function draw() {
  * Draws the butterfly using functions
  */
 function drawButterfly() {
+    drawFlowers();
     drawHead();
     drawWings();
     drawBody();
     drawsPatterns();
-
 }
 
 /**
@@ -197,4 +197,43 @@ function drawsPatterns() {
     rotate(126);
     ellipse(0, 0, 12, 110);
     pop();
+
+    //Butterfly's patterns on lower wings
+    //left side 
+    push();
+    stroke(2);
+    strokeWeight(1);
+    fill(139, 64, 0);
+    circle(200, 300, 30);
+    circle(175, 280, 15);
+    circle(230, 240, 30);
+    circle(190, 180, 17);
+    circle(210, 200, 13);
+    pop();
+
+    //right side 
+    push();
+    stroke(2);
+    strokeWeight(1);
+    fill(139, 64, 0);
+    circle(500, 400, 30);
+    circle(475, 380, 15);
+    circle(460, 340, 30);
+    circle(390, 380, 17);
+    circle(370, 320, 13);
+    pop();
+}
+
+/**
+ * Draw a flower beneath the butterfly 
+ */
+function drawFlowers() {
+    //yellow flower
+    push();
+    fill(255, 192, 0);
+    translate(400, 220);
+    rotate(95);
+    ellipse(0, 0, 250, 350);
+    pop();
+
 }
