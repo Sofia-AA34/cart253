@@ -1,12 +1,13 @@
-# TITLE OF PROJECT
+# Hypnosis
 
-AUTHOR NAME
+Sofia Allashukurovs
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+It is a flickering iris that hypnotizes the user. It is made to catch the eye (haha just like what is represents) 
+and be a fun Halloween preview. It is made to be interactive as the color of the pupil turns red when pressed.
 
 ## Attribution
 
