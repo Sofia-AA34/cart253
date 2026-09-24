@@ -1,9 +1,8 @@
 /**
- * Title of Project
+ * Smell the Flowers 
  * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * It is a freeze-frame of a butterfly that came to drink nectar and rest on some flowers. Be the butterfly! Rest, eat and take a moment to unwind.
  */
 
 "use strict";
@@ -68,7 +67,7 @@ function drawHead() {
  * Draws the butterfly's body 
  */
 function drawBody() {
-    //Butterfly's middle 1
+    //Butterfly's torso part 1.
     push();
     stroke(50);
     fill(80);
@@ -77,7 +76,7 @@ function drawBody() {
     ellipse(0, 0, 40, 65);
     pop();
 
-    //Butterfly's middle 2
+    //Butterfly's torso part 2.
     push();
     stroke(50);
     fill(80);
@@ -86,7 +85,7 @@ function drawBody() {
     ellipse(0, 0, 34, 58);
     pop();
 
-    //Butterfly's bottom 1
+    //Butterfly's bottom part 1.
     push();
     stroke(50);
     fill(80);
@@ -95,7 +94,7 @@ function drawBody() {
     ellipse(0, 0, 23, 60)
     pop();
 
-    //Butterfly's bottom 2
+    //Butterfly's bottom part 2.
     push();
     stroke(50);
     fill(80);
@@ -148,7 +147,7 @@ function drawWings() {
  */
 function drawsPatterns() {
     //Butterfly's patterns for upper wings 
-    //right side
+    //right side of the upper wings 
     push();
     stroke(10);
     fill(160, 82, 45);
@@ -173,7 +172,7 @@ function drawsPatterns() {
     ellipse(0, 0, 13, 150);
     pop();
 
-    //left side 
+    //left side of the upper wings 
     push();
     stroke(10);
     fill(160, 82, 45);
@@ -199,7 +198,7 @@ function drawsPatterns() {
     pop();
 
     //Butterfly's patterns on lower wings
-    //left side 
+    //left side of the lower wings 
     push();
     stroke(2);
     strokeWeight(1);
@@ -211,7 +210,7 @@ function drawsPatterns() {
     circle(210, 200, 13);
     pop();
 
-    //right side 
+    //right side of the lower wings 
     push();
     stroke(2);
     strokeWeight(1);
@@ -225,9 +224,32 @@ function drawsPatterns() {
 }
 
 /**
- * Draw a flower beneath the butterfly 
+ * Draw flowers beneath the butterfly 
  */
 function drawFlowers() {
+
+    //lavender flower stem
+    push();
+    stroke(245, 245, 220);
+    strokeWeight(25);
+    line(540, 60, 580, 480);
+    pop();
+
+    //lavender flower 
+    push();
+    fill(230, 230, 250);
+    translate(530, 60);
+    rotate(95);
+    ellipse(0, 0, 150, 230);
+    pop();
+
+    //yellow flower stem
+    push();
+    stroke(245, 245, 220);
+    strokeWeight(20);
+    line(400, 220, 500, 480);
+    pop();
+
     //yellow flower
     push();
     fill(255, 192, 0);
@@ -236,4 +258,18 @@ function drawFlowers() {
     ellipse(0, 0, 250, 350);
     pop();
 
+    //pink flower stem
+    push();
+    stroke(245, 245, 220);
+    strokeWeight(15);
+    line(150, 400, 160, 0);
+    pop();
+
+    //pink flower 
+    push();
+    fill(235, 199, 237);
+    translate(150, 400);
+    rotate(69);
+    ellipse(0, 0, 200, 320);
+    pop();
 }
