@@ -35,8 +35,10 @@ function draw() {
  */
 function drawButterfly() {
     drawHead();
-    drawBody();
     drawWings();
+    drawBody();
+    drawsPatterns();
+
 }
 
 /**
@@ -138,5 +140,61 @@ function drawWings() {
     fill(255, 95, 31);
     quad(130, 185, 345, 225, 303, 290, 150, 320);
     triangle(150, 320, 303, 290, 260, 330);
+    pop();
+}
+
+/**
+ * Draw butterfly's patterns 
+ */
+function drawsPatterns() {
+    //Butterfly's patterns for upper wings 
+    //right side
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(460, 190);
+    rotate(70);
+    ellipse(0, 0, 20, 150);
+    pop();
+
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(520, 220);
+    rotate(81);
+    ellipse(0, 0, 16, 220);
+    pop();
+
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(520, 265);
+    rotate(95);
+    ellipse(0, 0, 13, 150);
+    pop();
+
+    //left side 
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(290, 150);
+    rotate(150);
+    ellipse(0, 0, 10, 120);
+    pop();
+
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(260, 155);
+    rotate(142);
+    ellipse(0, 0, 17, 185);
+    pop();
+
+    push();
+    stroke(10);
+    fill(160, 82, 45);
+    translate(240, 180);
+    rotate(126);
+    ellipse(0, 0, 12, 110);
     pop();
 }
