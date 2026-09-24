@@ -43,7 +43,6 @@ function drawButterfly() {
  * Draws the butterfly's head
  */
 function drawHead() {
-
     //Butterfly's head
     push();
     stroke(50);
@@ -52,7 +51,15 @@ function drawHead() {
     circle(375, 177, 25);
     pop();
 
-
+    //Butterfly's two antennaes
+    push();
+    stroke(10);
+    strokeWeight(3);
+    line(391, 155, 415, 132);
+    circle(415, 132, 3);
+    line(384, 152, 378, 125);
+    circle(378, 125, 3);
+    pop();
 }
 
 /**
@@ -104,23 +111,32 @@ function drawWings() {
     push();
     fill(255, 95, 31);
     quad(356, 210, 620, 150, 570, 340, 355, 235);
+    triangle(356, 210, 620, 150, 520, 140);
+    triangle(620, 150, 570, 340, 638, 185);
+    triangle(570, 340, 610, 320, 638, 185);
     pop();
 
     //Butterfly's right lower wing
     push();
     fill(255, 95, 31);
-    quad(355, 235, 590, 350, 420, 460, 315, 290);
+    quad(355, 235, 590, 350, 420, 460, 325, 290);
+    triangle(420, 460, 465, 463, 590, 350);
+    triangle(325, 290, 420, 460, 320, 350);
     pop();
 
     //Butterfly's left upper wing
     push();
     fill(255, 95, 31);
-    quad(220, 30, 356, 210, 345, 225, 145, 195);
+    quad(220, 75, 356, 205, 345, 225, 145, 195);
+    triangle(220, 75, 300, 100, 365, 225);
+    triangle(220, 75, 170, 90, 145, 195)
+    triangle(145, 195, 170, 90, 130, 165);
     pop();
 
     //Butterfly's left lower wing
     push();
     fill(255, 95, 31);
-    quad(130, 185, 345, 225, 315, 290, 180, 350);
+    quad(130, 185, 345, 225, 303, 290, 150, 320);
+    triangle(150, 320, 303, 290, 260, 330);
     pop();
 }
