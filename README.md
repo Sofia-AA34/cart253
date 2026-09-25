@@ -26,7 +26,7 @@ https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-protot
 
 ### Little Virus
 
-![screenshot](Little Virus.jpeg)
+![screenshot](LittleVirus.jpeg)
 
 https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-3/
 
