@@ -14,4 +14,6 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Smell the Flowers 
 
-![screenshot](image/Screenshot.jpg)
+![screenshot](SmelltheFlowers.jpeg)
+
+https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-1/
