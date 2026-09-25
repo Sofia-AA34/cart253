@@ -17,3 +17,13 @@ This website is designed to collect and showcase my prototyping work in CART253.
 ![screenshot](SmelltheFlowers.jpeg)
 
 https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-1/
+
+### Hypnosis 
+
+![screenshot](SmelltheFlowers.jpeg)
+
+### Little Virus
+
+![screenshot](SmelltheFlowers.jpeg)
+
+https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-2/
