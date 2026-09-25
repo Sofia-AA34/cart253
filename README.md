@@ -20,10 +20,14 @@ https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-protot
 
 ### Hypnosis 
 
-![screenshot](SmelltheFlowers.jpeg)
+![screenshot](Hypnosis.jpeg)
+
+https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-2/
 
 ### Little Virus
 
-![screenshot](SmelltheFlowers.jpeg)
+![screenshot](.jpeg)
 
-https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-2/
+https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-3/
+
+
