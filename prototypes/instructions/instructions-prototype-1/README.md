@@ -2,7 +2,7 @@
 
 Sofia Allashukurova
 
-[View this project online](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/instructions/instructions-prototype-1)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-1/)
 
 ## Description
 
