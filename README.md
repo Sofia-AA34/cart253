@@ -9,3 +9,9 @@ This website is designed to collect and showcase my prototyping work in CART253.
 ## Reflective Journal 
 
 [Reflective Journal](journal.md)
+
+## Prototyping: Instructions
+
+### Smell the Flowers 
+
+![screenshot](image/Screenshot.jpg)
