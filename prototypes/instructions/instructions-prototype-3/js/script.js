@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
- * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Little Virus
+ * Sofia Allashukurova 
+ * This is a depiction of a litte fugly chracter named "Little Virus". 
+ * He just stares and smiles at you while simultaniously spreading his jerms. 
+ * To avoid them, move your mouse around until they turn white. 
  */
 
 "use strict";
@@ -39,8 +39,6 @@ function drawCharacter() {
     drawShape();
     drawEyes();
     drawMouth();
-
-
 }
 
 /**
