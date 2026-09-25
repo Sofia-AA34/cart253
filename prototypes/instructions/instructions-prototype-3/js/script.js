@@ -8,6 +8,8 @@
 
 "use strict";
 
+let value = 0;
+
 /**
  * Creates the canvas
 */
@@ -25,7 +27,9 @@ function draw() {
 
     noStroke();
 
+    drawCircles();
     drawCharacter();
+
 }
 
 /**
@@ -35,6 +39,7 @@ function drawCharacter() {
     drawShape();
     drawEyes();
     drawMouth();
+
 
 }
 
@@ -114,17 +119,43 @@ function drawEyes() {
  */
 function drawMouth() {
     //makes the character smile / nos smile 
-
+    push();
     let mouthbiteSize = PI / 16;
     let startAngle = PI / 2 * mouthbiteSize * sin(frameCount * 0.1) + mouthbiteSize;
     let endAngle = PI - startAngle;
+    pop();
 
-    //draw the shape of the mouth 
+    //draw the shape of the mouth
     push();
     stroke('black');
     strokeWeight(3);
     fill(255, 179, 179);
     arc(200, 230, 110, 30, startAngle, endAngle, PIE);
     pop();
+}
 
+/**
+ * Draw circles behind the character  
+ */
+function drawCircles() {
+    //draw the circles
+    push();
+    fill(value);
+    circle(50, 50, 50);
+    circle(60, 300, 20);
+    circle(325, 75, 30);
+    circle(250, 360, 60);
+    circle(150, 60, 25);
+    circle(300, 15, 15);
+    circle(365, 305, 35);
+    pop();
+
+    //make the circles become lighter as the mouse is moved
+}
+
+function mouseMoved() {
+    value += 5;
+    if (value > 255) {
+        value = 0;
+    }
 }
