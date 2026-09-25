@@ -1,12 +1,14 @@
-# TITLE OF PROJECT
+# Little Virus 
 
-AUTHOR NAME
+Sofia Allashukurova
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+This is a depiction of a litte fugly chracter named "Little Virus". 
+He just stares and smiles at you while simultaniously spreading his jerms. 
+To avoid them, move your mouse around the screen until they turn white. 
 
 ## Attribution
 

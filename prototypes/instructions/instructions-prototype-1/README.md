@@ -2,7 +2,7 @@
 
 Sofia Allashukurova
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://sofia-aa34.github.io/cart253/)
 
 ## Description
 
