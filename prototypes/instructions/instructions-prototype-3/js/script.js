@@ -2,8 +2,8 @@
  * Little Virus
  * Sofia Allashukurova 
  * This is a depiction of a litte fugly chracter named "Little Virus". 
- * He just stares and smiles at you while simultaniously spreading his jerms. 
- * To avoid them, move your mouse around until they turn white. 
+ * He just stares and smiles at you while simultaniously spreading his germs. 
+ * To avoid them, move your mouse across the screen until they turn white. 
  */
 
 "use strict";
