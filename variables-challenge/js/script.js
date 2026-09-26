@@ -21,6 +21,13 @@ let mrFurious = {
     }
 };
 
+// Shade to fill the sky (background)
+let skyShade = {
+    r: 160,
+    g: 180,
+    b: 200
+}
+
 /**
  * Create the canvas
  */
@@ -32,7 +39,12 @@ function setup() {
  * Draw (and update) Mr. Furious
  */
 function draw() {
-    background(160, 180, 200);
+    // Make day turn to night (make the sky turn from blue to black)
+    skyShade.r = skyShade.r - 0.7;
+    skyShade.g = skyShade.g - 0.9;
+    skyShade.b = skyShade.b - 0.5;
+    // Display the sky 
+    background(skyShade.r, skyShade.g, skyShade.b);
 
     // Make Mr. Furious turn red over time 
     mrFurious.fill.g = mrFurious.fill.g - 1;
