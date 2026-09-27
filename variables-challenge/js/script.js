@@ -72,6 +72,9 @@ function draw() {
     mrFurious.fill.g = constrain(mrFurious.fill.g, 0, 255);
     mrFurious.fill.b = constrain(mrFurious.fill.b, 0, 255);
 
+    // Make Mr. Furious shake with rage 
+    mrFurious.x = random(175, 225);
+
     // Draw Mr. Furious as a coloured circle
     push();
     noStroke();
@@ -91,8 +94,6 @@ function draw() {
     bird.y2 = bird.y2 + 0.1;
     bird.y3 = bird.y3 + 0.1;
     bird.y4 = bird.y4 + 0.1;
-
-
 
     // Draw an annoying bird that flies above Mr. Furious
     push();
