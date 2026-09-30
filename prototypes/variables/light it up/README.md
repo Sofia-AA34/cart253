@@ -2,11 +2,11 @@
 
 Sofia Allashukurova
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/variables/light it up)
 
 ## Description
 
-This is a candle that will slowly illuminate the shadows of your screen. Click on until you find the flame to your liking.
+This is a candle that will slowly illuminate the shadows of your screen. Click on it until you find the flame to your liking.
 
 ## Attribution
 
