@@ -102,6 +102,19 @@ let candle = {
     fill: (240, 240, 216),
 };
 
+// Burned part of the candle 
+let topCandle = {
+    // Position, size and color of the burning part of the candle 
+    // Position 
+    x: 150,
+    y: 70,
+    // Size
+    width: 40,
+    height: 10,
+    // Color 
+    fill: "#CD7F32",
+};
+
 
 
 /**
@@ -159,6 +172,12 @@ function drawCandle() {
     push();
     fill(candle.fill);
     rect(candle.x, candle.y, candle.width, candle.height);
+    pop();
+
+    // draws the burning part of the candle 
+    push();
+    fill(topCandle.fill);
+    ellipse(topCandle.x, topCandle.y, topCandle.width, topCandle.height);
     pop();
 }
 
