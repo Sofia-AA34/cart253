@@ -9,16 +9,16 @@
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creates the canvas 
 */
 function setup() {
-
+    createCanvas(300, 400);
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws the candlestick and candle 
 */
 function draw() {
-
+    background(218, 160, 109);
 }
