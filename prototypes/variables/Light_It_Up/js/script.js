@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
+ * Light it up
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * A candle that slowly illuminates the shadows of your screen.
+ * Click it until you find the flame to your liking.
  */
 
 "use strict";
