@@ -2,7 +2,7 @@
 
 Sofia Allashukurova
 
-[View this project online](https://sofia-aa34.github.io/cart253/prototypes/variables/lightitup)
+[View this project online](https://sofia-aa34.github.io/cart253/ttps://sofia-aa34.github.io/cart253/prototypes/variables/Light_It_Up)
 
 ## Description
 
