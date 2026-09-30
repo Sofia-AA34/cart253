@@ -51,8 +51,18 @@ let bodyCandlestick = {
     y4: 210,
 };
 
-let topCandlestick = {
-    // Position, size and color of the top pasrt of the candlestick - 
+let topRectangle = {
+    // Position, size and color of the top pasrt of the candlestick - rectangle 
+    x: 120,
+    y: 180,
+    width: 60,
+    height: 30,
+    detail: 30,
+    // Color 
+    fill: (54, 69, 79),
+
+    // Position and size of the top pasrt of the candlestick - triangles(2)
+
 }
 
 
@@ -96,7 +106,8 @@ function drawCandlestick() {
 
     // draws the top part of the candlestick
     push();
-    rect(bodyCandlestick.x2, bodyCandlestick.y2, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
+    fill(topRectangle.fill);
+    rect(topRectangle.x, topRectangle.y, topRectangle.width, topRectangle.height, topRectangle.detail);
     pop();
 
 
