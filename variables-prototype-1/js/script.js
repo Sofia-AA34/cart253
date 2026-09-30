@@ -99,7 +99,7 @@ let candle = {
     width: 40,
     height: 110,
     // Color 
-    fill: (240, 240, 216),
+    fill: ('white'),
 };
 
 // Burned part of the candle 
@@ -138,8 +138,6 @@ let flame = {
     fill: "#CC5500",
 };
 
-
-
 /**
  * Creates the canvas 
 */
@@ -152,7 +150,7 @@ function setup() {
  * Draws the candlestick and candle 
 */
 function draw() {
-    background(218, 160, 109);
+    background('pink');
 
     drawCandlestick();
     drawCandle();
@@ -220,10 +218,20 @@ function drawFlame() {
     flame.x = random(140, 160);
     flame.y = random(35, 45);
 
-
     // draws the flame 
     push();
     fill(flame.fill);
     ellipse(flame.x, flame.y, flame.width, flame.height);
     pop();
+}
+
+/**
+ * toggle the flame's color when the user clicks
+ */
+
+function mouseClicked() {
+    if (flame.fill === "#CC5500") {
+        flame.fill = color(random(255), random(255), random(255));
+    }
+    else { flame.fill = "#CC5500"; }
 }
