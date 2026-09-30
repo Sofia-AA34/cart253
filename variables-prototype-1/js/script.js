@@ -9,6 +9,7 @@
 "use strict";
 
 // Candlestick
+// Base of the candlestick
 let baseEllipse = {
     // Position, size and color of the base - ellipse
     // Position
@@ -31,6 +32,7 @@ let baseTriangle = {
     y3: 325,
 };
 
+// Body of the candlestick
 let bodyCandlestick = {
     // Position, size and color of the first element
     x: 120,
@@ -51,8 +53,9 @@ let bodyCandlestick = {
     y4: 210,
 };
 
+// Top of the candlestick
 let topRectangle = {
-    // Position, size and color of the top pasrt of the candlestick - rectangle 
+    // Position, size and color of the top rectangle of the candlestick
     x: 120,
     y: 180,
     width: 60,
@@ -60,10 +63,29 @@ let topRectangle = {
     detail: 30,
     // Color 
     fill: (54, 69, 79),
+};
 
-    // Position and size of the top pasrt of the candlestick - triangles(2)
+let topTriangle1 = {
+    // Position and size of the top left triangle of the candlestick 
+    // Triangle 1
+    x1: 105,
+    y1: 195,
+    x2: 130,
+    y2: 210,
+    x3: 130,
+    y3: 180,
+};
 
-}
+let topTriangle2 = {
+    // Position and size of the top right triangle of the candlestick
+    // Triangle 2
+    x1: 170,
+    y1: 210,
+    x2: 170,
+    y2: 180,
+    x3: 195,
+    y3: 195,
+};
 
 
 
@@ -108,6 +130,8 @@ function drawCandlestick() {
     push();
     fill(topRectangle.fill);
     rect(topRectangle.x, topRectangle.y, topRectangle.width, topRectangle.height, topRectangle.detail);
+    triangle(topTriangle1.x1, topTriangle1.y1, topTriangle1.x2, topTriangle1.y2, topTriangle1.x3, topTriangle1.y3);
+    triangle(topTriangle2.x1, topTriangle2.y1, topTriangle2.x2, topTriangle2.y2, topTriangle2.x3, topTriangle2.y3);
     pop();
 
 
