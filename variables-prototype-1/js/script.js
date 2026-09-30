@@ -87,6 +87,21 @@ let topTriangle2 = {
     y3: 195,
 };
 
+// Candle
+
+// Candle itself (body)
+let candle = {
+    // Position, size and color of the candle 
+    // Position 
+    x: 130,
+    y: 70,
+    // Size
+    width: 40,
+    height: 110,
+    // Color 
+    fill: (240, 240, 216),
+};
+
 
 
 /**
@@ -104,6 +119,7 @@ function draw() {
     background(218, 160, 109);
 
     drawCandlestick();
+    drawCandle();
 }
 
 /**
@@ -133,7 +149,17 @@ function drawCandlestick() {
     triangle(topTriangle1.x1, topTriangle1.y1, topTriangle1.x2, topTriangle1.y2, topTriangle1.x3, topTriangle1.y3);
     triangle(topTriangle2.x1, topTriangle2.y1, topTriangle2.x2, topTriangle2.y2, topTriangle2.x3, topTriangle2.y3);
     pop();
-
-
 }
+
+/**
+ * draws the candle  
+ */
+function drawCandle() {
+    // draws the body of the candle 
+    push();
+    fill(candle.fill);
+    rect(candle.x, candle.y, candle.width, candle.height);
+    pop();
+}
+
 
