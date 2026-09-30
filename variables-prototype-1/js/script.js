@@ -13,7 +13,7 @@ let baseEllipse = {
     // Position, size and color of the base - ellipse
     // Position
     x: 150,
-    y: 350,
+    y: 375,
     // Size
     width: 100,
     height: 30,
@@ -24,35 +24,36 @@ let baseEllipse = {
 let baseTriangle = {
     // Position of the base - triangle
     x1: 110,
-    y1: 350,
+    y1: 375,
     x2: 190,
-    y2: 350,
+    y2: 375,
     x3: 150,
-    y3: 305,
+    y3: 325,
 };
 
 let bodyCandlestick = {
     // Position, size and color of the first element
     x: 120,
-    y1: 275,
+    y1: 315,
     width: 60,
-    height: 50,
+    height: 35,
     detail: 20,
     // Color
     fill: (54, 69, 79),
 
     // Position of the second element
-    y2: 225,
+    y2: 280,
 
     // Position of the third element 
-    y3: 175,
+    y3: 245,
 
     // Position of the fourth element
-    y4: 125,
-
-    // Position of the fifth element 
-    y5: 75,
+    y4: 210,
 };
+
+let topCandlestick = {
+    // Position, size and color of the top pasrt of the candlestick - 
+}
 
 
 
@@ -91,8 +92,13 @@ function drawCandlestick() {
     rect(bodyCandlestick.x, bodyCandlestick.y2, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
     rect(bodyCandlestick.x, bodyCandlestick.y3, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
     rect(bodyCandlestick.x, bodyCandlestick.y4, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
-    rect(bodyCandlestick.x, bodyCandlestick.y5, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
     pop();
+
+    // draws the top part of the candlestick
+    push();
+    rect(bodyCandlestick.x2, bodyCandlestick.y2, bodyCandlestick.width, bodyCandlestick.height, bodyCandlestick.detail);
+    pop();
+
 
 }
 
