@@ -123,7 +123,20 @@ let wick = {
     x: 150,
     y1: 70,
     y2: 50,
-}
+};
+
+// Flame 
+let flame = {
+    // Position, size and color 
+    // Position 150 / 40
+    x: 150,
+    y: 40,
+    // Size 
+    width: 30,
+    height: 40,
+    // Color
+    fill: "#CC5500",
+};
 
 
 
@@ -193,7 +206,7 @@ function drawCandle() {
 }
 
 /**
- * draws the wick and the flame
+ * draws the wick and the flame (and update)
  */
 function drawFlame() {
     // draws the wick
@@ -203,6 +216,14 @@ function drawFlame() {
     line(wick.x, wick.y1, wick.x, wick.y2);
     pop();
 
+    // make the flame dance 
+    flame.x = random(140, 160);
+    flame.y = random(35, 45);
+
+
+    // draws the flame 
+    push();
+    fill(flame.fill);
+    ellipse(flame.x, flame.y, flame.width, flame.height);
+    pop();
 }
-
-
