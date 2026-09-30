@@ -115,6 +115,16 @@ let topCandle = {
     fill: "#CD7F32",
 };
 
+// Wick and flame 
+
+// Wick
+let wick = {
+    // Position of the wick
+    x: 150,
+    y1: 70,
+    y2: 50,
+}
+
 
 
 /**
@@ -133,6 +143,7 @@ function draw() {
 
     drawCandlestick();
     drawCandle();
+    drawFlame();
 }
 
 /**
@@ -179,6 +190,19 @@ function drawCandle() {
     fill(topCandle.fill);
     ellipse(topCandle.x, topCandle.y, topCandle.width, topCandle.height);
     pop();
+}
+
+/**
+ * draws the wick and the flame
+ */
+function drawFlame() {
+    // draws the wick
+    push();
+    stroke('black');
+    strokeWeight(5);
+    line(wick.x, wick.y1, wick.x, wick.y2);
+    pop();
+
 }
 
 
