@@ -128,7 +128,7 @@ let wick = {
 // Flame 
 let flame = {
     // Position, size and color 
-    // Position 150 / 40
+    // Position
     x: 150,
     y: 40,
     // Size 
@@ -136,6 +136,19 @@ let flame = {
     height: 40,
     // Color
     fill: "#CC5500",
+};
+
+// Light
+let light = {
+    // Position, size and color 
+    // Position 
+    x: 150,
+    y: 200,
+    // Size 
+    width: 10,
+    height: 10,
+    // Color 
+    fill: "#FFC000",
 };
 
 /**
@@ -150,8 +163,9 @@ function setup() {
  * Draws the candlestick and candle 
 */
 function draw() {
-    background('pink');
+    background('black');
 
+    drawLight();
     drawCandlestick();
     drawCandle();
     drawFlame();
@@ -234,4 +248,27 @@ function mouseClicked() {
         flame.fill = color(random(255), random(255), random(255));
     }
     else { flame.fill = "#CC5500"; }
+}
+
+/**
+ * draws (and updates) the light behind the candle 
+ */
+
+function drawLight() {
+    // make the light grow bigger and bigger 
+    push();
+    light.width = light.width + 1;
+    light.height = light.height + 2;
+    pop();
+
+    // constrain the light to be within the normal range
+    push();
+    light.width = constrain(light.width, 0, 300);
+    light.height = constrain(light.height, 0, 400);
+
+    // draws the light (ellipse)
+    push();
+    fill(light.fill);
+    ellipse(light.x, light.y, light.width, light.height);
+    pop();
 }
