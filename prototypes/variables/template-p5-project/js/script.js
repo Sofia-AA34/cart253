@@ -21,6 +21,15 @@ let sun = {
     fill: "#E8E810"
 }
 
+// Planet 1
+let planet1 = {
+    x: 340,
+    y: 170,
+    width: 60,
+    height: 60,
+    fill: "#275207"
+}
+
 /**
  * Creates the canvas
 */
@@ -38,6 +47,7 @@ function draw() {
     background("#6F8FAF");
 
     drawSun();
+    drawPlanet1();
 
 
 }
@@ -50,5 +60,14 @@ function drawSun() {
     fill(sun.fill);
     ellipse(sun.x, sun.y, sun.width, sun.height);
     pop();
+}
 
+/**
+ * Draws planet 1
+ */
+function drawPlanet1() {
+    push();
+    fill(planet1.fill);
+    ellipse(planet1.x, planet1.y, planet1.width, planet1.height);
+    pop();
 }
