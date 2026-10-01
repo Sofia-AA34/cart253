@@ -24,7 +24,7 @@ let shapeCup = {
     y4: 325,
     // Color 
     fill: "#AA336A",
-}
+};
 
 // Mold the quad into the shape of a cup
 let ellipseCup = {
@@ -45,7 +45,23 @@ let ellipseCup = {
     // Size 
     width2: 200,
     height2: 20,
-}
+};
+
+// Handle of the cup 
+let handleCup = {
+    // Position, size, angles and color of the handle
+    // Position 
+    x: 310,
+    y: 240,
+    // Size 
+    width: 80,
+    height: 135,
+    // Angles 
+    startAngle: 240,
+    endAngle: 140,
+    // Color 
+    fill: "#AA336A",
+};
 
 
 /**
@@ -55,6 +71,8 @@ function setup() {
     createCanvas(400, 400);
 
     noStroke();
+
+    angleMode(DEGREES);
 }
 
 
@@ -64,7 +82,9 @@ function setup() {
 function draw() {
     background("#FAD5A5");
 
+    drawHandle();
     drawCup();
+
 }
 
 /**
@@ -76,5 +96,17 @@ function drawCup() {
     quad(shapeCup.x1, shapeCup.y1, shapeCup.x2, shapeCup.y2, shapeCup.x3, shapeCup.y3, shapeCup.x4, shapeCup.y4);
     ellipse(ellipseCup.x1, ellipseCup.y1, ellipseCup.width1, ellipseCup.height1);
     ellipse(ellipseCup.x2, ellipseCup.y2, ellipseCup.width2, ellipseCup.height2);
+    pop();
+}
+
+/**
+ * Draws the handle of the cup
+ */
+function drawHandle() {
+    push();
+    noFill();
+    stroke(handleCup.fill);
+    strokeWeight(20);
+    arc(handleCup.x, handleCup.y, handleCup.width, handleCup.height, handleCup.startAngle, handleCup.endAngle);
     pop();
 }
