@@ -1,6 +1,6 @@
 /**
- * Title of Project
- * Author Name
+ * Steaming cup of coffee
+ * Sofia Allashukurova
  * 
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
@@ -9,10 +9,10 @@
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creates the canvas
 */
 function setup() {
-
+    createCanvas(400, 400);
 }
 
 
@@ -20,5 +20,5 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-
+    background("#FAD5A5");
 }
