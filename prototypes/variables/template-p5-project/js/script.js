@@ -155,6 +155,8 @@ function drawCup() {
     fill(shapeCup.fill);
     quad(shapeCup.x1, shapeCup.y1, shapeCup.x2, shapeCup.y2, shapeCup.x3, shapeCup.y3, shapeCup.x4, shapeCup.y4);
     ellipse(ellipseCup.x1, ellipseCup.y1, ellipseCup.width1, ellipseCup.height1);
+    stroke('black');
+    strokeWeight(3);
     ellipse(ellipseCup.x2, ellipseCup.y2, ellipseCup.width2, ellipseCup.height2);
     pop();
 }
@@ -172,10 +174,26 @@ function drawHandle() {
 }
 
 /**
- * Draws the coffee in the cup
+ * Draws the coffee in the cup (and updates it)
  */
-// Coffee itslef 
 function drawCoffee() {
+    // make the coffee disappear from the cup
+    push();
+    coffee.width = coffee.width - 0.5;
+    coffee.height = coffee.height - 0.1;
+    shadow.width = shadow.width - 0.5;
+    shadow.height = shadow.height - 0.1;
+    pop();
+
+    // constrain the coffee to be within normal range 
+    push();
+    coffee.width = constrain(coffee.width, 0, 400);
+    coffee.height = constrain(coffee.height, 0, 400);
+    shadow.width = constrain(shadow.width, 0, 400);
+    shadow.height = constrain(shadow.height, 0, 400);
+    pop();
+
+    // coffee itslef 
     push();
     stroke(shadow.fill);
     strokeWeight(3);
