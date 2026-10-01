@@ -6,6 +6,9 @@ Sofia Allashukurova
 
 ## Description
 
+It is an animation of the space. 
+No matter what happens, the world keeps spinnig. Even as small comets fly off into the void.
+
 ## Attribution
 
 > - This project uses [p5.js](https://p5js.org).
