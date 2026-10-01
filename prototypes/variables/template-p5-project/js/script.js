@@ -99,12 +99,18 @@ function draw() {
     drawObject();
 }
 
+
+
 /**
  * Draws a sun
  */
+// makes the sun rotate 
+let angle = frameCount * 0.01;
+// draws a sun
 function drawSun() {
     push();
     fill(sun.fill);
+    rotate(angle);
     ellipse(sun.x, sun.y, sun.width, sun.height);
     pop();
 }
