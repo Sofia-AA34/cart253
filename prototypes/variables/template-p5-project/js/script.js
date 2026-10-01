@@ -28,8 +28,8 @@ let planet1 = {
     x: 340,
     y: 170,
     // Size
-    width: 60,
-    height: 60,
+    width: 62,
+    height: 55,
     // Color
     fill: "#275207"
 };
@@ -102,36 +102,41 @@ function draw() {
 
 
 /**
- * Draws a sun
+ * Draws a sun - yellow 
  */
-// makes the sun rotate 
-let angle = frameCount * 0.01;
-// draws a sun
+// draws a sun (and makes it rotate)
 function drawSun() {
     push();
     fill(sun.fill);
-    rotate(angle);
-    ellipse(sun.x, sun.y, sun.width, sun.height);
+    translate(sun.x, sun.y);
+    rotate(frameCount * 0.1);
+    ellipse(0, 0, sun.width, sun.height);
     pop();
 }
 
 /**
- * Draws planet 1
+ * Draws planet 1 - green
  */
+// draws planet 1 (and makes it rotate)
 function drawPlanet1() {
     push();
     fill(planet1.fill);
-    ellipse(planet1.x, planet1.y, planet1.width, planet1.height);
+    translate(planet1.x, planet1.y);
+    rotate(frameCount * 0.19);
+    ellipse(0, 0, planet1.width, planet1.height);
     pop();
 }
 
 /**
- * Draws planet 2
+ * Draws planet 2 - red
  */
+// draws planet 3 (and makes it rotate)
 function drawPlanet2() {
     push();
     fill(planet2.fill);
-    ellipse(planet2.x, planet2.y, planet2.width, planet2.height);
+    translate(planet2.x, planet2.y);
+    rotate(frameCount * 0.2);
+    ellipse(0, 0, planet2.width, planet2.height);
     pop();
 }
 
