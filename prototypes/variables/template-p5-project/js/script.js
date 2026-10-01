@@ -1,5 +1,6 @@
 /**
- * title
+ * 1, 2, Void!
+ 
  * Sofia Allashukurova
  * 
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
@@ -144,6 +145,28 @@ function drawPlanet2() {
  * Draws asteroids and comets as ellipses 
  */
 function drawObject() {
+    // make objects fly away in different directions
+    // object 1
+    object.y1 = object.y1 + 1.5;      // down
+    object.x1 = object.x1 + 2;      // right
+
+    // object 2 
+    object.y2 = object.y2 - 0.5;     // up
+    object.x2 = object.x2 - 0.7;      // left
+
+    // object 3
+    object.y3 = object.y3 + 1.5;        // down
+    object.x2 = object.x2 - 0.7;        // left
+
+    // object 4
+    object.y4 = object.y4 + 1.5;        // down
+    object.x4 = object.x4 + 0.7;        // right
+
+    // object 5 
+    object.y5 = object.y5 - 0.5;        // up
+    object.x5 = object.x5 - 1.7;        // left
+
+    // draw objects
     push();
     fill(object.fill);
     ellipse(object.x1, object.y1, object.width1);
