@@ -2,8 +2,8 @@
  * Steaming cup of coffee
  * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Mornings are rough for everybody. Coffee saves us. 
+ * But have you ever noticed how quiclky it cools down or disappears?
  */
 
 "use strict"
