@@ -41,7 +41,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Light It Up
 
-![screenshot]()
+![screenshot](Screenshot_Light_It_Up)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Light_It_Up/)
 
