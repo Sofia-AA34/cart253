@@ -136,7 +136,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws the cup of coffee
 */
 function draw() {
     background("#FAD5A5");
@@ -151,6 +151,7 @@ function draw() {
  * Draws the cup 
  */
 function drawCup() {
+    // draws the cup itself
     push();
     fill(shapeCup.fill);
     quad(shapeCup.x1, shapeCup.y1, shapeCup.x2, shapeCup.y2, shapeCup.x3, shapeCup.y3, shapeCup.x4, shapeCup.y4);
