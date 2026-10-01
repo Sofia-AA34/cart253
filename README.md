@@ -49,7 +49,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Little Weakness 
 
-![screenshot]()
+![screenshot](Screenshot_Little_Weakness.jpeg)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Little_Weakness/)
 
