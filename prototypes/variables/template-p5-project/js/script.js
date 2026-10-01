@@ -194,6 +194,17 @@ function drawCoffee() {
  * Draws the steam coming out of the cup using lines (and update)
  */
 function drawSteam() {
+    // make the steam lines go up
+    steam1.y1 = steam1.y1 - 0.2;
+    steam1.y2 = steam1.y2 - 0.2;
+    steam2.y1 = steam2.y1 - 0.5;
+    steam2.y2 = steam2.y2 - 0.5;
+    steam3.y1 = steam3.y1 - 0.3;
+    steam3.y2 = steam3.y2 - 0.3;
+    steam4.y1 = steam4.y1 - 0.4;
+    steam4.y2 = steam4.y2 - 0.4;
+
+    // draw the steam lines
     push();
     stroke("#59515E");
     strokeWeight(3);
