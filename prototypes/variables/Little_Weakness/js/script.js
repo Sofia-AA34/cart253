@@ -134,7 +134,6 @@ function setup() {
     angleMode(DEGREES);
 }
 
-
 /**
  * Draws the cup of coffee
 */
