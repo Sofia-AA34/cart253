@@ -63,6 +63,35 @@ let handleCup = {
     fill: "#AA336A",
 };
 
+// Coffee
+let coffee = {
+    // Position, size and color of the coffee 
+    // Position 
+    x: 200,
+    y: 153,
+    // Size 
+    width: 175,
+    height: 16,
+    // Color
+    fill: "#5C4033",
+};
+
+// Shadow of the coffee 
+let shadow = {
+    // Position, size and color of the shadow of the coffee in the cup
+    // Position 
+    x: 200,
+    y: 153,
+    // Size
+    width: 125,
+    height: 10,
+    // Color 
+    fill: "#351E10"
+};
+
+// Steam coming out of the cup
+
+
 
 /**
  * Creates the canvas
@@ -84,7 +113,8 @@ function draw() {
 
     drawHandle();
     drawCup();
-
+    drawCoffee();
+    drawSteam();
 }
 
 /**
@@ -109,4 +139,29 @@ function drawHandle() {
     strokeWeight(20);
     arc(handleCup.x, handleCup.y, handleCup.width, handleCup.height, handleCup.startAngle, handleCup.endAngle);
     pop();
+}
+
+/**
+ * Draws the coffee in the cup
+ */
+// Coffee itslef 
+function drawCoffee() {
+    push();
+    stroke(shadow.fill);
+    strokeWeight(3);
+    fill(coffee.fill);
+    ellipse(coffee.x, coffee.y, coffee.width, coffee.height);
+    pop();
+
+    // Shadow of the coffee in the cup
+    push();
+    fill(shadow.fill);
+    ellipse(shadow.x, shadow.y, shadow.width, shadow.height);
+    pop();
+}
+
+/**
+ * Draws the steam coming out of the cup 
+ */
+function drawSteam() {
 }
