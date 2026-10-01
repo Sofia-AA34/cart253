@@ -3,8 +3,8 @@
  
  * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * It is an animation of the space. 
+ * No matter what happens, the world keeps spinnig. Even as small comets fly off into the void.
  */
 
 "use strict";
