@@ -37,6 +37,36 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [Reflective Journal](journal.md)
 
+## Prototyping: Variables 
+
+### Light It Up
+
+![screenshot]()
+
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Light_It_Up/)
+
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/variables/Light_It_Up)
+
+### Little Weakness 
+
+![screenshot]()
+
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Little_Weakness/)
+
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/variables/Little_Weakness)
+
+### 1, 2, Void!
+
+![screenshot]()
+
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/1_2_Void!/)
+
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/variables/1_2_Void!)
+
+## Journal Entry 
+
+[Reflective Journal]()
+
 
 
 
