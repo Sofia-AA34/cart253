@@ -57,7 +57,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### 1, 2, Void!
 
-![screenshot]()
+![screenshot](Screenshot_1_2_Void!.jpeg)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/1_2_Void!/)
 
