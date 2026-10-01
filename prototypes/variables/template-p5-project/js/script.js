@@ -90,7 +90,37 @@ let shadow = {
 };
 
 // Steam coming out of the cup
+let steam1 = {
+    // first line of the steam 
+    x1: 60,
+    y1: 50,
+    x2: 100,
+    y2: 110,
+}
 
+let steam2 = {
+    // second line of the steam
+    x1: 150,
+    y1: 40,
+    x2: 160,
+    y2: 90,
+}
+
+let steam3 = {
+    // third line of the steam
+    x1: 230,
+    y1: 15,
+    x2: 220,
+    y2: 100,
+}
+
+let steam4 = {
+    // fourth line of the steam
+    x1: 300,
+    y1: 70,
+    x2: 280,
+    y2: 110,
+}
 
 
 /**
@@ -161,7 +191,15 @@ function drawCoffee() {
 }
 
 /**
- * Draws the steam coming out of the cup 
+ * Draws the steam coming out of the cup using lines (and update)
  */
 function drawSteam() {
+    push();
+    stroke("#59515E");
+    strokeWeight(3);
+    line(steam1.x1, steam1.y1, steam1.x2, steam1.y2);
+    line(steam2.x1, steam2.y1, steam2.x2, steam2.y2);
+    line(steam3.x1, steam3.y1, steam3.x2, steam3.y2);
+    line(steam4.x1, steam4.y1, steam4.x2, steam4.y2);
+    pop();
 }
