@@ -176,4 +176,3 @@ function drawObject() {
     ellipse(object.x5, object.y5, object.width5);
     pop();
 }
-
