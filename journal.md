@@ -21,6 +21,6 @@ The part I am still unsure about is when and where exactly I should be using var
 For the cup of coffee, I wanted to make the steam lines curved and animated, but after trying various options, it seemed like I could technically draw them using points and arcs, but making them move would be a mission impossible. I also wanted to make the cup tilt to the side, maybe even spill the coffee, but I couldn’t figure out how to do it when my cup was made of 4 shapes with different centers. 
 Overall, I actually really enjoyed this whole process, and for my next prototypes, I would like to try using images instead of drawing all my shapes so I can concentrate more on the transformations.
 
-![code for the shapes making the cup](
+![code for the shapes making the cup](Screenshot1.jpeg)
 
-![ending with confusing names for my variables]
+![ending with confusing names for my variables](screenshot2.jpeg)
