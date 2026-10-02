@@ -1,4 +1,4 @@
-# Little weakness
+# Little Weakness
 
 Sofia Allashukurova
 
