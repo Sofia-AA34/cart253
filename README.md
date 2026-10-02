@@ -68,7 +68,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ## Journal Entry 
 
-[Reflective Journal]()
+[Reflective Journal](journal.md)
 
 
 
