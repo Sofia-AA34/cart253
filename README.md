@@ -17,6 +17,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 ![screenshot](SmelltheFlowers.jpeg)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-1/)
+
 [code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/instructions/instructions-prototype-1)
 
 ### Hypnosis 
@@ -24,6 +25,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 ![screenshot](Hypnosis.jpeg)
 
 [running protoype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-2/)
+
 [code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/instructions/instructions-prototype-2)
 
 ### Little Virus
@@ -31,6 +33,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 ![screenshot](LittleVirus.jpeg)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-3/)
+
 [code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/instructions/instructions-prototype-3)
 
 ## Journal entry 
@@ -57,7 +60,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### 1, 2, Void!
 
-![screenshot](Screenshot_1_2_Void!.jpeg)
+![screenshot](Screenshot_1_2_Void!.png)
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/1_2_Void!/)
 
