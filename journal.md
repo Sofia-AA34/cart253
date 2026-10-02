@@ -13,3 +13,14 @@ This assignment took me way longer than I expected, easily around three hours pe
 Some functions looked pretty logical, but others felt like straight gibberish no matter how many parts of them I looked up. Even when I searched things up, it felt like the answers I needed simply didn't exist or they were buried inside someone else's code that made no sense to me. The worst part was trying to debug when nothing looks wrong but the page is still blank. I genuinely wanted to give up. 
 
 I do understand better now where everything is in my repository and what belongs inside my project files. It's getting easier to remember to commit after finishing a specific action, and I feel more comfortable knowing what to write in my descriptions. It's also satisfying to see the final prototypes come to life, even if they didn't turn out exactly (or anything) like I first imagined. I liked creating the interactive elements the most because they looked cool.
+
+## Thursday, October 1, 2026 
+
+Variables turned out to be very helpful when understanding and applying transformations such as mouse, translate, rotate and random to the elements of my prototypes. It was much easier to access and change parameters without accidentally messing up every line of code I had written so far. I also learned that using HTML color codes is much easier than trying to manually find the exact shade I want or looking it up in the references every time. I finally understood how to draw arcs and realized it was the angles being specified in radians that made it seem so impossible at first, because I’ve always struggled to visualize them and preferred using degrees instead. 
+The part I am still unsure about is when and where exactly I should be using variables in my code, which is why I wrote all of my prototypes with variables instead of set values. It was a bit confusing naming them all because of that, since I ended up with 20 different x coordinates. 
+For the cup of coffee, I wanted to make the steam lines curved and animated, but after trying various options, it seemed like I could technically draw them using points and arcs, but making them move would be a mission impossible. I also wanted to make the cup tilt to the side, maybe even spill the coffee, but I couldn’t figure out how to do it when my cup was made of 4 shapes with different centers. 
+Overall, I actually really enjoyed this whole process, and for my next prototypes, I would like to try using images instead of drawing all my shapes so I can concentrate more on the transformations.
+
+![code for the shapes making the cup](
+
+![ending with confusing names for my variables]
