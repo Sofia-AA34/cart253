@@ -13,6 +13,7 @@ let img;
 
 // Text to dispay for the start, middle and ending
 let startString = "Click on the kitty to start the game";
+let middleString = "Can you find the kitty now?";
 
 let state = "start";
 
@@ -21,7 +22,8 @@ let state = "start";
 */
 async function setup() {
     createCanvas(600, 600);
-    img = await loadImage("assets/images/kitty_cat.png");
+    kittyImg = await loadImage("assets/images/kitty_cat.png");
+    ghostImg = await loadImage("assets/images/ghost.png");
 
     textSize(20);
     textAlign(CENTER, CENTER);
@@ -36,16 +38,30 @@ function draw() {
     if (state === "start") {
         start();
     }
+    else if (state === "middle") {
+        middle();
+    }
 
     // draws the image in the center of the canvas 
     function start() {
         background("#EDE8D0");
 
-        image(img, 200, 200);
+        image(kittyImg, 200, 200);
 
         push();
         fill("black");
         text(startString, width / 2, height / 4);
+        pop();
+    }
+
+    function middle() {
+        background("#EDE8D0");
+
+        image(img, 100, 100);
+
+        push();
+        fill("black");
+        text(miidleString, width / 2, height / 4);
         pop();
     }
 }
