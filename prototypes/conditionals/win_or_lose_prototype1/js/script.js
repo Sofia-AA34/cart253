@@ -15,7 +15,7 @@ let ghostImg;
 
 // Text to dispay for the start, middle and ending
 let startString = "Click on the kitty to start the game";
-let middleString = "Can you catch the kitty?";
+let middleString = "Can you find the kitty?";
 
 let state = "start";
 
@@ -68,8 +68,35 @@ function mouseClicked() {
 function middle() {
     background("#EDE8D0");
 
-    image(kittyImg, 200, 200);
-    image(ghostImg, 100, 100);
+    image(kittyImg, 50, 100);
+
+    image(ghostImg, 125, -100);
+    image(ghostImg, -75, -35);
+    image(ghostImg, 200, -35);
+    image(ghostImg, 450, -35);
+    image(ghostImg, 325, -35);
+
+
+
+
+    image(ghostImg, 100, 215);
+    image(ghostImg, -15, 215);
+    image(ghostImg, 215, 215);
+    image(ghostImg, 425, 215);
+    image(ghostImg, 325, 215);
+
+    image(ghostImg, 75, 465);
+    image(ghostImg, -100, 465);
+
+    image(ghostImg, 175, 465);
+    image(ghostImg, 390, 465);
+    image(ghostImg, 520, 465);
+    image(ghostImg, 280, 465);
+
+
+
+
+
 
     push();
     fill("black");
