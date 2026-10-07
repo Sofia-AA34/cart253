@@ -8,11 +8,15 @@
 
 "use strict";
 
+// Load the image kitty_cat
+let img;
+
 /**
  * Creates the canvas
 */
-function setup() {
+async function setup() {
     createCanvas(600, 600);
+    img = await loadImage("assets/images/kitty_cat.png");
 }
 
 
@@ -21,4 +25,11 @@ function setup() {
 */
 function draw() {
     background("#EDE8D0");
+
+    drawImage();
+}
+
+// draws the image in the center of the canvas 
+function drawImage() {
+    image(img, 200, 200);
 }
