@@ -1,22 +1,24 @@
 /**
- * Title of Project
- * Author Name
+ * My Useful Charger 
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * A simultaion where you plug the charger into the outlet and watch
+ * the battery charge right before your eyes
  */
 
 "use strict";
 
+// The image used in this prototype - an outlet 
 let outletImg;
 
-let state = "nothing";
+// first state shown when the prototype runs 
+let state = "empty";
 
 let battery = {
     fill: "red",
     fills: {
-        nothing: "red",
-        charge: "green"
+        empty: "red",
+        full: "green"
     }
 }
 
@@ -45,15 +47,15 @@ function draw() {
     image(outletImg, 50, 50);
 
 
-    if (state === "nothing") {
-        nothing();
+    if (state === "empty") {
+        empty();
     }
-    else if (state === "charge") {
-        nothing();
+    else if (state === "full") {
+        empty();
     }
 
 }
-function nothing() {
+function empty() {
     // drawChargerBlock
     push();
     fill("white");
@@ -84,8 +86,8 @@ function nothing() {
     pop();
 }
 
-function charge() {
-    if (battery.fill === baterry.fills.charge) {
+function full() {
+    if (battery.fill === baterry.fills.full) {
     }
 }
 
@@ -93,13 +95,13 @@ function charge() {
 function mouseMoved() {
     if (
         (mouseX > 75 && mouseX < 100 && mouseY > 75 && mouseY < 100) ||
-        (mouseX > 75 && mouseX < 100 && mouseY > 175 && mouseY < 200)
+        (mouseX > 75 && mouseX < 100 && mouseY > 175 && mouseY < 210)
     ) {
-        state = "charge";
+        state = "full";
     }
 
     else {
-        state = "nothing";
+        state = "empty";
     }
 
 }
