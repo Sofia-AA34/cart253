@@ -10,25 +10,7 @@
 
 let outletImg;
 
-let chargerRect1 = {
-    // Charger block outer piece 
-    // Position and size
-    x: 325,
-    y: 90,
-    width: 125,
-    height: 120,
-    detail: 30,
-}
 
-let chargerRect2 = {
-    // Charger block middle piece 
-    // Position and size 
-    x: 351,
-    y: 115,
-    width: 75,
-    height: 75,
-    detail: 35,
-}
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -39,6 +21,8 @@ async function setup() {
     outletImg = await loadImage("assets/images/outlet.png");
 
     noCursor();
+
+
 
 
 }
@@ -52,16 +36,13 @@ function draw() {
 
     image(outletImg, 50, 50);
 
-    drawCharger();
+    drawChargerBlock();
+
 }
-
-function drawCharger() {
-
-
-
+function drawChargerBlock() {
     push();
     fill("white");
-    rect(chargerRect1.x, chargerRect1.y, chargerRect1.width, chargerRect1.height, chargerRect1.detail);
-    rect(chargerRect2.x, chargerRect2.y, chargerRect2.width, chargerRect2.height, chargerRect2.detail)
+    rect(mouseX, mouseY, 140, 130, 20);
+    rect(mouseX + 32, mouseY + 25, 75, 75, 20);
     pop();
 }
