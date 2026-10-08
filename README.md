@@ -82,7 +82,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Find Your Way Out 
 
-![screenshot](Screenshot_Findà-Your_Way_Out)
+![screenshot](Screenshot_Find_Your_Way_Out)
 
 [running prototype]()
 
