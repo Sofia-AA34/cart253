@@ -46,6 +46,9 @@ function draw() {
     else if (state === "middle") {
         middle();
     }
+    else if (state === "end") {
+        end();
+    }
 }
 
 // draws the image in the center of the canvas 
@@ -59,9 +62,6 @@ function start() {
     text(startString, width / 2, height / 4);
     pop();
 }
-
-
-
 
 function middle() {
     background("#EDE8D0");
@@ -93,6 +93,10 @@ function middle() {
     pop();
 }
 
+function end() {
+    background("green");
+}
+
 
 function mouseClicked() {
     if (state === "start") {
@@ -100,7 +104,7 @@ function mouseClicked() {
     }
 
     else if (state === "middle") {
-        if (mouseX > 125 && mouseX < 175 && mouseY > 175 && mouseY < 225) {
+        if (mouseX > 125 && mouseX < 200 && mouseY > 150 && mouseY < 225) {
             state = "end";
         }
     }
