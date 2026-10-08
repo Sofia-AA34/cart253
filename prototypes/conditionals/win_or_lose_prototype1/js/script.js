@@ -56,6 +56,9 @@ function draw() {
     else if (state === "end") {
         end();
     }
+    else if (state === "gameOver") {
+        gameOver();
+    }
 }
 
 // draws the image in the center of the canvas 
@@ -120,6 +123,9 @@ function mouseClicked() {
     else if (state === "middle") {
         if (mouseX > 125 && mouseX < 200 && mouseY > 150 && mouseY < 225) {
             state = "end";
+        }
+        else {
+            state = "gameOver"
         }
     }
 }
