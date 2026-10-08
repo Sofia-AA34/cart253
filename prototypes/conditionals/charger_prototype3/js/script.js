@@ -10,7 +10,15 @@
 
 let outletImg;
 
+let state = "nothing";
 
+let battery = {
+    fill: "red",
+    fills: {
+        nothing: "red",
+        charge: "green"
+    }
+}
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -36,20 +44,24 @@ function draw() {
 
     image(outletImg, 50, 50);
 
-    drawChargerBlock();
-    drawChargerCable();
+
+    if (state === "nothing") {
+        nothing();
+    }
+    else if (state === "charge") {
+        nothing();
+    }
 
 }
-
-function drawChargerBlock() {
+function nothing() {
+    // drawChargerBlock
     push();
     fill("white");
     rect(mouseX, mouseY, 140, 130, 20);
     rect(mouseX + 32, mouseY + 25, 75, 75, 20);
     pop();
-}
 
-function drawChargerCable() {
+    // drawChargerCable 
     push();
     noFill();
     stroke("black");
@@ -57,5 +69,37 @@ function drawChargerCable() {
     bezier(mouseX + 70, mouseY + 60, mouseX + 250, mouseY - 100, mouseX - 50, mouseY - 100, 450, 400);
     pop();
 
+    // draw battery 
+    push();
+    fill(battery.fills[state]);
+    rect(450, 100, 100, 200);
+    pop();
+
+    push();
+    stroke("black");
+    strokeWeight(2);
+    line(451, 150, 549, 150);
+    line(451, 200, 549, 200);
+    line(451, 250, 549, 250);
+    pop();
+}
+
+function charge() {
+    if (battery.fill === baterry.fills.charge) {
+    }
+}
+
+
+function mouseMoved() {
+    if (
+        (mouseX > 75 && mouseX < 100 && mouseY > 75 && mouseY < 100) ||
+        (mouseX > 75 && mouseX < 100 && mouseY > 175 && mouseY < 200)
+    ) {
+        state = "charge";
+    }
+
+    else {
+        state = "nothing";
+    }
 
 }
