@@ -21,6 +21,7 @@ let frogImg;
 // Text to dispay for the start, middle and ending
 let startString = "Click on the kitty to start the game";
 let middleString = "Can you find the kitty?";
+let endString = "Yayyy!!! You won!";
 
 let state = "start";
 
@@ -100,7 +101,14 @@ function middle() {
 }
 
 function end() {
-    background("green");
+    background("pink");
+
+    image(partyImg, 150, 150, 300, 300);
+
+    push();
+    fill("black");
+    text(endString, width / 2, height / 5);
+    pop();
 }
 
 
