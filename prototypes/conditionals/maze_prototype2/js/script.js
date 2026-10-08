@@ -32,7 +32,7 @@ function draw() {
     if (state === "maze") {
         maze();
     }
-    else if (state === noMaze) {
+    else if (state === "noMaze") {
         noMaze();
     }
 }
@@ -47,7 +47,21 @@ function maze() {
     //push();
     //fill("red");
     //circle(mouseX, mouseY, 20);
-    //pop();
+    //pop();   
+}
+
+function mouseMoved() {
+    // oustide
+    if (mouseX > 0 && mouseX < 400 && mouseY > 375 && mouseY < 500) {
+        state = "maze";
+    }
+    if (mouseX > 0 && mouseX < 400 && mouseY > 375 && mouseY < 500) {
+        state = "maze";
+    }
+
+    //else {
+    //    state = "noMaze";
+    // }
 }
 
 function noMaze() {
