@@ -8,14 +8,14 @@
 
 "use strict";
 
-// Load the images used in this prototype 
-let kittyImg; // small black cat with a white thing around it's neck
+//
+let kittyImg;
 
-let ghostImg; // ghost
+let ghostImg;
 
-let partyImg; // black cat with a confetti gun
+let partyImg;
 
-let frogImg; // sad frog
+let frogImg;
 
 
 // Text to dispay for the start, middle and ending
