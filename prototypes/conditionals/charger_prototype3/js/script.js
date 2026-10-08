@@ -37,12 +37,25 @@ function draw() {
     image(outletImg, 50, 50);
 
     drawChargerBlock();
+    drawChargerCable();
 
 }
+
 function drawChargerBlock() {
     push();
     fill("white");
     rect(mouseX, mouseY, 140, 130, 20);
     rect(mouseX + 32, mouseY + 25, 75, 75, 20);
     pop();
+}
+
+function drawChargerCable() {
+    push();
+    noFill();
+    stroke("black");
+    strokeWeight(25);
+    bezier(mouseX + 70, mouseY + 60, mouseX + 250, mouseY - 100, mouseX - 50, mouseY - 100, 450, 400);
+    pop();
+
+
 }
