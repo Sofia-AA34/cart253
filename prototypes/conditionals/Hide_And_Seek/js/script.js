@@ -8,7 +8,7 @@
 
 "use strict";
 
-// Load the images used in this prototype 
+// The images used in this prototype 
 let kittyImg; // small black cat with a white thing around it's neck
 
 let ghostImg; // ghost
@@ -18,25 +18,29 @@ let partyImg; // black cat with a confetti gun
 let frogImg; // sad frog
 
 
-// Text to dispay for the start, middle and ending
-let startString = "Click on the kitty to start the game";
-let middleString = "Can you find the kitty?";
-let endString = "Yayyy!!! You won!";
-let gameOverString = "Game over :(";
+// Text to dispay for the start, middle, win and loss states 
+let startString = "Click on the cat to start the game";
+let middleString = "Can you find it now?";
+let winString = "Yayyy!!! You won!"; // win
+let gameOverString = "Game over :("; // loss
 
+// first state shown when the prototype runs 
 let state = "start";
 
 /**
  * Creates the canvas
 */
 async function setup() {
-
+    // creates the canvas
     createCanvas(600, 600);
+
+    // Load the images used in this prototype
     kittyImg = await loadImage("assets/images/kitty_cat.png");
     ghostImg = await loadImage("assets/images/ghost.png");
     partyImg = await loadImage("assets/images/party.png");
     frogImg = await loadImage("assets/images/frog.png");
 
+    // text settings
     textSize(25);
     textAlign(CENTER, CENTER);
 }
@@ -54,8 +58,8 @@ function draw() {
     else if (state === "middle") {
         middle();
     }
-    else if (state === "end") {
-        end();
+    else if (state === "win") {
+        win();
     }
     else if (state === "gameOver") {
         gameOver();
@@ -104,7 +108,7 @@ function middle() {
     pop();
 }
 
-function end() {
+function win() {
     background("pink");
 
     image(partyImg, 150, 150, 300, 300);
@@ -134,7 +138,7 @@ function mouseClicked() {
 
     else if (state === "middle") {
         if (mouseX > 125 && mouseX < 200 && mouseY > 150 && mouseY < 225) {
-            state = "end";
+            state = "win";
         }
         else {
             state = "gameOver"
