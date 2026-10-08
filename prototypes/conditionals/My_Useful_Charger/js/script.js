@@ -23,6 +23,7 @@ let battery = {
     }
 }
 
+
 /**
  * Creates the canavs and loads the outlet image 
 */
@@ -45,19 +46,14 @@ function draw() {
 
     noCursor();
 
-    if (state === "empty") {
-        empty();
-    }
-    else if (state === "full") {
-        empty();
-    }
+    drawCharger();
 }
 
 /**
  * Deafault state of the program, before the user can alter it by moving 
  * his mouse. The cursor is the charger and the battery is empty (red)
  */
-function empty() {
+function drawCharger() {
     // Draws the battery 
     // Draws the ouline of the battery 
     push();
