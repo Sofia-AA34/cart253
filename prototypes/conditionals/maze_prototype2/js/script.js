@@ -10,6 +10,8 @@
 
 let mazeImg;
 
+let state = "maze";
+
 /**
  * Creates the canvas 
 */
@@ -27,6 +29,15 @@ async function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    if (state === "maze") {
+        maze();
+    }
+    else if (state === noMaze) {
+        noMaze();
+    }
+}
+
+function maze() {
     background("black");
 
     image(mazeImg, 0, 0);
@@ -37,5 +48,8 @@ function draw() {
     //fill("red");
     //circle(mouseX, mouseY, 20);
     //pop();
+}
 
+function noMaze() {
+    background("red");
 }
