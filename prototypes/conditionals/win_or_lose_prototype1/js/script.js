@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
+ * Hide-and-seek
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is a game where you just follow the directions.
+ * Click on the cat, find it among the ghosts and try not to lose!
  */
 
 "use strict";
