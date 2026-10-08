@@ -10,6 +10,7 @@
 
 // Load the image kitty_cat
 let kittyImg;
+
 let ghostImg;
 
 
@@ -28,9 +29,10 @@ async function setup() {
     kittyImg = await loadImage("assets/images/kitty_cat.png");
     ghostImg = await loadImage("assets/images/ghost.png");
 
-    textSize(20);
+    textSize(25);
     textAlign(CENTER, CENTER);
 }
+
 
 
 /**
@@ -58,11 +60,7 @@ function start() {
     pop();
 }
 
-function mouseClicked() {
-    if (state === "start") {
-        state = "middle";
-    }
-}
+
 
 
 function middle() {
@@ -76,9 +74,6 @@ function middle() {
     image(ghostImg, 450, -35);
     image(ghostImg, 325, -35);
 
-
-
-
     image(ghostImg, 100, 215);
     image(ghostImg, -15, 215);
     image(ghostImg, 215, 215);
@@ -87,19 +82,26 @@ function middle() {
 
     image(ghostImg, 75, 465);
     image(ghostImg, -100, 465);
-
     image(ghostImg, 175, 465);
     image(ghostImg, 390, 465);
     image(ghostImg, 520, 465);
     image(ghostImg, 280, 465);
 
-
-
-
-
-
     push();
-    fill("black");
-    text(middleString, width / 2, height / 4);
+    fill("white");
+    text(middleString, width / 2, height / 2);
     pop();
+}
+
+
+function mouseClicked() {
+    if (state === "start") {
+        state = "middle";
+    }
+
+    else if (state === "middle") {
+        if (mouseX > 125 && mouseX < 175 && mouseY > 175 && mouseY < 225) {
+            state = "end";
+        }
+    }
 }
