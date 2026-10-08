@@ -1,18 +1,21 @@
 /**
- * Title of Project
- * Author Name
+ * Find your way out 
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is a very easy maze challenge. Or is it? Try to reach the end 
+ * and remember: DO NOT TOUCH THE WALLS!
  */
 
 "use strict";
 
+// The image used in this prototype: a maze 
 let mazeImg;
 
+// First state shown when the prototype runs 
 let state = "maze";
 
-let mazeString = "Don't touch the lines";
+// Text displayed for the "warning" state
+let warningString = "Don't touch the walls!";
 
 /**
  * Creates the canvas 
@@ -38,8 +41,8 @@ function draw() {
     if (state === "maze") {
         maze();
     }
-    else if (state === "noMaze") {
-        noMaze();
+    else if (state === "warning") {
+        warning();
     }
 }
 
@@ -81,15 +84,15 @@ function mouseMoved() {
     }
 
     else {
-        state = "noMaze";
+        state = "warning";
     }
 }
 
-function noMaze() {
+function warning() {
     background("red");
 
     push();
     fill("white");
-    text(mazeString, width / 2, height / 2);
+    text(warningString, width / 2, height / 2);
     pop();
 }
