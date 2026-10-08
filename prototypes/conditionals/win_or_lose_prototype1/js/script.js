@@ -22,6 +22,7 @@ let frogImg;
 let startString = "Click on the kitty to start the game";
 let middleString = "Can you find the kitty?";
 let endString = "Yayyy!!! You won!";
+let gameOverString = "Game over :(";
 
 let state = "start";
 
@@ -111,6 +112,17 @@ function end() {
     push();
     fill("black");
     text(endString, width / 2, height / 5);
+    pop();
+}
+
+function gameOver() {
+    background("black");
+
+    image(frogImg, 150, 150, 300, 300);
+
+    push();
+    fill("white");
+    text(gameOverString, width / 2, height / 5);
     pop();
 }
 
