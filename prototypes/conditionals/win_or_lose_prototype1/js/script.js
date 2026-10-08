@@ -13,6 +13,10 @@ let kittyImg;
 
 let ghostImg;
 
+let partyImg;
+
+let frogImg;
+
 
 // Text to dispay for the start, middle and ending
 let startString = "Click on the kitty to start the game";
@@ -28,6 +32,8 @@ async function setup() {
     createCanvas(600, 600);
     kittyImg = await loadImage("assets/images/kitty_cat.png");
     ghostImg = await loadImage("assets/images/ghost.png");
+    partyImg = await loadImage("assets/images/party.png");
+    frogImg = await loadImage("assets/images/frog.png");
 
     textSize(25);
     textAlign(CENTER, CENTER);
