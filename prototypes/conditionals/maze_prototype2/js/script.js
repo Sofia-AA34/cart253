@@ -8,11 +8,15 @@
 
 "use strict";
 
+let mazeImg;
+
 /**
  * Creates the canvas 
 */
-function setup() {
+async function setup() {
     createCanvas(400, 400);
+
+    mazeImg = await loadImage("assets/images/maze.png");
 
 }
 
@@ -22,5 +26,7 @@ function setup() {
 */
 function draw() {
     background("black");
+
+    image(mazeImg, 0, 0);
 
 }
