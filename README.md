@@ -70,6 +70,35 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [Reflective Journal](journal.md)
 
+## Prototyping: Conditionals 
+
+### Hide-And-Seek
+
+![screenshot]()
+
+[running prototype]()
+
+[code]()
+
+### Find Your Way Out 
+
+![screenshot]()
+
+[running prototype]()
+
+[code]()
+
+### My Useful Charger 
+
+![screenshot]()
+
+[running prototype]()
+
+[code]()
+
+## Journal Entry 
+
+[Reflective Journal](journal.md)
 
 
 
