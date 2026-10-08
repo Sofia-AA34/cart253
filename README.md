@@ -76,7 +76,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ![screenshot](Screenshot_Hide_And_Seek.png)
 
-[running prototype]()
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Hide_And_Seek/)
 
 [code]()
 
@@ -84,7 +84,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ![screenshot](Screenshot_Find_Your_Way_Out.png)
 
-[running prototype]()
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Find_Your_Way_Out/)
 
 [code]()
 
@@ -92,7 +92,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ![screenshot](Screenshot_My_Useful_Charger.png)
 
-[running prototype]()
+[running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/My_Useful_Charger/)
 
 [code]()
 
