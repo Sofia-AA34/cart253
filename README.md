@@ -78,7 +78,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Hide_And_Seek/)
 
-[code]()
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/conditionals/Hide_And_Seek)
 
 ### Find Your Way Out 
 
@@ -86,7 +86,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Find_Your_Way_Out/)
 
-[code]()
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/conditionals/Find_Your_Way_Out)
 
 ### My Useful Charger 
 
@@ -94,7 +94,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/My_Useful_Charger/)
 
-[code]()
+[code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/conditionals/My_Useful_Charger)
 
 ## Journal Entry 
 
