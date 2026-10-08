@@ -16,7 +16,7 @@ let mazeImg;
 async function setup() {
     createCanvas(400, 400);
 
-    noCursor();
+    //noCursor();
 
     mazeImg = await loadImage("assets/images/maze.png");
 
@@ -31,9 +31,11 @@ function draw() {
 
     image(mazeImg, 0, 0);
 
-    push();
-    fill("red");
-    circle(mouseX, mouseY, 20);
-    pop();
+    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
+
+    //push();
+    //fill("red");
+    //circle(mouseX, mouseY, 20);
+    //pop();
 
 }
