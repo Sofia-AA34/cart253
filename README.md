@@ -74,7 +74,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Hide-And-Seek
 
-![screenshot]()
+![screenshot](Screenshot_Hide_And_Seek)
 
 [running prototype]()
 
@@ -82,7 +82,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Find Your Way Out 
 
-![screenshot]()
+![screenshot](Screenshot_Findà-Your_Way_Out)
 
 [running prototype]()
 
@@ -90,7 +90,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### My Useful Charger 
 
-![screenshot]()
+![screenshot](Screenshot_My_Useful_Charger)
 
 [running prototype]()
 
