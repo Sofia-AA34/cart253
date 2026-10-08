@@ -12,6 +12,8 @@ let mazeImg;
 
 let state = "maze";
 
+let mazeString = "Don't touch the lines";
+
 /**
  * Creates the canvas 
 */
@@ -21,6 +23,10 @@ async function setup() {
     //noCursor();
 
     mazeImg = await loadImage("assets/images/maze.png");
+
+    textSize(30);
+    textAlign(CENTER, CENTER);
+
 
 }
 
@@ -42,12 +48,14 @@ function maze() {
 
     image(mazeImg, 0, 0);
 
-    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
+    //text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
 
-    //push();
-    //fill("red");
-    //circle(mouseX, mouseY, 20);
-    //pop();   
+    push();
+    fill("red");
+    circle(mouseX, mouseY, 15);
+    pop();
+
+
 }
 
 function mouseMoved() {
@@ -79,4 +87,9 @@ function mouseMoved() {
 
 function noMaze() {
     background("red");
+
+    push();
+    fill("white");
+    text(mazeString, width / 2, height / 2);
+    pop();
 }
