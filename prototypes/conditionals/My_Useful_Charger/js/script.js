@@ -23,7 +23,6 @@ let battery = {
     }
 }
 
-
 /**
  * Creates the canavs and loads the outlet image 
 */
@@ -86,15 +85,6 @@ function drawCharger() {
     strokeWeight(25);
     bezier(mouseX + 70, mouseY + 60, mouseX + 250, mouseY - 100, mouseX - 50, mouseY - 100, 450, 400);
     pop();
-}
-
-/**
- * The state of the program once the user alligns the charger with one of the 
- * two outlet openings 
- */
-function full() {
-    if (battery.fill === baterry.fills.full) { //green
-    }
 }
 
 /**
