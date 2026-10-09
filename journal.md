@@ -34,3 +34,9 @@ While making my maze prototype, I discovered a new function :    text(`x: ${int(
 In my charger prototype, and with my dad’s help to clear up the mess I created, I learned a new way to write my “variables” :    fill(battery.fills[state])   . From what I understood, that one line says that the fill of my battery will change depending on the state my program is in and the color assigned to it.
 While my prototypes may have not turned out exactly the way I have planned them to behave, I’m still proud of what I made. For example, I initially wanted to add small traveling circles inside of my cable (bezier) to show that it was turned on, but curves are confusing, and I just wanted to let it go.. On the bright side, the solution I ended up with (green/red batter) turned out to be almost just as nice.
 
+![Layout_Hide_And_Seek](SS_Hide.png)
+
+![Layout_Find_Your_Way_Out](SS_Maze.png)
+
+![Layout_My_Useful_Charger](SS_Outlet.png)
+
