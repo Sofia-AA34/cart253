@@ -24,3 +24,13 @@ Overall, I actually really enjoyed this whole process, and for my next prototype
 ![code for the shapes making the cup](Screenshot1.jpeg)
 
 ![ending with confusing names for my variables](screenshot2.jpeg)
+
+## Thursday, October 8, 2026
+
+Conditionals were a notion that came in handy when trying to create different possible outcomes for my program. They gave me, as the creator, more room to get creative with my ideas and they made the program feel more interactive for the user, which I think makes it more engaging and interesting. 
+The part that confused me most was choosing the right approach to integrate a specific condition into my program. In the examples we’ve seen, “Basic states” felt simpler and more natural for me to visualise, so it was the “layout” I decided to stick with for my prototypes.
+I almost exclusively used images this week, and while understanding how to load them into my code was more challenging than it should have been, it allowed me to really focus on the interactivity of my programs because I didn’t spend hours making everything out of basic shapes.
+While making my maze prototype, I discovered a new function :    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);    which honestly saved me so much trouble and nerves. Since I used an image for the maze, I’m not sure how else I would have calculated the x and y coordinates of my corridors besides guessing or doing more math than I already had to.
+In my charger prototype, and with my dad’s help to clear up the mess I created, I learned a new way to write my “variables” :    fill(battery.fills[state])   . From what I understood, that one line says that the fill of my battery will change depending on the state my program is in and the color assigned to it.
+While my prototypes may have not turned out exactly the way I have planned them to behave, I’m still proud of what I made. For example, I initially wanted to add small traveling circles inside of my cable (bezier) to show that it was turned on, but curves are confusing, and I just wanted to let it go.. On the bright side, the solution I ended up with (green/red batter) turned out to be almost just as nice.
+
