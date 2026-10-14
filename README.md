@@ -14,7 +14,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Smell the Flowers 
 
-![screenshot](SmelltheFlowers.jpeg)
+<img style="width: 60%; margin: auto;" src="SmelltheFlowers.jpeg">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-1/)
 
@@ -22,7 +22,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Hypnosis 
 
-![screenshot](Hypnosis.jpeg)
+<img style="width: 60%; margin: auto;" src="Hypnosis.jpeg">
 
 [running protoype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-2/)
 
@@ -30,7 +30,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Little Virus
 
-![screenshot](LittleVirus.jpeg)
+<img style="width: 60%; margin: auto;" src="LittleVirus.jpeg">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/instructions/instructions-prototype-3/)
 
@@ -44,7 +44,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Light It Up
 
-![screenshot](Screenshot_Light_It_Up.jpeg)
+<img style="width: 60%; margin: auto;" src="Screenshot_Light_It_Up.jpeg">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Light_It_Up/)
 
@@ -52,7 +52,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Little Weakness 
 
-![screenshot](Screenshot_Little_Weakness.jpeg)
+<img style="width: 60%; margin: auto;" src="Screenshot_Little_Weakness.jpeg">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/Little_Weakness/)
 
@@ -60,7 +60,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### 1, 2, Void!
 
-![screenshot](Screenshot_1_2_Void!.png)
+<img style="width: 60%; margin: auto;" src="Screenshot_1_2_Void!.png">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/variables/1_2_Void!/)
 
@@ -74,7 +74,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Hide-And-Seek
 
-![screenshot](Screenshot_Hide_And_Seek.png)
+<img style="width: 60%; margin: auto;" src="Screenshot_Hide_And_Seek.png">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Hide_And_Seek/)
 
@@ -82,7 +82,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Find Your Way Out 
 
-![screenshot](Screenshot_Find_Your_Way_Out.png)
+<img style="width: 60%; margin: auto;" src="Screenshot_Find_Your_Way_Out.png">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Find_Your_Way_Out/)
 
@@ -90,7 +90,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### My Useful Charger 
 
-![screenshot](Screenshot_My_Useful_Charger.png)
+<img style="width: 60%; margin: auto;" src="Screenshot_My_Useful_Charger.png">
 
 [running prototype](https://sofia-aa34.github.io/cart253/prototypes/conditionals/My_Useful_Charger/)
 
