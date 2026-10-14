@@ -4,7 +4,7 @@
 
 Making a website with Markdown and GitHub has helped me thoroughly grasp the core concepts: what they are and how they interact, something I had REALLY struggled with when completing the first challenge. I finally understood how repositories fit within GitHub and how changes made in VS Code are translated into what you see in GitHub. I think it's cool how once you start to undertand what you are doing, instead of mindlessly following the instructions (because you have a hard time even comprehending the sentences), the whole process becomes fun. While it's frustrating that a small mistake or typo can prevent the whole website from working, it's very satisfying to see everything come together in the end. I was surprised that once I was halfway done, I could see that the assignment wasn't as complicated or tricky as it had first appeared to be when I skimmed through the instructions. Programming had always seemed like an alien language to me and I struggled to understand how it can even be taught to someone, but now I realize that you simply have to "play around" and observe how everything works. I hope that for the following assignments, I can use what we learn through the lessons to edit the layout and design of my pages so they become recognizable as my work. I want my audience to be intrigued by my projects and eager to see what I will offer next.
 
-![website screenshot](image/Screenshot.jpg)
+<img style="width: 60%; margin: auto;" src="images/screenshot_website">
 
 ## Thursday, Septemeber 24, 2026
 
@@ -21,9 +21,9 @@ The part I am still unsure about is when and where exactly I should be using var
 For the cup of coffee, I wanted to make the steam lines curved and animated, but after trying various options, it seemed like I could technically draw them using points and arcs, but making them move would be a mission impossible. I also wanted to make the cup tilt to the side, maybe even spill the coffee, but I couldn’t figure out how to do it when my cup was made of 4 shapes with different centers. 
 Overall, I actually really enjoyed this whole process, and for my next prototypes, I would like to try using images instead of drawing all my shapes so I can concentrate more on the transformations.
 
-![code for the shapes making the cup](Screenshot1.jpeg)
+<img style="width: 60%; margin: auto;" src="images/Screenshot1.jpeg">
 
-![ending with confusing names for my variables](screenshot2.jpeg)
+<img style="width: 60%; margin: auto;" src="images/screenshot2.jpeg">
 
 ## Thursday, October 8, 2026
 
@@ -34,9 +34,9 @@ While making my maze prototype, I discovered a new function :    text(`x: ${int(
 In my charger prototype, and with my dad’s help to clear up the mess I created, I learned a new way to write my “variables” :    fill(battery.fills[state])   . From what I understood, that one line says that the fill of my battery will change depending on the state my program is in and the color assigned to it.
 While my prototypes may have not turned out exactly the way I have planned them to behave, I’m still proud of what I made. For example, I initially wanted to add small traveling circles inside of my cable (bezier) to show that it was turned on, but curves are confusing, and I just wanted to let it go.. On the bright side, the solution I ended up with (green/red battery) turned out to be almost just as nice.
 
-![Layout_Hide_And_Seek](SS_Hide.png)
+<img style="width: 60%; margin: auto;" src="images/SS_Hide.png">
 
-![Layout_Find_Your_Way_Out](SS_Maze.png)
+<img style="width: 60%; margin: auto;" src="images/SS_Maze.png">
 
-![Layout_My_Useful_Charger](SS_Outlet.png)
+<img style="width: 60%; margin: auto;" src="images/SS_Outlet.png">
 
