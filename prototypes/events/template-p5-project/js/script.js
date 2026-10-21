@@ -24,6 +24,8 @@ let paper = {
     fill: ('#FAFAEC') // beige
 }
 
+let write = "";
+
 /**
  * Creates the canvas and laods the image
 */
@@ -33,6 +35,10 @@ async function setup() {
 
     // loads the image 
     typingMachineImg = await loadImage("assets/images/typing_machine.png");
+
+    // properties of the text 
+    textSize(16);
+    fill('black');
 }
 
 
@@ -46,13 +52,15 @@ function draw() {
 
     drawPaper();
 
-    // used to get the exact coordinates of the corridors of the maze
-    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
+    // used to get the exact coordinates of the cursor
+    //text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
+
+    text(write, paper.x, paper.y, paper.width, paper.height);
 
 }
 
 /**
- * Draws the paper in the. typing machine
+ * Draws the paper in the typing machine
  */
 function drawPaper() {
     push();
@@ -60,4 +68,16 @@ function drawPaper() {
     fill(paper.fill);
     rect(paper.x, paper.y, paper.width, paper.height);
     pop();
+}
+
+/**
+ * Function that makes the text appear on the paper when the user types on their keyboard
+ */
+function keyPressed() {
+
+    if (keyCode === BACKSPACE) {
+        write = write.slice(0, -1);
+    }
+    else { write += key }
+
 }
