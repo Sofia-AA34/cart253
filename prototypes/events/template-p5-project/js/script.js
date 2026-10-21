@@ -86,6 +86,9 @@ function keyPressed() {
     if (keyCode === BACKSPACE) {
         write = write.slice(0, -1);
     }
+    else if (keyCode === ENTER) {
+
+    }
 
     else { write += key }
 
