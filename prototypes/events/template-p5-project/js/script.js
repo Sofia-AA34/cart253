@@ -56,7 +56,7 @@ function draw() {
     // used to get the exact coordinates of the cursor
     //text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
 
-    text(write, paper.x, paper.y, paper.width, paper.height);
+    text(write, paper.x + 10, paper.y + 10, paper.width, paper.height);
 
 }
 
@@ -67,6 +67,7 @@ function draw() {
 function drawPaperMoves() {
     if (keyCode === ENTER) {
         paper.y -= 1;
+        paper.height += 1;
     }
 
 }
@@ -87,6 +88,10 @@ function keyPressed() {
         write = write.slice(0, -1);
     }
     else if (keyCode === ENTER) {
+
+    }
+
+    else if (keyCode === SHIFT) {
 
     }
 
