@@ -51,6 +51,7 @@ function draw() {
     image(typingMachineImg, -55, -90, 500, 650);
 
     drawPaper();
+    drawPaperMoves();
 
     // used to get the exact coordinates of the cursor
     //text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
@@ -62,6 +63,13 @@ function draw() {
 /**
  * Draws the paper in the typing machine
  */
+
+function drawPaperMoves() {
+    if (keyCode === ENTER) {
+        paper.y -= 1;
+    }
+
+}
 function drawPaper() {
     push();
     noStroke();
@@ -78,6 +86,7 @@ function keyPressed() {
     if (keyCode === BACKSPACE) {
         write = write.slice(0, -1);
     }
+
     else { write += key }
 
 }
