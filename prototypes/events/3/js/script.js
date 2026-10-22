@@ -8,6 +8,8 @@
 
 "use strict";
 
+let state = "alive";
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -36,6 +38,13 @@ function draw() {
 
     drawOutline();
     drawInsideBlocks();
+
+    if (state === "alive") {
+        alive();
+    }
+    else if (state === "dead") {
+        dead();
+    }
 }
 
 
@@ -74,6 +83,4 @@ function drawInsideBlocks() {
     line(290, 200, 345, 200);
     line(290, 200, 290, 300);
     pop();
-
-
 }
