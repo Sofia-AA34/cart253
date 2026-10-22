@@ -29,4 +29,23 @@ function draw() {
 
     image(recordPlayerImg, 50, 50, 500, 300);
 
+    //drawRecordPlayer();
+
+    noStroke();
+
+}
+
+function drawRecordPlayer() {
+    // base 
+    push();
+    fill('#dad8d5')
+    rect(50, 50, 500, 300, 20);
+    pop();
+
+    // side pannel 
+    push();
+    fill('#1c1b1b');
+    rect(450, 55, 90, 290);
+    pop();
+
 }
