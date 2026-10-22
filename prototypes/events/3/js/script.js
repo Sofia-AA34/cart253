@@ -11,8 +11,8 @@
 let state = "alive";
 
 let person = {
-    x: 250,
-    y: 115
+    x: 20,
+    y: 28
 }
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -57,6 +57,8 @@ function draw() {
     if (keyIsDown(DOWN_ARROW)) {
         person.y += 2;
     }
+
+    drawCandy();
 }
 
 function drawPerson() {
@@ -137,9 +139,9 @@ function alive() {
         (person.x > 10 && person.x < 66 && person.y > 55 & person.y < 126) ||
         (person.x > 65 && person.x < 245 && person.y > 55 & person.y < 85) ||
 
-        (person.x > 150 && person.x < 185 && person.y > 124 & person.y < 290)
-            (person.x > 10 && person.x < 151 && person.y > 255 & person.y < 290)
-            (person.x > 10 && person.x < 205 && person.y > 165 & person.y < 256)
+        (person.x > 150 && person.x < 185 && person.y > 124 & person.y < 290) ||
+        (person.x > 10 && person.x < 151 && person.y > 255 & person.y < 290) ||
+        (person.x > 10 && person.x < 205 && person.y > 165 & person.y < 256)
 
     )
         state = "alive";
@@ -150,7 +152,24 @@ function alive() {
 }
 
 function dead() {
-    person.x = 250;
-    person.y = 115;
+    person.x = 20;
+    person.y = 28;
     state = "alive";
+}
+
+function drawCandy() {
+    push();
+    fill("#642ed9");
+    ellipse(150, 27, 15);
+    ellipse(373, 22, 15);
+    ellipse(315, 55, 15);
+    ellipse(307, 222, 15);
+    ellipse(209, 147, 15);
+    ellipse(31, 175, 15);
+    ellipse(121, 146, 15);
+    ellipse(228, 68, 15);
+
+
+    pop();
+
 }
