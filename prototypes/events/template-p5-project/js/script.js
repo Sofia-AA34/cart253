@@ -26,6 +26,17 @@ let paper = {
 
 let write = "";
 
+let paperBack = {
+    // Position, size and color of the back of the paper - rectangle 
+    // Position 
+    x: 70,
+    y: -180,
+    //Size
+    height: 60,
+    // color
+    fill: ('#b2b29e') // dark beige
+}
+
 /**
  * Creates the canvas and laods the image
 */
@@ -39,6 +50,9 @@ async function setup() {
     // properties of the text 
     textSize(16);
     fill('black');
+
+    angleMode(DEGREES);
+
 }
 
 
@@ -48,16 +62,20 @@ async function setup() {
 function draw() {
     background('#D8A8A6'); // light pink
 
+    drawPaperBack();
+
     image(typingMachineImg, -55, -90, 500, 650);
 
+
     drawPaper();
+
     drawPaperMoves();
 
+
     // used to get the exact coordinates of the cursor
-    //text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
+    // text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
 
     text(write, paper.x + 10, paper.y + 10, paper.width, paper.height);
-
 }
 
 /**
@@ -68,6 +86,7 @@ function drawPaperMoves() {
     if (keyCode === ENTER) {
         paper.y -= 1;
         paper.height += 1;
+        paperBack.height += 1;
     }
 
 }
@@ -97,4 +116,13 @@ function keyPressed() {
 
     else { write += key }
 
+}
+
+function drawPaperBack() {
+    push()
+    noStroke();
+    fill(paperBack.fill);
+    rotate(5);
+    rect(paperBack.x, paperBack.y, paper.width, paperBack.height);
+    pop();
 }
