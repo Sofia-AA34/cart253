@@ -59,17 +59,17 @@ async function setup() {
 function draw() {
     background("white");
 
-    image(recordPlayerImg, 50, 50, 500, 300);
+    //image(recordPlayerImg, 50, 50, 500, 300);
 
-    //drawRecordPlayer();
+    drawRecordPlayer();
 
     drawDetails();
 
-    //drawVinylRecord();
+    drawVinylRecord();
 
 
 
-    // drawTonearm();
+    drawTonearm();
 
     noStroke();
 
@@ -95,6 +95,11 @@ function drawVinylRecord() {
     push();
     fill('black');
     ellipse(vinylRecord.x, vinylRecord.y, vinylRecord.width, vinylRecord.height);
+    pop();
+
+    push();
+    fill('white');
+    ellipse(vinylRecord.x, vinylRecord.y, 10);
     pop();
 }
 
