@@ -146,7 +146,7 @@ function drawBall(ball) {
     push();
     rectMode(CENTER);
     noStroke();
-    fill("red");
+    fill(random(0, 255), random(0, 255), random(0, 255));
     rect(ball.x, ball.y, ball.width, ball.height);
     pop();
 }
