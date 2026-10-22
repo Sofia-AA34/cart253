@@ -12,6 +12,8 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
+    createCanvas(400, 300);
+
 
 }
 
@@ -20,5 +22,8 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background("#8d9fe0");
 
+    // used to get the exact coordinates of the corridors of the maze
+    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
 }
