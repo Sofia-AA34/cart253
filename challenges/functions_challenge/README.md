@@ -1,6 +1,6 @@
-# TITLE OF PROJECT
+# Functions Challenge
 
-AUTHOR NAME
+Charlotte Walsh & Sofia Allashukurova 
 
 [View this project online](https://sofia-aa34.github.io/cart253/challenges/events_challenge)
 
