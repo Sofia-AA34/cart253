@@ -11,14 +11,6 @@
 let recordPlayerImg;
 let diskImg;
 
-let vinylRecord = {
-    // Positon and size 
-    x: 260,
-    y: 200,
-    width: 350,
-    height: 280,
-}
-
 let metalllicPiece1 = {
     x1: 434,
     y1: 145,
@@ -41,7 +33,12 @@ let metalllicPiece2 = {
     y4: 300,
 }
 
-
+let disk = {
+    x: 250,
+    y: 200,
+    width: 320,
+    height: 450,
+}
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -51,6 +48,8 @@ async function setup() {
 
     recordPlayerImg = await loadImage("assets/images/record_player.png");
     diskImg = await loadImage("assets/images/vinyl_record.png");
+
+    angleMode(DEGREES);
 
 }
 
@@ -71,17 +70,19 @@ function draw() {
 
     // drawVinylRecord();
 
-    image(diskImg, 60, 20, 400, 375);
 
+    drawDisk();
 
 
     drawTonearm();
 
     noStroke();
 
-    angleMode(DEGREES);
+
 
 }
+
+
 
 function drawRecordPlayer() {
     // base 
@@ -97,13 +98,14 @@ function drawRecordPlayer() {
     pop();
 }
 
-function drawVinylRecord() {
+
+function drawDisk() {
     push();
-    fill('black');
-    ellipse(vinylRecord.x, vinylRecord.y, vinylRecord.width, vinylRecord.height);
+    imageMode(CENTER);
+    translate(disk.x, disk.y);
+    rotate(frameCount * 0.7);
+    image(diskImg, 0, 0, disk.width, disk.height);
     pop();
-
-
 }
 
 function drawTonearm() {
@@ -148,10 +150,4 @@ function drawDetails() {
     fill('#e5cdcd');
     ellipse(472, 310, 40, 35);
     pop();
-
-    push();
-    fill('white');
-    ellipse(vinylRecord.x, vinylRecord.y, 10);
-    pop();
 }
-
