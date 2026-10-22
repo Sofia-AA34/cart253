@@ -10,6 +10,10 @@
 
 let state = "alive";
 
+let person = {
+    x: 20,
+    y: 28
+}
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -28,25 +32,40 @@ function draw() {
     noStroke();
 
     // used to get the exact coordinates of the corridors of the maze
-    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 50);
-
-    // if (state === "alive") {
-    //alive();
-    //}
-
-    // if (state === "dead") { dead(); }
+    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
 
     drawOutline();
     drawInsideBlocks();
+    drawPerson();
 
-    if (state === "alive") {
-        alive();
+    // if (state === "alive") {
+    // alive();
+    // }
+    // else if (state === "dead") {
+    //     dead();
+    // }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+        person.x += 2;
     }
-    else if (state === "dead") {
-        dead();
+    if (keyIsDown(LEFT_ARROW)) {
+        person.x -= 2;
     }
+    if (keyIsDown(UP_ARROW)) {
+        person.y -= 2;
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+        person.y += 2;
+    }
+
 }
 
+function drawPerson() {
+    push();
+    fill("#f904cc");
+    ellipse(person.x, person.y, 10);
+    pop();
+}
 
 function drawOutline() {
     push();
