@@ -8,10 +8,15 @@
 
 "use strict";
 
+let recordPlayerImg;
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
-function setup() {
+async function setup() {
+    createCanvas(600, 400);
+
+    recordPlayerImg = await loadImage("assets/images/record_player.png");
 
 }
 
@@ -20,5 +25,8 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background("black");
+
+    image(recordPlayerImg, 50, 50, 500, 300);
 
 }
