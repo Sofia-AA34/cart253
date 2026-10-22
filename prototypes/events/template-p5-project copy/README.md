@@ -2,7 +2,7 @@
 
 AUTHOR NAME
 
-[View this project online](https://sofia-aa34.github.io/cart253/prototypes/events/template-p5-project copy)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/events/template-p5-projectcopy)
 
 
 ## Description
