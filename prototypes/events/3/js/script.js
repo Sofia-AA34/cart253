@@ -14,13 +14,34 @@ let person = {
     x: 20,
     y: 28
 }
+
+let candy = {
+    size: 15,
+    x1: 150,
+    y1: 27,
+    x2: 373,
+    y2: 22,
+    x3: 315,
+    y3: 55,
+    x4: 307,
+    y4: 222,
+    x5: 209,
+    y5: 147,
+    x6: 31,
+    y6: 175,
+    x7: 121,
+    y7: 146,
+    x8: 228,
+    y8: 68
+}
+
+
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
     createCanvas(400, 300);
-
-
 }
 
 
@@ -60,6 +81,13 @@ function draw() {
 
     drawCandy();
 }
+
+//function candyYes() {
+// if (person.x === candy.x1 && person.y === candy.y1) {
+//     drawCandy = false;
+//}
+//}
+
 
 function drawPerson() {
     push();
@@ -149,6 +177,7 @@ function alive() {
     else {
         state = "dead"
     }
+
 }
 
 function dead() {
@@ -160,14 +189,13 @@ function dead() {
 function drawCandy() {
     push();
     fill("#642ed9");
-    ellipse(150, 27, 15);
-    ellipse(373, 22, 15);
-    ellipse(315, 55, 15);
-    ellipse(307, 222, 15);
-    ellipse(209, 147, 15);
-    ellipse(31, 175, 15);
-    ellipse(121, 146, 15);
-    ellipse(228, 68, 15);
+    ellipse(candy.x1, candy.y1, candy.size);
+    ellipse(candy.x2, candy.y2, candy.size);
+    ellipse(candy.x3, candy.y3, candy.size);
+    ellipse(candy.x4, candy.y4, candy.size);
+    ellipse(candy.x5, candy.y5, candy.size);
+    ellipse(candy.x6, candy.y6, candy.size);
+    ellipse(candy.x7, candy.y7, candy.size);
+    ellipse(candy.x8, candy.y8, candy.size);
     pop();
-
 }
