@@ -18,6 +18,30 @@ let vinylRecord = {
     height: 280,
 }
 
+let metalllicPiece1 = {
+    x1: 434,
+    y1: 145,
+    x2: 455,
+    y2: 153,
+    x3: 395,
+    y3: 258,
+    x4: 382,
+    y4: 243,
+}
+
+let metalllicPiece2 = {
+    x1: 400,
+    y1: 250,
+    x2: 380,
+    y2: 245,
+    x3: 300,
+    y3: 278,
+    x4: 315,
+    y4: 300,
+}
+
+
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -35,13 +59,17 @@ async function setup() {
 function draw() {
     background("black");
 
-    image(recordPlayerImg, 50, 50, 500, 300);
+    // image(recordPlayerImg, 50, 50, 500, 300);
 
-    //drawRecordPlayer();
+    drawRecordPlayer();
 
-    // drawVinylRecord();
+    drawVinylRecord();
+
+    drawTonearm();
 
     noStroke();
+
+    angleMode(DEGREES);
 
 }
 
@@ -65,3 +93,31 @@ function drawVinylRecord() {
     ellipse(vinylRecord.x, vinylRecord.y, vinylRecord.width, vinylRecord.height);
     pop();
 }
+
+function drawTonearm() {
+    //main two pieces 
+    push();
+    fill('#8a8a8a');
+    quad(482, 55, 510, 65, 490, 110, 447, 95);
+    pop();
+
+    push();
+    fill('#191919');
+    quad(490, 110, 447, 95, 434, 145, 455, 153);
+    pop();
+
+    //metal x2
+    push();
+    fill('#aca8a8');
+    quad(metalllicPiece1.x1, metalllicPiece1.y1, metalllicPiece1.x2, metalllicPiece1.y2, metalllicPiece1.x3, metalllicPiece1.y3, metalllicPiece1.x4, metalllicPiece1.y4);
+    quad(metalllicPiece2.x1, metalllicPiece2.y1, metalllicPiece2.x2, metalllicPiece2.y2, metalllicPiece2.x3, metalllicPiece2.y3, metalllicPiece2.x4, metalllicPiece2.y4);
+    pop();
+
+    push();
+    fill('#fefdfd');
+    translate(metalllicPiece1.x4, metalllicPiece1.y4,)
+    rotate(52);
+    rect(0, 0, 40, 5);
+    pop();
+}
+
