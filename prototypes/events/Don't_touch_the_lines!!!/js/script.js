@@ -4,7 +4,7 @@
  * 
  * This is a relaxing simulation of a maze. 
  * The rule is simple: never touch the blue lines while you explore it.
- * To move the red dot, use the arrows of your keyboard.
+ * To move the pink dot, use the arrows of your keyboard.
  */
 
 "use strict";
@@ -12,7 +12,7 @@
 // first state shown when the prototype runs 
 let state = "alive";
 
-// the red dot that user controls 
+// the pink dot that user controls 
 let person = {
     x: 20,
     y: 28
@@ -25,9 +25,8 @@ function setup() {
     createCanvas(400, 300);
 }
 
-
 /**
- * The user navigates the maze with the red dot. If they touch any of the blue 
+ * The user navigates the maze with the pink dot. If they touch any of the blue 
  * lines, they respawn at the original coordinates.
 */
 function draw() {
@@ -39,7 +38,7 @@ function draw() {
 
     drawOutline(); // the four walls of the maze 
     drawInsideBlocks(); // the lines that define the maze 
-    drawPerson(); // red dot the user controls
+    drawPerson(); // pink dot the user controls
 
     // Check the state and call the appropriate function
     if (state === "alive") {
@@ -49,7 +48,7 @@ function draw() {
         dead();
     }
 
-    // the keys that allow the user to control the red dot 
+    // the keys that allow the user to control the pink dot 
     if (keyIsDown(RIGHT_ARROW)) {
         person.x += 3;
     }
@@ -65,8 +64,8 @@ function draw() {
 }
 
 /**
- * The red dot that the user moves to navigate the maze with the arrows 
- * on the keyboard 
+ * The pink dot that the user moves to navigate the maze with the arrows 
+ * of their keyboard 
  */
 function drawPerson() {
     push();
@@ -121,7 +120,7 @@ function drawInsideBlocks() {
 /**
  * The first state "alive".
  * State of the prototype as long as the user does not touch
- * the blue lines with the red dot.
+ * the blue lines with the pink dot.
  */
 function alive() {
     if (
