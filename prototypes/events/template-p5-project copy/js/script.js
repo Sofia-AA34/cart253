@@ -57,15 +57,19 @@ async function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background("black");
+    background("white");
 
-    // image(recordPlayerImg, 50, 50, 500, 300);
+    image(recordPlayerImg, 50, 50, 500, 300);
 
-    drawRecordPlayer();
+    //drawRecordPlayer();
 
-    drawVinylRecord();
+    drawDetails();
 
-    drawTonearm();
+    //drawVinylRecord();
+
+
+
+    // drawTonearm();
 
     noStroke();
 
@@ -118,6 +122,23 @@ function drawTonearm() {
     translate(metalllicPiece1.x4, metalllicPiece1.y4,)
     rotate(52);
     rect(0, 0, 40, 5);
+    pop();
+}
+
+function drawDetails() {
+    push();
+    fill('#000000');
+    rect(100, 305, 70, 20);
+    pop();
+
+    push();
+    fill('#6d0e0e');
+    rect(370, 315, 35, 10);
+    pop();
+
+    push();
+    fill('#e5cdcd');
+    ellipse(472, 310, 40, 35);
     pop();
 }
 
