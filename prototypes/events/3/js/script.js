@@ -35,7 +35,7 @@ function draw() {
     noStroke();
 
     // used to get the exact coordinates of the corridors of the maze
-    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
+    // text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
 
     drawOutline(); // the four walls of the maze 
     drawInsideBlocks(); // the lines that define the maze 
