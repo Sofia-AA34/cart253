@@ -10,6 +10,14 @@
 
 let recordPlayerImg;
 
+let vinylRecord = {
+    // Positon and size 
+    x: 260,
+    y: 200,
+    width: 350,
+    height: 280,
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -31,6 +39,8 @@ function draw() {
 
     //drawRecordPlayer();
 
+    // drawVinylRecord();
+
     noStroke();
 
 }
@@ -47,5 +57,11 @@ function drawRecordPlayer() {
     fill('#1c1b1b');
     rect(450, 55, 90, 290);
     pop();
+}
 
+function drawVinylRecord() {
+    push();
+    fill('black');
+    ellipse(vinylRecord.x, vinylRecord.y, vinylRecord.width, vinylRecord.height);
+    pop();
 }
