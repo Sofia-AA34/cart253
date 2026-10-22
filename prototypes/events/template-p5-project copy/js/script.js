@@ -9,6 +9,7 @@
 "use strict";
 
 let recordPlayerImg;
+let diskImg;
 
 let vinylRecord = {
     // Positon and size 
@@ -49,6 +50,7 @@ async function setup() {
     createCanvas(600, 400);
 
     recordPlayerImg = await loadImage("assets/images/record_player.png");
+    diskImg = await loadImage("assets/images/vinyl_record.png");
 
 }
 
@@ -61,11 +63,15 @@ function draw() {
 
     //image(recordPlayerImg, 50, 50, 500, 300);
 
+
+
     drawRecordPlayer();
 
     drawDetails();
 
-    drawVinylRecord();
+    // drawVinylRecord();
+
+    image(diskImg, 60, 20, 400, 375);
 
 
 
@@ -97,10 +103,7 @@ function drawVinylRecord() {
     ellipse(vinylRecord.x, vinylRecord.y, vinylRecord.width, vinylRecord.height);
     pop();
 
-    push();
-    fill('white');
-    ellipse(vinylRecord.x, vinylRecord.y, 10);
-    pop();
+
 }
 
 function drawTonearm() {
@@ -144,6 +147,11 @@ function drawDetails() {
     push();
     fill('#e5cdcd');
     ellipse(472, 310, 40, 35);
+    pop();
+
+    push();
+    fill('white');
+    ellipse(vinylRecord.x, vinylRecord.y, 10);
     pop();
 }
 
