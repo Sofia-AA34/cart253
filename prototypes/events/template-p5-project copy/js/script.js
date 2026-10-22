@@ -40,14 +40,19 @@ let disk = {
     height: 450,
 }
 
+let music;
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 async function setup() {
     createCanvas(600, 400);
 
-    recordPlayerImg = await loadImage("assets/images/record_player.png");
+    //recordPlayerImg = await loadImage("assets/images/record_player.png");
     diskImg = await loadImage("assets/images/vinyl_record.png");
+    music = await loadSound("assets/sounds/music.mp3");
+
+    addEventListener("mousemove", playMusic);
 
     angleMode(DEGREES);
 
@@ -77,7 +82,6 @@ function draw() {
     drawTonearm();
 
     noStroke();
-
 
 
 }
@@ -150,4 +154,10 @@ function drawDetails() {
     fill('#e5cdcd');
     ellipse(472, 310, 40, 35);
     pop();
+}
+
+function playMusic() {
+    if (!music.isPlaying()) {
+        music.play();
+    }
 }
