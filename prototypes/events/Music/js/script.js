@@ -52,7 +52,7 @@ async function setup() {
     diskImg = await loadImage("assets/images/vinyl_record.png");
     music = await loadSound("assets/sounds/music.mp3");
 
-    addEventListener("mousemove", playMusic);
+    document.addEventListener("click", playMusic);
 
     angleMode(DEGREES);
 
@@ -83,10 +83,7 @@ function draw() {
 
     noStroke();
 
-
 }
-
-
 
 function drawRecordPlayer() {
     // base 
@@ -157,6 +154,7 @@ function drawDetails() {
 }
 
 function playMusic() {
+    console.log("music")
     if (!music.isPlaying()) {
         music.play();
     }
