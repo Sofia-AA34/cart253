@@ -1,44 +1,25 @@
 /**
- * Title of Project
- * Author Name
+ * Don't touch the lines!!!
+ * Sofia Allashukurova 
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is a relaxing simulation of a maze. 
+ * The rule is simple: never touch the blue lines while you explore it.
+ * To move the red dot, use the arrows of your keyboard.
  */
 
 "use strict";
 
+// first state shown when the prototype runs 
 let state = "alive";
 
+// the red dot that user controls 
 let person = {
     x: 20,
     y: 28
 }
 
-let candy = {
-    size: 15,
-    x1: 150,
-    y1: 27,
-    x2: 373,
-    y2: 22,
-    x3: 315,
-    y3: 55,
-    x4: 307,
-    y4: 222,
-    x5: 209,
-    y5: 147,
-    x6: 31,
-    y6: 175,
-    x7: 121,
-    y7: 146,
-    x8: 228,
-    y8: 68
-}
-
-
-
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creates the canvas
 */
 function setup() {
     createCanvas(400, 300);
@@ -46,19 +27,21 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * The user navigates the maze with the red dot. If they touch any of the blue 
+ * lines, they respawn at the original coordinates.
 */
 function draw() {
-    background("#e3e7f5");
+    background("#e3e7f5"); // very light blue 
     noStroke();
 
     // used to get the exact coordinates of the corridors of the maze
     text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
 
-    drawOutline();
-    drawInsideBlocks();
-    drawPerson();
+    drawOutline(); // the four walls of the maze 
+    drawInsideBlocks(); // the lines that define the maze 
+    drawPerson(); // red dot the user controls
 
+    // Check the state and call the appropriate function
     if (state === "alive") {
         alive();
     }
@@ -66,46 +49,48 @@ function draw() {
         dead();
     }
 
+    // the keys that allow the user to control the red dot 
     if (keyIsDown(RIGHT_ARROW)) {
-        person.x += 2;
+        person.x += 3;
     }
     if (keyIsDown(LEFT_ARROW)) {
-        person.x -= 2;
+        person.x -= 3;
     }
     if (keyIsDown(UP_ARROW)) {
-        person.y -= 2;
+        person.y -= 3;
     }
     if (keyIsDown(DOWN_ARROW)) {
-        person.y += 2;
+        person.y += 3;
     }
-
-    drawCandy();
 }
 
-//function candyYes() {
-// if (person.x === candy.x1 && person.y === candy.y1) {
-//     drawCandy = false;
-//}
-//}
-
-
+/**
+ * The red dot that the user moves to navigate the maze with the arrows 
+ * on the keyboard 
+ */
 function drawPerson() {
     push();
-    fill("#f904cc");
+    fill("#f904cc"); // pink
     ellipse(person.x, person.y, 10);
     pop();
 }
 
+/**
+ * The four blue lines that outline the perimeter of the maze 
+ */
 function drawOutline() {
     push();
-    fill("#0909a7");
-    rect(0, 0, 400, 10); //top
-    rect(390, 0, 10, 300); //right
-    rect(0, 290, 400, 10); //bottom
-    rect(0, 0, 10, 300); //left
+    fill("#0909a7"); // blue 
+    rect(0, 0, 400, 10); // top
+    rect(390, 0, 10, 300); // right
+    rect(0, 290, 400, 10); // bottom
+    rect(0, 0, 10, 300); // left
     pop();
 }
 
+/**
+ * The lines that create the walls of the maze 
+ */
 function drawInsideBlocks() {
     push();
     stroke("#0909a7");
@@ -133,9 +118,14 @@ function drawInsideBlocks() {
     pop();
 }
 
+/**
+ * The first state "alive".
+ * State of the prototype as long as the user does not touch
+ * the blue lines with the red dot.
+ */
 function alive() {
     if (
-        (person.x > 10 && person.x < 253 && person.y > 10 && person.y < 47) ||
+        (person.x > 15 && person.x < 253 && person.y > 10 && person.y < 47) || // first corridor - where the user starts and respawns after "dying"
         (person.x > 252 && person.x < 295 && person.y > 10 & person.y < 95) ||
 
         (person.x > 294 && person.x < 390 && person.y > 10 & person.y < 35) ||
@@ -155,47 +145,40 @@ function alive() {
 
         (person.x > 235 && person.x < 285 && person.y > 194 & person.y < 290) ||
         (person.x > 195 && person.x < 236 && person.y > 255 & person.y < 290) ||
-        (person.x > 195 && person.x < 226 && person.y > 135 & person.y < 256) ||
 
+        (person.x > 195 && person.x < 226 && person.y > 135 & person.y < 256) ||
         (person.x > 65 && person.x < 236 && person.y > 95 & person.y < 125) ||
 
         (person.x > 65 && person.x < 95 && person.y > 124 & person.y < 245) ||
         (person.x > 94 && person.x < 140 && person.y > 195 & person.y < 245) ||
-        (person.x > 105 && person.x < 140 && person.y > 135 & person.y < 196) ||
 
+        (person.x > 105 && person.x < 140 && person.y > 135 & person.y < 196) ||
         (person.x > 10 && person.x < 66 && person.y > 125 & person.y < 155) ||
         (person.x > 10 && person.x < 66 && person.y > 55 & person.y < 126) ||
-        (person.x > 65 && person.x < 245 && person.y > 55 & person.y < 85) ||
 
+        (person.x > 65 && person.x < 245 && person.y > 55 & person.y < 85) ||
         (person.x > 150 && person.x < 185 && person.y > 124 & person.y < 290) ||
         (person.x > 10 && person.x < 151 && person.y > 255 & person.y < 290) ||
+
         (person.x > 10 && person.x < 205 && person.y > 165 & person.y < 256)
 
     )
-        state = "alive";
+        state = "alive"; // if the user does not touch the blue lines
 
     else {
-        state = "dead"
+        state = "dead" // if the user touches one of the blue lines
     }
 
 }
+
+/**
+ * The second state "dead".
+ * State of the prototype if the user touches one of the blue lines
+ * User respaws at the original coordinates
+ */
 
 function dead() {
     person.x = 20;
     person.y = 28;
     state = "alive";
-}
-
-function drawCandy() {
-    push();
-    fill("#642ed9");
-    ellipse(candy.x1, candy.y1, candy.size);
-    ellipse(candy.x2, candy.y2, candy.size);
-    ellipse(candy.x3, candy.y3, candy.size);
-    ellipse(candy.x4, candy.y4, candy.size);
-    ellipse(candy.x5, candy.y5, candy.size);
-    ellipse(candy.x6, candy.y6, candy.size);
-    ellipse(candy.x7, candy.y7, candy.size);
-    ellipse(candy.x8, candy.y8, candy.size);
-    pop();
 }
