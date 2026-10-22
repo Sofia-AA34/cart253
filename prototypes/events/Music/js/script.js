@@ -52,7 +52,7 @@ async function setup() {
     diskImg = await loadImage("assets/images/vinyl_record.png");
     music = await loadSound("assets/sounds/music.mp3");
 
-    addEventListener("mousemove", playMusic);
+    addEventListener("mousemove, playMusic");
 
     angleMode(DEGREES);
 
