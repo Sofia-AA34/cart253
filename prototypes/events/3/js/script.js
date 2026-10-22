@@ -168,8 +168,6 @@ function drawCandy() {
     ellipse(31, 175, 15);
     ellipse(121, 146, 15);
     ellipse(228, 68, 15);
-
-
     pop();
 
 }
