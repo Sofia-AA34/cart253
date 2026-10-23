@@ -40,3 +40,17 @@ While my prototypes may have not turned out exactly the way I have planned them 
 
 <img style="width: 60%; margin: auto;" src="images/SS_Outlet.png">
 
+## Thursday, October 22, 2026
+
+I learned, or at least tried to implement sounds into my prototypes. Somehow, the music I had chosen would only play about one out of ten times, and only if the mouse was pressed for at least 15s. In class today, we changed my “mouse move” to “mouse click”, but even then, the sound only began working several hours later. Honestly, this really confused me, and it does not make me want to keep using sound in my future prototypes.
+
+I realized that I am still quite unsure about how to properly use conditions and events, especially syntax-wise. When I see them used in examples, I have no issues understanding how they work and what they do, but whenever I have to add them into a context I created myself, it becomes very confusing
+
+It was frustrating to have nice ideas for the prototypes I wanted to create, but when it came to actually bringing them to life, nothing seemed to work or even be possible to make. Examples:
+- Maze prototype: I wanted to add small circles that the pink dot (user) was supposed to eat (make them disappear). I used overlap, then fills, then other random functions, but in every situation, the code either stopped working or when the user touched one of the circles, all of them disappeared at the same time. 
+- Record player prototype: At first, my mouse move did not work at all. Then, I wanted the vinyl record to shatter when the user clicked on the prototype, but I did not have a clue where to even begin. 
+
+In my next prototypes, I will use more abstract shapes and ideas, because I feel like trying to create realistic things restricts me. This way, I will have more possibilities to practice conditions and events. I would be interested in developing a prototype where a series of games follow one another, similarly to my “Hide and seek” prototype, but more complex. Maybe the user could be the main character in a space adventure.
+
+<img style="width: 60%; margin: auto;" src="SS_Red.png">
+
