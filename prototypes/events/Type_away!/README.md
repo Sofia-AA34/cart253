@@ -2,7 +2,7 @@
 
 Sofia Allashukurova
 
-[View this project online](https://sofia-aa34.github.io/cart253/prototypes/Type_away!)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/events/Type_away!)
 
 ## Description
 
