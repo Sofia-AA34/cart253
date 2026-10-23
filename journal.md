@@ -52,5 +52,5 @@ It was frustrating to have nice ideas for the prototypes I wanted to create, but
 
 In my next prototypes, I will use more abstract shapes and ideas, because I feel like trying to create realistic things restricts me. This way, I will have more possibilities to practice conditions and events. I would be interested in developing a prototype where a series of games follow one another, similarly to my “Hide and seek” prototype, but more complex. Maybe the user could be the main character in a space adventure.
 
-<img style="width: 60%; margin: auto;" src="SS_Red.png">
+<img style="width: 60%; margin: auto;" src="images/SS_Red.png">
 
