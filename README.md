@@ -100,6 +100,36 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [Reflective Journal](journal.md)
 
+## Prototyping: Events 
+
+### Type Away!
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Type_away!.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/events/Type_away!/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/events/Type_away!)
+
+### Get In The Zone
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Get_in_the_zone.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/events/Get_in_the_zone/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/events/Get_in_the_zone)
+
+### Don't Touch The Lines
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Don't_touch_the_lines!!!.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/events/Don't_touch_the_lines!!!/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/events/Don't_touch_the_lines!!!)
+
+## Journal Entry 
+
+[Reflective Journal](journal.md)
+
 
 
 
