@@ -120,7 +120,7 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ### Don't Touch The Lines
 
-<img style="width: 60%; margin: auto;" src="images/Screenshot_Don't_touch_the_lines!!!.">
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Don't_touch_the_lines!!!.png">
 
 [View online](https://sofia-aa34.github.io/cart253/prototypes/events/Don't_touch_the_lines!!!/)
 
