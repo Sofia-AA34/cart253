@@ -1,9 +1,10 @@
 /**
- * Title of Project
- * Author Name
+ * Type away! Your secrets are safe with me
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * It's a special typewriter. A one of a kind journal that will
+ * never disclose any of your secrets. How? Type in your thoughts 
+ * and press enter to unroll more space!
  */
 
 "use strict";

@@ -1,23 +1,18 @@
-# TITLE OF PROJECT
+# Type away! Your secrets are safe with me
 
-AUTHOR NAME
+Sofia Allashukurova
 
-[View this project online](https://sofia-aa34.github.io/cart253/prototypes/events/1/)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/Type_away!)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+It's a special typewriter. A one of a kind journal that will never disclose any of your secrets. How? Type in your thoughts and press enter to unroll more space!
 
 ## Attribution
 
-This bit should attribute any code, assets or other elements used taken from other sources. For example:
-
 > - This project uses [p5.js](https://p5js.org).
-> - The clown image is a capture of the clown from the Apple emoji character set.
-> - The barking sound effect is "single dog bark 1" by crazymonke9 from freesound.org: https://freesound.org/people/crazymonke9/sounds/418107/
+> - The typewriter image used in this prototype is from Pinterest
 
 ## License
-
-This bit could include the license you want to apply to your work. For example:
 
 > This project is licensed under a Creative Commons Attribution ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)) license with the exception of libraries and other components with their own licenses.
