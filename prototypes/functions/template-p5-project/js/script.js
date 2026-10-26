@@ -134,13 +134,13 @@ function chaseFish(fish) {
     // if the mouse is in range, it affects the fish - the fish chases it
     const d = dist(mouseX, mouseY, ((fish.x1 + fish.x2 + fish.x3) / 3), ((fish.y1 + fish.y2 + fish.y3) / 3));
 
-    if (d < 150) {
-        fish.velocity.x1 += (fish.x1 + mouseX) * 0.001;
-        fish.velocity.x2 += (fish.x2 + mouseX) * 0.001;
-        fish.velocity.x3 += (fish.x3 + mouseX) * 0.001;
+    if (d < 200) {
+        fish.velocity.x1 += (-fish.x1 + mouseX) * 0.005;
+        fish.velocity.x2 += (-fish.x2 + mouseX) * 0.005;
+        fish.velocity.x3 += (-fish.x3 + mouseX) * 0.005;
 
-        fish.velocity.y1 += (fish.y1 + mouseY) * 0.001;
-        fish.velocity.y2 += (fish.y2 + mouseY) * 0.001;
-        fish.velocity.y3 += (fish.y3 + mouseY) * 0.001;
+        fish.velocity.y1 += (-fish.y1 + mouseY) * 0.005;
+        fish.velocity.y2 += (-fish.y2 + mouseY) * 0.005;
+        fish.velocity.y3 += (-fish.y3 + mouseY) * 0.005;
     }
 }
