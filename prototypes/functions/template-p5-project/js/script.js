@@ -17,11 +17,11 @@ const fish = {
     y3: 700,
     velocity: {
         x1: -10,
-        y1: -15,
+        y1: -5,
         x2: -10,
-        y2: -15,
+        y2: -5,
         x3: -10,
-        y3: -15,
+        y3: -5,
     }
 }
 
@@ -48,7 +48,8 @@ function draw() {
     drawBubble(200, 500, 50);
     drawBubble(300, 300, 75);
 
-    // draw the fish
+    // draw the fish and make it swim across the screen
+    wrapFish(fish);
     swimFish(fish);
     drawFish(fish);
 
@@ -62,6 +63,17 @@ function drawBubble(x, y, size) {
     pop();
 }
 
+function drawFish(fish) {
+    push();
+    noStroke();
+    fill("#140320");
+    triangle(fish.x1, fish.y1, fish.x2, fish.y2, fish.x3, fish.y3);
+    pop();
+}
+
+/**
+ * Move the fish by its velocity
+ */
 function swimFish(fish) {
     fish.x1 += fish.velocity.x1;
     fish.x2 += fish.velocity.x2;
@@ -72,10 +84,14 @@ function swimFish(fish) {
     fish.y3 += fish.velocity.y3;
 }
 
-function drawFish(fish) {
-    push();
-    noStroke();
-    fill("#140320");
-    triangle(fish.x1, fish.y1, fish.x2, fish.y2, fish.x3, fish.y3);
-    pop();
+/**
+ * If the fish goes off the canvas, wrap it around
+ */
+function wrapFish(fish) {
+    // right to left 
+    if (fish.x1 < -150 || fish.x2 < -width || fish.x3 < -width) {
+        fish.x1 = 500 + fish.x1;
+        fish.x2 = 500 + fish.x2;
+        fish.x3 = 500 + fish.x3;
+    }
 }
