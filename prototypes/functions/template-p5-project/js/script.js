@@ -30,12 +30,24 @@ function draw() {
     drawBubble(100, 400, 100);
     drawBubble(200, 500, 50);
     drawBubble(300, 300, 75);
+
+    // draw the fish
+    drawFish(50, 200, 150, 100, 150, 300);
+
 }
 
 function drawBubble(x, y, size) {
     push();
     noStroke();
-    fill("#95a7ba");
+    fill("#7ea3ca");
     ellipse(x, y, size);
+    pop();
+}
+
+function drawFish(x1, y1, x2, y2, x3, y3) {
+    push();
+    noStroke();
+    fill("#140320");
+    triangle(x1, y1, x2, y2, x3, y3);
     pop();
 }
