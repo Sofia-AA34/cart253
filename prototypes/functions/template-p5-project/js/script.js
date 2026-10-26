@@ -88,10 +88,17 @@ function swimFish(fish) {
  * If the fish goes off the canvas, wrap it around
  */
 function wrapFish(fish) {
-    // right to left 
-    if (fish.x1 < -150 || fish.x2 < -width || fish.x3 < -width) {
-        fish.x1 = 500 + fish.x1;
-        fish.x2 = 500 + fish.x2;
-        fish.x3 = 500 + fish.x3;
+    // right to left
+    if (fish.x1 < -200 || fish.x2 < -50 || fish.x3 < -50) {
+        fish.x1 = 550 + fish.x1;
+        fish.x2 = 550 + fish.x2;
+        fish.x3 = 550 + fish.x3;
+    }
+
+    // bottom to top
+    if (fish.y1 < -100 || fish.y2 < -width || fish.y3 < -width) {
+        fish.y1 = height - fish.y1;
+        fish.y2 = height - fish.y2;
+        fish.y3 = height - fish.y3;
     }
 }
