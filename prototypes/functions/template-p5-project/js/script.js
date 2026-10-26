@@ -34,8 +34,15 @@ const fish2 = {
     y2: 500,
     x3: 0,
     y3: 600,
-
-}
+    velocity: {
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: 0,
+        x3: 0,
+        y3: 0,
+    },
+};
 
 
 /**
@@ -63,7 +70,11 @@ function draw() {
 
     // draw the fish and make it swim across the screen
     wrapFish(fish);
+    chaseFish(fish2);
+
     swimFish(fish);
+    swimFish(fish2);
+
     drawFish(fish);
     drawFish(fish2);
 
@@ -98,6 +109,8 @@ function swimFish(fish) {
     fish.y3 += fish.velocity.y3;
 }
 
+
+
 /**
  * If the fish goes off the canvas, wrap it around
  */
@@ -114,5 +127,20 @@ function wrapFish(fish) {
         fish.y1 = height - fish.y1;
         fish.y2 = height - fish.y2;
         fish.y3 = height - fish.y3;
+    }
+}
+
+function chaseFish(fish) {
+    // if the mouse is in range, it affects the fish - the fish chases it
+    const d = dist(mouseX, mouseY, ((fish.x1 + fish.x2 + fish.x3) / 3), ((fish.y1 + fish.y2 + fish.y3) / 3));
+
+    if (d < 150) {
+        fish.velocity.x1 += (fish.x1 + mouseX) * 0.001;
+        fish.velocity.x2 += (fish.x2 + mouseX) * 0.001;
+        fish.velocity.x3 += (fish.x3 + mouseX) * 0.001;
+
+        fish.velocity.y1 += (fish.y1 + mouseY) * 0.001;
+        fish.velocity.y2 += (fish.y2 + mouseY) * 0.001;
+        fish.velocity.y3 += (fish.y3 + mouseY) * 0.001;
     }
 }
