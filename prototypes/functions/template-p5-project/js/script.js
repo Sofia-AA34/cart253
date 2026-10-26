@@ -8,6 +8,15 @@
 
 "use strict";
 
+const fish = {
+    x1: 50,
+    y1: 200,
+    x2: 150,
+    y2: 100,
+    x3: 150,
+    y3: 300.
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -32,7 +41,8 @@ function draw() {
     drawBubble(300, 300, 75);
 
     // draw the fish
-    drawFish(50, 200, 150, 100, 150, 300);
+    //moveFish();
+    drawFish(fish);
 
 }
 
@@ -44,10 +54,10 @@ function drawBubble(x, y, size) {
     pop();
 }
 
-function drawFish(x1, y1, x2, y2, x3, y3) {
+function drawFish(fish) {
     push();
     noStroke();
     fill("#140320");
-    triangle(x1, y1, x2, y2, x3, y3);
+    triangle(fish.x1, fish.y1, fish.x2, fish.y2, fish.x3, fish.y3);
     pop();
 }
