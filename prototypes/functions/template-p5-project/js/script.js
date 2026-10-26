@@ -23,4 +23,19 @@ function setup() {
 function draw() {
     background("#1e446c") // dark blue
 
+    // draw the bubbles 
+    drawBubble(100, 100, 50);
+    drawBubble(150, 200, 25);
+    drawBubble(300, 70, 100);
+    drawBubble(100, 400, 100);
+    drawBubble(200, 500, 50);
+    drawBubble(300, 300, 75);
+}
+
+function drawBubble(x, y, size) {
+    push();
+    noStroke();
+    fill("#95a7ba");
+    ellipse(x, y, size);
+    pop();
 }
