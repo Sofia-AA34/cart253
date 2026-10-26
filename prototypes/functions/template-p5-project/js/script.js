@@ -9,12 +9,20 @@
 "use strict";
 
 const fish = {
-    x1: 50,
-    y1: 200,
-    x2: 150,
-    y2: 100,
-    x3: 150,
-    y3: 300.
+    x1: 400,
+    y1: 600,
+    x2: 550,
+    y2: 500,
+    x3: 550,
+    y3: 700,
+    velocity: {
+        x1: -10,
+        y1: -15,
+        x2: -10,
+        y2: -15,
+        x3: -10,
+        y3: -15,
+    }
 }
 
 /**
@@ -41,7 +49,7 @@ function draw() {
     drawBubble(300, 300, 75);
 
     // draw the fish
-    //moveFish();
+    swimFish(fish);
     drawFish(fish);
 
 }
@@ -52,6 +60,16 @@ function drawBubble(x, y, size) {
     fill("#7ea3ca");
     ellipse(x, y, size);
     pop();
+}
+
+function swimFish(fish) {
+    fish.x1 += fish.velocity.x1;
+    fish.x2 += fish.velocity.x2;
+    fish.x3 += fish.velocity.x3;
+
+    fish.y1 += fish.velocity.y1;
+    fish.y2 += fish.velocity.y2;
+    fish.y3 += fish.velocity.y3;
 }
 
 function drawFish(fish) {
