@@ -125,14 +125,31 @@ function chaseFish(fish) {
     const d = dist(mouseX, mouseY, ((fish.x1 + fish.x2 + fish.x3) / 3), ((fish.y1 + fish.y2 + fish.y3) / 3));
 
     if (d < 300) {
-        fish.velocity.x += (-fish.x1 + mouseX) * 0.001;
-        fish.velocity.x += (-fish.x2 + mouseX) * 0.001;
-        fish.velocity.x += (-fish.x3 + mouseX) * 0.001;
+        fish.velocity.x += (-fish.x1 + mouseX) * 0.0005;
+        fish.velocity.x += (-fish.x2 + mouseX) * 0.0005;
+        fish.velocity.x += (-fish.x3 + mouseX) * 0.0005;
 
-        fish.velocity.y += (-fish.y1 + mouseY) * 0.001;
-        fish.velocity.y += (-fish.y2 + mouseY) * 0.001;
-        fish.velocity.y += (-fish.y3 + mouseY) * 0.001;
+        fish.velocity.y += (-fish.y1 + mouseY) * 0.0005;
+        fish.velocity.y += (-fish.y2 + mouseY) * 0.0005;
+        fish.velocity.y += (-fish.y3 + mouseY) * 0.0005;
+    }
+
+    if (fish.x1 < 0 || fish.x2 < 0 || fish.x3 < 0) {
+        fish.velocity.x *= -1;
+    }
+
+    if (fish.x1 > 400 || fish.x2 > 400 || fish.x3 > 400) {
+        fish.velocity.x *= -1;
+    }
+
+    if (fish.y1 < 0 || fish.y2 < 0 || fish.y3 < 0) {
+        fish.velocity.y *= -1;
+    }
+
+    if (fish.y1 > 600 || fish.y2 > 600 || fish.y3 > 600) {
+        fish.velocity.y *= -1;
     }
 
 }
+
 
