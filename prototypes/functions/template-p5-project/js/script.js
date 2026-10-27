@@ -36,6 +36,43 @@ const fish2 = {
     },
 };
 
+const seaweed = {
+    x: 20,
+    y: 450,
+    width: 40,
+    height: 150,
+};
+
+const seaweed1 = {
+    x: 100,
+    y: 500,
+    width: 30,
+    height: 125,
+};
+
+const seaweed2 = {
+    x: 180,
+    y: 350,
+    width: 40,
+    height: 250,
+};
+
+const seaweed3 = {
+    x: 280,
+    y: 450,
+    width: 50,
+    height: 150,
+};
+
+const seaweed4 = {
+    x: 370,
+    y: 500,
+    width: 20,
+    height: 100,
+};
+
+
+
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -50,7 +87,7 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background("#1e446c") // dark blue
+    background("#5680ad") // dark blue
 
     // draw the bubbles 
     drawBubble(100, 100, 50);
@@ -69,6 +106,11 @@ function draw() {
 
     drawFish(fish);
     drawFish(fish2);
+    drawSeaweed(seaweed);
+    drawSeaweed(seaweed1);
+    drawSeaweed(seaweed2);
+    drawSeaweed(seaweed3);
+    drawSeaweed(seaweed4);
 
 }
 
@@ -149,7 +191,12 @@ function chaseFish(fish) {
     if (fish.y1 > 600 || fish.y2 > 600 || fish.y3 > 600) {
         fish.velocity.y *= -1;
     }
-
 }
 
-
+function drawSeaweed(seaweed) {
+    push();
+    noStroke();
+    fill("#072c0e");
+    rect(seaweed.x, seaweed.y, seaweed.width, seaweed.height);
+    pop();
+}
