@@ -265,5 +265,30 @@ function shrinkSeaweed(seaweed) {
     }
 }
 
+function checkOverlap() {
+    // get the distance betwwen the mouse position and the targets 
+
+    // fish (purple)
+
+    // fish (blue)
+
+    // seaweed
+
+    // seaweed1
+
+    // seaweed2
+
+    // seaweed3 
+
+    // seaweed4
+}
+
+function alive() {
+
+}
+
+function dead() {
+
+}
 
 
