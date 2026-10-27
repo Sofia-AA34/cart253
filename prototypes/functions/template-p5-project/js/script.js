@@ -36,6 +36,20 @@ const fish2 = {
     },
 };
 
+const fish3 = {
+    fill: ("#0e0c8a"),
+    x1: 50,
+    y1: 100,
+    x2: 0,
+    y2: 75,
+    x3: 0,
+    y3: 125,
+    velocity: {
+        x: 5,
+        y: 15,
+    },
+};
+
 const seaweed = {
     x: 20,
     y: 500,
@@ -111,6 +125,7 @@ function draw() {
 
     drawFish(fish);
     drawFish(fish2);
+    drawFish(fish3);
     drawSeaweed(seaweed);
     drawSeaweed(seaweed1);
     drawSeaweed(seaweed2);
