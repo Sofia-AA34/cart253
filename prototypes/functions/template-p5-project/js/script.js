@@ -110,9 +110,10 @@ function draw() {
     drawBubble(200, 500, 50);
     drawBubble(300, 300, 75);
 
+    checkOverlapFish(fish);
+
     // draw the fish and make it swim across the screen
     wrapFish(fish);
-
     chaseFish(fish2);
     wrapFishFast(fish3)
     swimFish(fish);
@@ -133,6 +134,8 @@ function draw() {
     drawSeaweed(seaweed2);
     drawSeaweed(seaweed3);
     drawSeaweed(seaweed4);
+
+
 
 }
 
@@ -265,22 +268,23 @@ function shrinkSeaweed(seaweed) {
     }
 }
 
-function checkOverlap() {
+function checkOverlapFish(fish) {
     // get the distance betwwen the mouse position and the targets 
 
     // fish (purple)
+    //if (
+    ////  (mouseX === (fish.x1, fish.x3)) || // bottom
+    // (mouseY < (fish.y1, fish.y3)) ||
+    // (mouseX === (fish.x1, fish.x2)) || //right 
+    // (mouseY > (fish.y1, fish.y2)) ||
+    //  (mouseX === (fish.x2, fish.x3)) ||
+    //  (mouseY > (fish.y2, fish.y3))
+    //)
+
 
     // fish (blue)
 
-    // seaweed
-
-    // seaweed1
-
-    // seaweed2
-
-    // seaweed3 
-
-    // seaweed4
+    // fish (pink)
 }
 
 function alive() {
