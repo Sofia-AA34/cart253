@@ -10,12 +10,9 @@
 
 const fish = {
     fill: ("#140320"),
-    x1: 400,
-    y1: 600,
-    x2: 550,
-    y2: 500,
-    x3: 550,
-    y3: 700,
+    x: 400,
+    y: 600,
+    size: 150,
     velocity: {
         x: -10,
         y: -5,
@@ -24,12 +21,9 @@ const fish = {
 
 const fish2 = {
     fill: ("#bc1d7a"),
-    x1: 100,
-    y1: 550,
-    x2: 0,
-    y2: 500,
-    x3: 0,
-    y3: 600,
+    x: 200,
+    y: 100,
+    size: 100,
     velocity: {
         x: 0,
         y: 0,
@@ -38,12 +32,9 @@ const fish2 = {
 
 const fish3 = {
     fill: ("#0e0c8a"),
-    x1: 50,
-    y1: 100,
-    x2: 0,
-    y2: 75,
-    x3: 0,
-    y3: 125,
+    x: 50,
+    y: 100,
+    size: 50,
     velocity: {
         x: 15,
         y: 8,
@@ -114,8 +105,8 @@ function draw() {
 
     // draw the fish and make it swim across the screen
     wrapFish(fish);
+    wrapFish(fish3);
     chaseFish(fish2);
-    wrapFishFast(fish3)
     swimFish(fish);
     swimFish(fish2);
     swimFish(fish3);
@@ -151,7 +142,7 @@ function drawFish(fish) {
     push();
     noStroke();
     fill(fish.fill);
-    triangle(fish.x1, fish.y1, fish.x2, fish.y2, fish.x3, fish.y3);
+    ellipse(fish.x, fish.y, fish.size);
     pop();
 }
 
@@ -159,13 +150,9 @@ function drawFish(fish) {
  * Move the fish by its velocity
  */
 function swimFish(fish) {
-    fish.x1 += fish.velocity.x;
-    fish.x2 += fish.velocity.x;
-    fish.x3 += fish.velocity.x;
+    fish.x += fish.velocity.x;
 
-    fish.y1 += fish.velocity.y;
-    fish.y2 += fish.velocity.y;
-    fish.y3 += fish.velocity.y;
+    fish.y += fish.velocity.y;
 }
 
 /**
@@ -173,63 +160,30 @@ function swimFish(fish) {
  */
 function wrapFish(fish) {
     // right to left
-    if (fish.x1 < -200 || fish.x2 < -50 || fish.x3 < -50) {
-        fish.x1 = 550 + fish.x1;
-        fish.x2 = 550 + fish.x2;
-        fish.x3 = 550 + fish.x3;
+    if ((fish.x + (fish.size / 2)) < 0 || fish.x - (fish.size / 2) > width) {
+        fish.x = width - fish.x;
     }
 
     // bottom to top
-    if (fish.y1 < -100 || fish.y2 < - height || fish.y3 < - height) {
-        fish.y1 = height - fish.y1;
-        fish.y2 = height - fish.y2;
-        fish.y3 = height - fish.y3;
+    if (fish.y + (fish.size / 2) < 0 || fish.y - (fish.size / 2) > height) {
+        fish.y = height - fish.y;
     }
-}
-
-function wrapFishFast(fish) {
-    // right to left
-    if (fish.x1 > 460 || fish.x2 > 410 || fish.x3 > 410) {
-        fish.x1 = fish.x1 - width;
-        fish.x2 = fish.x2 - width;
-        fish.x3 = fish.x3 - width;
-    }
-    // bottom to top
-    if (fish.y1 > height || fish.y2 > height || fish.y3 > height) {
-        fish.y1 = fish.y1 - height;
-        fish.y2 = fish.y2 - height;
-        fish.y3 = fish.y3 - height;
-    }
-
 }
 
 function chaseFish(fish) {
     // if the mouse is in range, it affects the fish - the fish chases it
-    const d = dist(mouseX, mouseY, ((fish.x1 + fish.x2 + fish.x3) / 3), ((fish.y1 + fish.y2 + fish.y3) / 3));
+    const d = dist(mouseX, mouseY, fish.x, fish.y);
 
-    if (d < 300) {
-        fish.velocity.x += (-fish.x1 + mouseX) * 0.0005;
-        fish.velocity.x += (-fish.x2 + mouseX) * 0.0005;
-        fish.velocity.x += (-fish.x3 + mouseX) * 0.0005;
-
-        fish.velocity.y += (-fish.y1 + mouseY) * 0.0005;
-        fish.velocity.y += (-fish.y2 + mouseY) * 0.0005;
-        fish.velocity.y += (-fish.y3 + mouseY) * 0.0005;
+    if (d < fish.size + 100) {
+        fish.velocity.x += (-fish.x + mouseX) * 0.005;
+        fish.velocity.y += (-fish.y + mouseY) * 0.005;
     }
 
-    if (fish.x1 < 0 || fish.x2 < 0 || fish.x3 < 0) {
+    if (fish.x - (fish.size / 2) < 0 || fish.x + (fish.size / 2) > width) {
         fish.velocity.x *= -1;
     }
 
-    if (fish.x1 > 400 || fish.x2 > 400 || fish.x3 > 400) {
-        fish.velocity.x *= -1;
-    }
-
-    if (fish.y1 < 0 || fish.y2 < 0 || fish.y3 < 0) {
-        fish.velocity.y *= -1;
-    }
-
-    if (fish.y1 > 600 || fish.y2 > 600 || fish.y3 > 600) {
+    if (fish.y - (fish.size / 2) < 0 || fish.y + (fish.size / 2) > height) {
         fish.velocity.y *= -1;
     }
 }
@@ -254,7 +208,7 @@ function growSeaweed(seaweed) {
     seaweed.y -= 1; // grows
     seaweed.height += 1; // keeps it from floating away 
 
-    if (seaweed.y < 400) {
+    if (seaweed.y < 300) {
         seaweed.growing = false;
     }
 }
@@ -270,16 +224,6 @@ function shrinkSeaweed(seaweed) {
 
 function checkOverlapFish(fish) {
     // get the distance betwwen the mouse position and the targets 
-
-    // fish (purple)
-    //if (
-    ////  (mouseX === (fish.x1, fish.x3)) || // bottom
-    // (mouseY < (fish.y1, fish.y3)) ||
-    // (mouseX === (fish.x1, fish.x2)) || //right 
-    // (mouseY > (fish.y1, fish.y2)) ||
-    //  (mouseX === (fish.x2, fish.x3)) ||
-    //  (mouseY > (fish.y2, fish.y3))
-    //)
 
 
     // fish (blue)
