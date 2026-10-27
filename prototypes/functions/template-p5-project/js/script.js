@@ -45,8 +45,8 @@ const fish3 = {
     x3: 0,
     y3: 125,
     velocity: {
-        x: 5,
-        y: 15,
+        x: 15,
+        y: 8,
     },
 };
 
@@ -112,10 +112,12 @@ function draw() {
 
     // draw the fish and make it swim across the screen
     wrapFish(fish);
-    chaseFish(fish2);
 
+    chaseFish(fish2);
+    wrapFishFast(fish3)
     swimFish(fish);
     swimFish(fish2);
+    swimFish(fish3);
     moveSeaweed(seaweed);
     moveSeaweed(seaweed1);
     moveSeaweed(seaweed2);
@@ -175,11 +177,27 @@ function wrapFish(fish) {
     }
 
     // bottom to top
-    if (fish.y1 < -100 || fish.y2 < -width || fish.y3 < -width) {
+    if (fish.y1 < -100 || fish.y2 < - height || fish.y3 < - height) {
         fish.y1 = height - fish.y1;
         fish.y2 = height - fish.y2;
         fish.y3 = height - fish.y3;
     }
+}
+
+function wrapFishFast(fish) {
+    // right to left
+    if (fish.x1 > 460 || fish.x2 > 410 || fish.x3 > 410) {
+        fish.x1 = fish.x1 - width;
+        fish.x2 = fish.x2 - width;
+        fish.x3 = fish.x3 - width;
+    }
+    // bottom to top
+    if (fish.y1 > height || fish.y2 > height || fish.y3 > height) {
+        fish.y1 = fish.y1 - height;
+        fish.y2 = fish.y2 - height;
+        fish.y3 = fish.y3 - height;
+    }
+
 }
 
 function chaseFish(fish) {
@@ -246,4 +264,6 @@ function shrinkSeaweed(seaweed) {
         seaweed.growing = true;
     }
 }
+
+
 
