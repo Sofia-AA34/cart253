@@ -38,40 +38,39 @@ const fish2 = {
 
 const seaweed = {
     x: 20,
-    y: 450,
+    y: 500,
     width: 40,
-    height: 150,
+    height: 100,
+    growing: true,
 };
 
 const seaweed1 = {
     x: 100,
-    y: 500,
+    y: 550,
     width: 30,
-    height: 125,
+    height: 50,
 };
 
 const seaweed2 = {
     x: 180,
-    y: 350,
+    y: 450,
     width: 40,
-    height: 250,
+    height: 150,
 };
 
 const seaweed3 = {
     x: 280,
-    y: 450,
+    y: 525,
     width: 50,
-    height: 150,
+    height: 75,
 };
 
 const seaweed4 = {
     x: 370,
-    y: 500,
+    y: 475,
     width: 20,
-    height: 100,
+    height: 125,
 };
-
-
 
 
 /**
@@ -103,6 +102,12 @@ function draw() {
 
     swimFish(fish);
     swimFish(fish2);
+    moveSeaweed(seaweed);
+    moveSeaweed(seaweed1);
+    moveSeaweed(seaweed2);
+    moveSeaweed(seaweed3);
+    moveSeaweed(seaweed4);
+
 
     drawFish(fish);
     drawFish(fish2);
@@ -200,3 +205,30 @@ function drawSeaweed(seaweed) {
     rect(seaweed.x, seaweed.y, seaweed.width, seaweed.height);
     pop();
 }
+
+function moveSeaweed(seaweed) {
+    if (seaweed.growing) {
+        growSeaweed(seaweed);
+    }
+
+    else { shrinkSeaweed(seaweed); }
+}
+
+function growSeaweed(seaweed) {
+    seaweed.y -= 1; // grows
+    seaweed.height += 1; // keeps it from floating away 
+
+    if (seaweed.y < 400) {
+        seaweed.growing = false;
+    }
+}
+
+function shrinkSeaweed(seaweed) {
+    seaweed.y += 1;
+    seaweed.height -= 1;
+
+    if (seaweed.y > 550) {
+        seaweed.growing = true;
+    }
+}
+
