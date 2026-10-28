@@ -21,8 +21,8 @@ const fish1 = {
     y: 600,
     size: 150,
     velocity: {
-        x: -3,
-        y: -1,
+        x: -5,
+        y: -3,
     },
 };
 
@@ -45,8 +45,8 @@ const fish3 = {
     y: 100,
     size: 50,
     velocity: {
-        x: 2,
-        y: 1,
+        x: 5,
+        y: 2,
     },
 };
 
@@ -234,8 +234,8 @@ function chaseFish(fish) {
     const d = dist(mouseX, mouseY, fish.x, fish.y);
 
     if (d < fish.size + 100) {
-        fish.velocity.x += (-fish.x + mouseX) * 0.00005;
-        fish.velocity.y += (-fish.y + mouseY) * 0.00005;
+        fish.velocity.x += (-fish.x + mouseX) * 0.0005;
+        fish.velocity.y += (-fish.y + mouseY) * 0.0005;
     }
 
     // makes the fish bounce off the canvas walls - keeps it from going outside the canvas
