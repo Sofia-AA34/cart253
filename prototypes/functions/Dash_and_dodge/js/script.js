@@ -8,17 +8,32 @@
 
 "use strict";
 
+// First state shown when the prototype runs
+let state = "firstFrame"
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
+    // creates the canvas
+    createCanvas(500, 300);
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Depending on the current state, run the function to handle the state
 */
 function draw() {
+    // Check the state and call the appropriate function
+    if (state === "firstFrame") {
+        firstFrame();
+    }
+}
 
+/**
+ * The first state - "firstFrame"
+ */
+function firstFrame() {
+    background("#7d5a5a"); // red-gray 
 }
