@@ -10,6 +10,9 @@
 
 let state = "alive";
 
+// Text to display for the GameOver state 
+let gameOverString = "You lose :(";
+
 const fish = {
     fill: ("#140320"),
     x: 400,
@@ -86,6 +89,9 @@ const seaweed4 = {
 function setup() {
     createCanvas(400, 600);
 
+    // text settings 
+    textSize(50);
+    textAlign(CENTER, CENTER);
 }
 
 
@@ -100,9 +106,14 @@ function draw() {
         rectMode(CENTER);
         fill('red');
         noStroke();
-        rect(width / 2, height / 2, 300, 300);
+        rect(width / 2, height / 2, 300);
         pop();
+
+        push();
+        fill('black');
+        text(gameOverString, width / 2, height / 2);
         return;
+
     }
 
     // draw the bubbles 
