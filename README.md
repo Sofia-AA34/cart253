@@ -130,6 +130,15 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [Reflective Journal](journal.md)
 
+## Prototyping: Functions
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Don't_let_them_eat_you.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/functions/Don't_let_them_eat_you/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Don't_let_them_eat_you)
+
+
 
 
 
