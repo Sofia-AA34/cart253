@@ -15,14 +15,42 @@ let state = "alive";
 // the pink dot that the user controls 
 let person = {
     x: 20,
-    y: 28
+    y: 28,
+    size: 10,
 }
 
+// the candy that the user is supposed to eat 
+let candy;
+
+// coordinates of the new candy that will appear each time the user eats one
+// if it was fully randomized, they might appear on the blue lines
+const newCandy = [
+    { x: 168, y: 27 },
+    { x: 368, y: 22 },
+    { x: 316, y: 58 },
+    { x: 230, y: 69 },
+    { x: 305, y: 216 },
+    { x: 209, y: 145 },
+    { x: 121, y: 146 },
+    { x: 30, y: 174 },
+];
+
 /**
- * Creates the canvas
+ * Creates the canvas and makes the candy appear within the corridors of the maze 
 */
 function setup() {
     createCanvas(400, 300);
+
+    // the coordinates of the new appearing candy are already defined 
+    const appearCandy = random(newCandy);
+
+    // first candy that appears when the game starts in the state alive 
+    candy = {
+        x: appearCandy.x,
+        y: appearCandy.y,
+        size: random(5, 25),
+    };
+
 }
 
 /**
@@ -34,19 +62,11 @@ function draw() {
     noStroke();
 
     // used to get the exact coordinates of the corridors of the maze
-    text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
+    // text(`x: ${int(mouseX)} y: ${int(mouseY)}`, 50, 30);
 
     drawOutline(); // the four walls of the maze 
     drawInsideBlocks(); // the lines that define the maze 
     drawPerson(); // pink dot the user controls
-
-    // Check the state and call the appropriate function
-    if (state === "alive") {
-        alive();
-    }
-    else if (state === "dead") {
-        dead();
-    }
 
     // the keys that allow the user to control the pink dot 
     if (keyIsDown(RIGHT_ARROW)) {
@@ -62,6 +82,24 @@ function draw() {
         person.y += 3;
     }
 
+    // Check the state and call the appropriate function
+    if (state === "alive") {
+        alive();
+    }
+    else if (state === "dead") {
+        dead();
+    }
+
+    // draws the new appearing candy once the user eats the perivious one 
+    if (candyOverlap()) {
+        const appearCandy = random(newCandy);
+        candy = {
+            x: appearCandy.x,
+            y: appearCandy.y,
+            size: random(5, 25),
+        };
+    }
+
     drawCandy();
 }
 
@@ -72,7 +110,7 @@ function draw() {
 function drawPerson() {
     push();
     fill("#f904cc"); // pink
-    ellipse(person.x, person.y, 10);
+    ellipse(person.x, person.y, person.size);
     pop();
 }
 
@@ -184,17 +222,27 @@ function dead() {
     state = "alive";
 }
 
+/**
+ * Draws the green candy inside of the maze
+ */
 function drawCandy() {
     push();
     noStroke();
-    fill("#407a4d");
-    ellipse(168, 27, 10);
-    ellipse(368, 22, 10);
-    ellipse(316, 58, 10);
-    ellipse(230, 69, 10);
-    ellipse(305, 216, 10);
-    ellipse(209, 145, 10);
-    ellipse(121, 146, 10);
-    ellipse(30, 174, 10);
+    fill("#407a4d")
+    ellipse(candy.x, candy.y, candy.size);
     pop();
+}
+
+/**
+ * Checks if user (person) overlaps the candy (touches it)
+ * If they overlap, a new candy appears 
+ */
+function candyOverlap() {
+    const d = dist(person.x, person.y, candy.x, candy.y);
+    if (d < person.size / 2 + candy.size) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
