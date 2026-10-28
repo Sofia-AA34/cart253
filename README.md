@@ -132,11 +132,21 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 ## Prototyping: Functions
 
+### Don't Let Them Eat You
+
 <img style="width: 60%; margin: auto;" src="images/Screenshot_Don't_let_them_eat_you.png">
 
 [View online](https://sofia-aa34.github.io/cart253/prototypes/functions/Don't_let_them_eat_you/)
 
 [View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Don't_let_them_eat_you)
+
+### Yummy Yummy
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Yummy_Yummy.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/functions/Yummy_Yummy/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Yummy_Yummy)
 
 
 
