@@ -21,8 +21,8 @@ const fish1 = {
     y: 600,
     size: 150,
     velocity: {
-        x: -5,
-        y: -2,
+        x: -3,
+        y: -1,
     },
 };
 
@@ -45,8 +45,8 @@ const fish3 = {
     y: 100,
     size: 50,
     velocity: {
-        x: 5,
-        y: 2,
+        x: 2,
+        y: 1,
     },
 };
 
