@@ -2,7 +2,7 @@
 
 Sofia Allashukurova 
 
-[View this project online](https://sofia-aa34.github.io/cart253/prototypes/conditionals/Don't_let_them_eat_you/)
+[View this project online](https://sofia-aa34.github.io/cart253/prototypes/functions/Don't_let_them_eat_you/)
 
 ## Description
 
