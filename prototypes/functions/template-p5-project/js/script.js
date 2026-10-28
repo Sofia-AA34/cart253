@@ -8,6 +8,8 @@
 
 "use strict";
 
+let state = "alive";
+
 const fish = {
     fill: ("#140320"),
     x: 400,
@@ -93,6 +95,16 @@ function setup() {
 function draw() {
     background("#5680ad") // dark blue
 
+    if (state === "gameOver") {
+        push();
+        rectMode(CENTER);
+        fill('red');
+        noStroke();
+        rect(width / 2, height / 2, 300, 300);
+        pop();
+        return;
+    }
+
     // draw the bubbles 
     drawBubble(100, 100, 50);
     drawBubble(150, 200, 25);
@@ -102,6 +114,9 @@ function draw() {
     drawBubble(300, 300, 75);
 
     checkOverlapFish(fish);
+    checkOverlapFish(fish2);
+    checkOverlapFish(fish3);
+
 
     // draw the fish and make it swim across the screen
     wrapFish(fish);
@@ -224,19 +239,14 @@ function shrinkSeaweed(seaweed) {
 
 function checkOverlapFish(fish) {
     // get the distance betwwen the mouse position and the targets 
+    // fish (purple, blue and pink)
 
+    // calculate distance between circle's center and mouse 
+    const d = dist(mouseX, mouseY, fish.x, fish.y);
 
-    // fish (blue)
-
-    // fish (pink)
-}
-
-function alive() {
-
-}
-
-function dead() {
-
+    if (d < fish.size / 2) {
+        state = "gameOver"
+    }
 }
 
 
