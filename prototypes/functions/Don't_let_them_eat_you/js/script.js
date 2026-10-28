@@ -320,5 +320,3 @@ function checkOverlapSeaweed(seaweed) {
         state = "gameOver"
     }
 }
-
-
