@@ -116,6 +116,11 @@ function draw() {
     checkOverlapFish(fish);
     checkOverlapFish(fish2);
     checkOverlapFish(fish3);
+    checkOverlapSeaweed(seaweed);
+    checkOverlapSeaweed(seaweed1);
+    checkOverlapSeaweed(seaweed2);
+    checkOverlapSeaweed(seaweed3);
+    checkOverlapSeaweed(seaweed4);
 
 
     // draw the fish and make it swim across the screen
@@ -245,6 +250,18 @@ function checkOverlapFish(fish) {
     const d = dist(mouseX, mouseY, fish.x, fish.y);
 
     if (d < fish.size / 2) {
+        state = "gameOver"
+    }
+}
+
+function checkOverlapSeaweed(seaweed) {
+    // seaweed
+
+    if (
+        mouseX >= seaweed.x &&
+        mouseX <= seaweed.x + seaweed.width &&
+        mouseY >= seaweed.y &&
+        mouseY <= seaweed.y + seaweed.y + seaweed.height) {
         state = "gameOver"
     }
 }
