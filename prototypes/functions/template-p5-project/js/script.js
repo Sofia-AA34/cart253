@@ -1,9 +1,10 @@
 /**
- * Don't touch the lines!!!
+ * Yummy yummy
  * Sofia Allashukurova 
  * 
  * This is a relaxing simulation of a maze. 
- * The rule is simple: never touch the blue lines while you explore it.
+ * The rule is simple: never touch the blue lines while you eat the candy 
+ * that appears within it. 
  * To move the pink dot, use the arrows of your keyboard.
  */
 
