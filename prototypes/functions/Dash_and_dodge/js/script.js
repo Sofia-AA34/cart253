@@ -34,6 +34,20 @@ const ground = {
     height: 75,
 }
 
+const cactus1 = {
+    x: 100,
+    y: 200,
+    width: 50,
+    height: 25,
+}
+
+const cactus2 = {
+    x: 300,
+    y: 175,
+    width: 75,
+    height: 50,
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -49,9 +63,13 @@ function setup() {
 */
 function draw() {
     // Check the state and call the appropriate function
+
     if (state === "firstFrame") {
         firstFrame();
     }
+
+
+
     forceGravity();
     forceLand();
 
@@ -61,6 +79,7 @@ function draw() {
     // user 
     drawUser();
 
+
     // keys that allow the user to move the black circle
     if (keyIsDown(RIGHT_ARROW)) {
         user.x += 3;
@@ -68,6 +87,8 @@ function draw() {
     if (keyIsDown(LEFT_ARROW)) {
         user.x -= 3;
     }
+
+    checkOverlap(cactus1);
 }
 
 
@@ -116,11 +137,19 @@ function firstFrame() {
 
     // cactus
     push();
-    stroke("#f30a0a");
+    stroke("#072714");
     strokeWeight(3);
     fill("#50bf0f");
-    rect(100, 200, 50, 25);
-    rect(300, 175, 75, 50);
+    rect(cactus1.x, cactus1.y, cactus1.width, cactus1.height);
+    rect(cactus2.x, cactus2.y, cactus2.width, cactus2.height);
     pop();
 }
 
+function checkOverlap(cactus) {
+    if (
+        user.x + (user.size / 2) >= cactus.x
+    ) {
+        user.x = 30
+        user.y = 200;
+    }
+}
