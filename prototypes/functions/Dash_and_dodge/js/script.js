@@ -74,7 +74,7 @@ function draw() {
 // ground
 function drawGround() {
     push();
-    fill("#93370d");
+    fill("#dba16a");
     noStroke();
     rect(ground.x, ground.y, ground.width, ground.height);
     pop();
@@ -108,12 +108,19 @@ function forceLand() {
     }
 }
 
-
 /**
  * The first state - "firstFrame"
  */
 function firstFrame() {
-    background("#b29898"); // red-gray 
+    background("#6eceeb"); // red-gray 
 
+    // cactus
+    push();
+    stroke("#f30a0a");
+    strokeWeight(3);
+    fill("#50bf0f");
+    rect(100, 200, 50, 25);
+    rect(300, 175, 75, 50);
+    pop();
 }
 
