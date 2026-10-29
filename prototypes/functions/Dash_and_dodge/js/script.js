@@ -90,7 +90,7 @@ function drawUser() {
 
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        user.y -= -10;
+        user.gravitySpeed = -7;
     }
 }
 
