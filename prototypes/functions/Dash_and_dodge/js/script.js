@@ -9,7 +9,7 @@
 "use strict";
 
 // First state shown when the prototype runs
-let state = "firstFrame"
+let state = "secondFrame"
 
 const gravity = 0.5;
 
@@ -48,6 +48,47 @@ const cactus2 = {
     height: 50,
 }
 
+const meteor1 = {
+    x: 30,
+    y: -100,
+    width: 50,
+    height: 45,
+    velocity: {
+        x: 7,
+        y: 10,
+    },
+}
+const meteor2 = {
+    x: 100,
+    y: -150,
+    width: 50,
+    height: 45,
+    velocity: {
+        x: 10,
+        y: 5,
+    },
+}
+const meteor3 = {
+    x: 200,
+    y: -200,
+    width: 50,
+    height: 45,
+    velocity: {
+        x: -1,
+        y: 6,
+    },
+}
+const meteor4 = {
+    x: 500,
+    y: -150,
+    width: 50,
+    height: 45,
+    velocity: {
+        x: -6,
+        y: 6,
+    },
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -77,11 +118,14 @@ function draw() {
     forceGravity();
     forceLand();
 
+
     // ground 
     drawGround();
 
+
     // user 
     drawUser();
+
 
 
     // keys that allow the user to move the black circle
@@ -92,8 +136,13 @@ function draw() {
         user.x -= 3;
     }
 
+
+
     checkOverlap(cactus1);
     checkOverlap(cactus2);
+
+
+
 }
 
 
@@ -132,6 +181,8 @@ function forceLand() {
     if (user.y + user.size / 2 > land) {
         user.y = land - user.size / 2;
     }
+
+
 }
 
 /**
@@ -151,6 +202,7 @@ function firstFrame() {
 
     if (user.x + user.size / 2 > width) {
         state = "secondFrame";
+        user.x = -user.size / 2;
     }
 }
 
@@ -161,11 +213,32 @@ function checkOverlap(cactus) {
         user.y + user.size / 2 >= cactus.y &&
         user.y - user.size / 2 <= cactus.y + cactus.height
     ) {
-        user.x = 30
+        user.x = 30;
         user.y = 200;
     }
 }
 
 function secondFrame() {
-    background('black');
+    background('white');
+
+    // meteors 
+    push();
+    fill("#100d20");
+    ellipse(meteor1.x, meteor1.y, meteor1.width, meteor1.height);
+    ellipse(meteor2.x, meteor2.y, meteor2.width, meteor2.height);
+    ellipse(meteor3.x, meteor3.y, meteor3.width, meteor3.height);
+    ellipse(meteor4.x, meteor4.y, meteor4.width, meteor4.height);
+    pop();
+
+    meteor1.x += meteor1.velocity.x;
+    meteor1.y += meteor1.velocity.y;
+
+    meteor2.x += meteor2.velocity.x;
+    meteor2.y += meteor2.velocity.y;
+
+    meteor3.x += meteor3.velocity.x;
+    meteor3.y += meteor3.velocity.y;
+
+    meteor4.x += meteor4.velocity.x;
+    meteor4.y += meteor4.velocity.y;
 }
