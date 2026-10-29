@@ -156,6 +156,10 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Dash_and_dodge)
 
+## Journal Entry 
+
+[Reflective Journal](journal.md)
+
 
 
 
