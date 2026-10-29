@@ -22,7 +22,7 @@ const user = {
     fill: ('black'),
     x: 60,
     y: 200,
-    size: 30,
+    size: 50,
     velocity: {
         x: 0,
         y: 0,
