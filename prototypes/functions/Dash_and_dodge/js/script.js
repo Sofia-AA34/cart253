@@ -45,18 +45,30 @@ function draw() {
     }
 
     // ground 
+    drawGround();
+
+    // user 
+    drawUser();
+
+}
+
+// ground
+function drawGround() {
     push();
     fill("#93370d");
     noStroke();
     rect(0, 225, width, 75);
     pop();
+}
 
-    // user 
+// user 
+function drawUser() {
     push();
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
     pop();
 }
+
 
 /**
  * The first state - "firstFrame"
