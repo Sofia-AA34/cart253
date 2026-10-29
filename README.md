@@ -148,6 +148,14 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Yummy_Yummy)
 
+### Dash and Dodge
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Dash_and_Dodge.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/functions/Dash_and_dodge/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/functions/Dash_and_dodge)
+
 
 
 
