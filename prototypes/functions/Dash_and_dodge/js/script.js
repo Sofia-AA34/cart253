@@ -50,7 +50,15 @@ function draw() {
     // user 
     drawUser();
 
+    // keys that allow the user to move the black circle
+    if (keyIsDown(RIGHT_ARROW)) {
+        user.x += 3;
+    }
+    if (keyIsDown(LEFT_ARROW)) {
+        user.x -= 3;
+    }
 }
+
 
 // ground
 function drawGround() {
@@ -69,15 +77,18 @@ function drawUser() {
     pop();
 }
 
+function keyPressed() {
+    if (keyCode === UP_ARROW) {
+        user.y -= 10
+    }
+}
+
 
 /**
  * The first state - "firstFrame"
  */
 function firstFrame() {
     background("#b29898"); // red-gray 
-
-
-
 
 }
 
