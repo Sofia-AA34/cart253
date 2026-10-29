@@ -68,6 +68,10 @@ function draw() {
         firstFrame();
     }
 
+    if (state === "secondFrame") {
+        secondFrame();
+    }
+
 
 
     forceGravity();
@@ -144,6 +148,10 @@ function firstFrame() {
     rect(cactus1.x, cactus1.y, cactus1.width, cactus1.height);
     rect(cactus2.x, cactus2.y, cactus2.width, cactus2.height);
     pop();
+
+    if (user.x + user.size / 2 > width) {
+        state = "secondFrame";
+    }
 }
 
 function checkOverlap(cactus) {
@@ -156,4 +164,8 @@ function checkOverlap(cactus) {
         user.x = 30
         user.y = 200;
     }
+}
+
+function secondFrame() {
+    background('black');
 }
