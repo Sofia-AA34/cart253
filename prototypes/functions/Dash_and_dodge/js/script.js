@@ -43,13 +43,6 @@ function draw() {
     if (state === "firstFrame") {
         firstFrame();
     }
-}
-
-/**
- * The first state - "firstFrame"
- */
-function firstFrame() {
-    background("#b29898"); // red-gray 
 
     // ground 
     push();
@@ -63,5 +56,16 @@ function firstFrame() {
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
     pop();
+}
+
+/**
+ * The first state - "firstFrame"
+ */
+function firstFrame() {
+    background("#b29898"); // red-gray 
+
+
+
+
 }
 
