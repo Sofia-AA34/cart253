@@ -22,7 +22,7 @@ const user = {
     fill: ('black'),
     x: 60,
     y: 200,
-    size: 50,
+    size: 30,
     velocity: {
         x: 0,
         y: 0,
@@ -210,7 +210,7 @@ function drawUser() {
  */
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        user.gravitySpeed = -2;
+        user.gravitySpeed = -5;
     }
 }
 
