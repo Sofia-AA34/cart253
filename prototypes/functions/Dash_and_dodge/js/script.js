@@ -1,9 +1,10 @@
 /**
- * Title of Project
- * Author Name
+ * Dash and Dodge
+ * Sofia Allashukurova
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Can you reach the end? You must make it past the cactuses 
+ * and avoid being hit by the meteors. Use the left and right arrows 
+ * of your keyboard to run and the up arrow to jump.
  */
 
 "use strict";
@@ -13,13 +14,10 @@ let firstString = "The cactuses will sting!";
 let secondString = "Runnn!";
 let endString = "WOW, YOU WON :)"
 
-
 // First state shown when the prototype runs
-let state = "endFrame"
+let state = "firstFrame"
 
-const gravity = 0.5;
-
-// user 
+// the black circle the user controls with their keyboard
 const user = {
     fill: ('black'),
     x: 60,
@@ -33,6 +31,7 @@ const user = {
     gravitySpeed: 0,
 }
 
+// what the user runs on - brown ground 
 const ground = {
     x: 0,
     y: 225,
@@ -40,6 +39,7 @@ const ground = {
     height: 75,
 }
 
+// cactuses (x6)
 const cactus1 = {
     x: 130,
     y: 200,
@@ -82,7 +82,7 @@ const cactus5 = {
     height: 90,
 }
 
-
+// meteors (x4)
 const meteor1 = {
     x: 30,
     y: -100,
@@ -121,7 +121,7 @@ const meteor4 = {
 }
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creates the canvas and sets up the text
 */
 function setup() {
     // creates the canvas
@@ -130,18 +130,18 @@ function setup() {
     // text settings
     textSize(30);
     textAlign(CENTER, CENTER);
-
 }
 
 
 /**
- * Depending on the current state, run the function to handle the state
+ * Depending on the current state, runs the function to handle the state
+ * Draws the ground and user (black circle) in all the states
 */
 function draw() {
-    // Check the state and call the appropriate function
-
     if (state === "firstFrame") {
         firstFrame();
+
+        // checks if the user touches any of the cactuses 
         checkOverlapCactus(cactus1);
         checkOverlapCactus(cactus2);
         checkOverlapCactus(cactusLeft);
@@ -152,6 +152,8 @@ function draw() {
 
     if (state === "secondFrame") {
         secondFrame();
+
+        // checks if the user touches any of the meteors
         checkOverlapMeteor(meteor1);
         checkOverlapMeteor(meteor2);
         checkOverlapMeteor(meteor3);
@@ -162,38 +164,29 @@ function draw() {
         endFrame();
     }
 
+    // When the user jumps, they come back down on the ground 
+    // and don't stay floating
     forceGravity();
     forceLand();
-
 
     // ground 
     drawGround();
 
-
     // user 
     drawUser();
 
-
-
-    // keys that allow the user to move the black circle
+    // keys that allow the user to move the black circle left and right
     if (keyIsDown(RIGHT_ARROW)) {
         user.x += 3;
     }
     if (keyIsDown(LEFT_ARROW)) {
         user.x -= 3;
     }
-
-
-
-
-
-
-
-
 }
 
-
-// ground
+/**
+ * Draws the brown ground the user walks on
+ */
 function drawGround() {
     push();
     fill("#dba16a");
@@ -202,7 +195,9 @@ function drawGround() {
     pop();
 }
 
-// user 
+/**
+ * Draws the user (black circle)
+ */
 function drawUser() {
     push();
     fill(user.fill);
@@ -210,33 +205,42 @@ function drawUser() {
     pop();
 }
 
+/**
+ * Key that allows the user to jump 
+ */
 function keyPressed() {
     if (keyCode === UP_ARROW) {
         user.gravitySpeed = -5;
     }
 }
 
+/**
+ * Implements the gravity on the user
+ */
 function forceGravity() {
-    // gravity
     user.gravitySpeed += user.gravity;
     user.x += user.velocity.x;
     user.y += user.velocity.y + user.gravitySpeed;
 }
 
+/**
+ * Makes the user land on the ground and not fall through the canvas 
+ */
 function forceLand() {
     const land = height - ground.height;
     if (user.y + user.size / 2 > land) {
         user.y = land - user.size / 2;
     }
-
-
 }
 
 /**
  * The first state - "firstFrame"
+ * Draws the blue background, displays the text and draws the cactuses
+ * If the user reaches the right end of the canvas, then the "secondFrame" runs
  */
 function firstFrame() {
-    background("#6eceeb"); // red-gray 
+    // draws the background
+    background("#6eceeb");
 
     // text to display 
     push();
@@ -244,7 +248,7 @@ function firstFrame() {
     text(firstString, width / 2, height / 3);
     pop();
 
-    // cactus
+    // draws the cactuses
     push();
     stroke("#072714");
     strokeWeight(3);
@@ -257,12 +261,17 @@ function firstFrame() {
     rect(cactus5.x, cactus5.y, cactus5.width, cactus5.height);
     pop();
 
+    // runs the "secondFrame"
     if (user.x + user.size / 2 > width) {
         state = "secondFrame";
         user.x = -user.size / 2;
     }
 }
 
+/**
+ * Checks if the user touches any of the cactuses 
+ * If they do, the user respaws in their original position 
+ */
 function checkOverlapCactus(cactus) {
     if (
         user.x + user.size / 2 >= cactus.x &&
@@ -275,7 +284,13 @@ function checkOverlapCactus(cactus) {
     }
 }
 
+/**
+ * The second state - "secondFrame"
+ * Draws the blue background, displays the text and draws the falling meteors
+ * If the user reaches the right end of the canvas, then the "endFrame" runs
+ */
 function secondFrame() {
+    // draws the background
     background("#b9f4fd");
 
     // text to display 
@@ -284,7 +299,7 @@ function secondFrame() {
     text(secondString, width / 2, height / 3);
     pop();
 
-    // meteors 
+    // draws the meteors 
     push();
     fill("#100d20");
     ellipse(meteor1.x, meteor1.y, meteor1.size);
@@ -293,6 +308,7 @@ function secondFrame() {
     ellipse(meteor4.x, meteor4.y, meteor4.size);
     pop();
 
+    // makes the meteors fall down by their velocity 
     meteor1.x += meteor1.velocity.x;
     meteor1.y += meteor1.velocity.y;
 
@@ -305,12 +321,17 @@ function secondFrame() {
     meteor4.x += meteor4.velocity.x;
     meteor4.y += meteor4.velocity.y;
 
+    // runs the endFrame
     if (user.x + user.size / 2 > width) {
         state = "endFrame";
         user.x = -user.size / 2;
     }
 }
 
+/**
+ * Checks if the user gets hit by any of the meteors  
+ * If they do, the user respaws in their original position on the "firstFrame"
+ */
 function checkOverlapMeteor(meteor) {
     // gets the distance between the meteors' centers and user's center
     const d = dist(user.x, user.y, meteor.x, meteor.y);
@@ -320,13 +341,18 @@ function checkOverlapMeteor(meteor) {
     }
 }
 
+/**
+ * The end state - "endFrame"
+ * Draws the pink background and displays the text
+ * User won
+ */
 function endFrame() {
+    // draws the background
     background('pink');
 
+    // displays the text
     push();
-    fill("#1139ee");
+    fill("#4111ee");
     text(endString, width / 2, height / 3);
     pop();
-
-
 }
