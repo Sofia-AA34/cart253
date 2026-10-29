@@ -8,8 +8,14 @@
 
 "use strict";
 
+// Text to display for the first, second and end states
+let firstString = "The cactuses will sting!";
+let secondString = "Runnn!";
+let endString = "WOW, YOU WON :)"
+
+
 // First state shown when the prototype runs
-let state = "secondFrame"
+let state = "endFrame"
 
 const gravity = 0.5;
 
@@ -121,6 +127,10 @@ function setup() {
     // creates the canvas
     createCanvas(500, 300);
 
+    // text settings
+    textSize(30);
+    textAlign(CENTER, CENTER);
+
 }
 
 
@@ -228,6 +238,12 @@ function forceLand() {
 function firstFrame() {
     background("#6eceeb"); // red-gray 
 
+    // text to display 
+    push();
+    fill("#a41ff7");
+    text(firstString, width / 2, height / 3);
+    pop();
+
     // cactus
     push();
     stroke("#072714");
@@ -260,7 +276,13 @@ function checkOverlapCactus(cactus) {
 }
 
 function secondFrame() {
-    background('white');
+    background("#b9f4fd");
+
+    // text to display 
+    push();
+    fill("#f71f1f");
+    text(secondString, width / 2, height / 3);
+    pop();
 
     // meteors 
     push();
@@ -300,4 +322,11 @@ function checkOverlapMeteor(meteor) {
 
 function endFrame() {
     background('pink');
+
+    push();
+    fill("#1139ee");
+    text(endString, width / 2, height / 3);
+    pop();
+
+
 }
