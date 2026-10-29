@@ -20,9 +20,18 @@ const user = {
     y: 200,
     size: 50,
     velocity: {
-        x: 2,
+        x: 0,
         y: 0,
     },
+    gravity: 0.5,
+    gravitySpeed: 0,
+}
+
+const ground = {
+    x: 0,
+    y: 225,
+    width: 500,
+    height: 75,
 }
 
 /**
@@ -43,6 +52,8 @@ function draw() {
     if (state === "firstFrame") {
         firstFrame();
     }
+    forceGravity();
+    forceLand();
 
     // ground 
     drawGround();
@@ -65,7 +76,7 @@ function drawGround() {
     push();
     fill("#93370d");
     noStroke();
-    rect(0, 225, width, 75);
+    rect(ground.x, ground.y, ground.width, ground.height);
     pop();
 }
 
@@ -79,7 +90,21 @@ function drawUser() {
 
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        user.y -= 10
+        user.y -= -10;
+    }
+}
+
+function forceGravity() {
+    // gravity
+    user.gravitySpeed += user.gravity;
+    user.x += user.velocity.x;
+    user.y += user.velocity.y + user.gravitySpeed;
+}
+
+function forceLand() {
+    const land = height - ground.height;
+    if (user.y + user.size / 2 > land) {
+        user.y = land - user.size / 2;
     }
 }
 
