@@ -51,8 +51,7 @@ const cactus2 = {
 const meteor1 = {
     x: 30,
     y: -100,
-    width: 50,
-    height: 45,
+    size: 45,
     velocity: {
         x: 7,
         y: 10,
@@ -61,8 +60,7 @@ const meteor1 = {
 const meteor2 = {
     x: 100,
     y: -150,
-    width: 50,
-    height: 45,
+    size: 50,
     velocity: {
         x: 4,
         y: 5,
@@ -71,8 +69,7 @@ const meteor2 = {
 const meteor3 = {
     x: 200,
     y: -200,
-    width: 50,
-    height: 45,
+    size: 55,
     velocity: {
         x: -1,
         y: 6,
@@ -81,8 +78,7 @@ const meteor3 = {
 const meteor4 = {
     x: 500,
     y: -150,
-    width: 50,
-    height: 45,
+    size: 60,
     velocity: {
         x: -6,
         y: 6,
@@ -107,13 +103,17 @@ function draw() {
 
     if (state === "firstFrame") {
         firstFrame();
+        checkOverlapCactus(cactus1);
+        checkOverlapCactus(cactus2);
     }
 
     if (state === "secondFrame") {
         secondFrame();
+        checkOverlapMeteor(meteor1);
+        checkOverlapMeteor(meteor2);
+        checkOverlapMeteor(meteor3);
+        checkOverlapMeteor(meteor4);
     }
-
-
 
     forceGravity();
     forceLand();
@@ -138,13 +138,9 @@ function draw() {
 
 
 
-    checkOverlap(cactus1);
-    checkOverlap(cactus2);
 
-    checkOverlap(meteor1);
-    checkOverlap(meteor2);
-    checkOverlap(meteor3);
-    checkOverlap(meteor4);
+
+
 
 
 }
@@ -210,7 +206,7 @@ function firstFrame() {
     }
 }
 
-function checkOverlap(cactus) {
+function checkOverlapCactus(cactus) {
     if (
         user.x + user.size / 2 >= cactus.x &&
         user.x - user.size / 2 <= cactus.x + cactus.width &&
@@ -228,10 +224,10 @@ function secondFrame() {
     // meteors 
     push();
     fill("#100d20");
-    ellipse(meteor1.x, meteor1.y, meteor1.width, meteor1.height);
-    ellipse(meteor2.x, meteor2.y, meteor2.width, meteor2.height);
-    ellipse(meteor3.x, meteor3.y, meteor3.width, meteor3.height);
-    ellipse(meteor4.x, meteor4.y, meteor4.width, meteor4.height);
+    ellipse(meteor1.x, meteor1.y, meteor1.size);
+    ellipse(meteor2.x, meteor2.y, meteor2.size);
+    ellipse(meteor3.x, meteor3.y, meteor3.size);
+    ellipse(meteor4.x, meteor4.y, meteor4.size);
     pop();
 
     meteor1.x += meteor1.velocity.x;
@@ -245,14 +241,16 @@ function secondFrame() {
 
     meteor4.x += meteor4.velocity.x;
     meteor4.y += meteor4.velocity.y;
+
+    push();
+    fill("#7fbd13");
 }
 
-function checkOverlap(meteor) {
+function checkOverlapMeteor(meteor) {
     // gets the distance between the meteors' centers and user's center
     const d = dist(user.x, user.y, meteor.x, meteor.y);
 
-    if (d < meteor.size / 2) {
-        state = "firstFrame"
-
+    if (d < meteor.size / 2 + user.size / 2) {
+        state = "firstFrame";
     }
 }
