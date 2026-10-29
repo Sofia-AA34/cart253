@@ -177,10 +177,10 @@ function draw() {
 
     // keys that allow the user to move the black circle left and right
     if (keyIsDown(RIGHT_ARROW)) {
-        user.x += 3;
+        user.x += 1;
     }
     if (keyIsDown(LEFT_ARROW)) {
-        user.x -= 3;
+        user.x -= 1;
     }
 }
 
@@ -210,7 +210,7 @@ function drawUser() {
  */
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        user.gravitySpeed = -5;
+        user.gravitySpeed = -2;
     }
 }
 
