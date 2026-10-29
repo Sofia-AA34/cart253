@@ -9,7 +9,7 @@
 "use strict";
 
 // First state shown when the prototype runs
-let state = "secondFrame"
+let state = "firstFrame"
 
 const gravity = 0.5;
 
@@ -64,7 +64,7 @@ const meteor2 = {
     width: 50,
     height: 45,
     velocity: {
-        x: 10,
+        x: 4,
         y: 5,
     },
 }
@@ -141,6 +141,10 @@ function draw() {
     checkOverlap(cactus1);
     checkOverlap(cactus2);
 
+    checkOverlap(meteor1);
+    checkOverlap(meteor2);
+    checkOverlap(meteor3);
+    checkOverlap(meteor4);
 
 
 }
@@ -241,4 +245,14 @@ function secondFrame() {
 
     meteor4.x += meteor4.velocity.x;
     meteor4.y += meteor4.velocity.y;
+}
+
+function checkOverlap(meteor) {
+    // gets the distance between the meteors' centers and user's center
+    const d = dist(user.x, user.y, meteor.x, meteor.y);
+
+    if (d < meteor.size / 2) {
+        state = "firstFrame"
+
+    }
 }
