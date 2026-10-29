@@ -16,7 +16,7 @@ const gravity = 0.5;
 // user 
 const user = {
     fill: ('black'),
-    x: 30,
+    x: 60,
     y: 200,
     size: 50,
     velocity: {
@@ -35,7 +35,7 @@ const ground = {
 }
 
 const cactus1 = {
-    x: 100,
+    x: 130,
     y: 200,
     width: 50,
     height: 25,
@@ -48,13 +48,42 @@ const cactus2 = {
     height: 50,
 }
 
+const cactusLeft = {
+    x: 0,
+    y: 0,
+    width: 20,
+    height: 225,
+}
+
+const cactus3 = {
+    x: 100,
+    y: 0,
+    width: 50,
+    height: 75,
+}
+
+const cactus4 = {
+    x: 250,
+    y: 0,
+    width: 30,
+    height: 80,
+}
+
+const cactus5 = {
+    x: 430,
+    y: 0,
+    width: 70,
+    height: 90,
+}
+
+
 const meteor1 = {
     x: 30,
     y: -100,
     size: 45,
     velocity: {
-        x: 7,
-        y: 10,
+        x: 3,
+        y: 7,
     },
 }
 const meteor2 = {
@@ -62,8 +91,8 @@ const meteor2 = {
     y: -150,
     size: 50,
     velocity: {
-        x: 4,
-        y: 5,
+        x: 1,
+        y: 2,
     },
 }
 const meteor3 = {
@@ -72,7 +101,7 @@ const meteor3 = {
     size: 55,
     velocity: {
         x: -1,
-        y: 6,
+        y: 3,
     },
 }
 const meteor4 = {
@@ -80,8 +109,8 @@ const meteor4 = {
     y: -150,
     size: 60,
     velocity: {
-        x: -6,
-        y: 6,
+        x: -3,
+        y: 3,
     },
 }
 
@@ -105,6 +134,10 @@ function draw() {
         firstFrame();
         checkOverlapCactus(cactus1);
         checkOverlapCactus(cactus2);
+        checkOverlapCactus(cactusLeft);
+        checkOverlapCactus(cactus3);
+        checkOverlapCactus(cactus4);
+        checkOverlapCactus(cactus5);
     }
 
     if (state === "secondFrame") {
@@ -165,7 +198,7 @@ function drawUser() {
 
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        user.gravitySpeed = -7;
+        user.gravitySpeed = -5;
     }
 }
 
@@ -198,6 +231,10 @@ function firstFrame() {
     fill("#50bf0f");
     rect(cactus1.x, cactus1.y, cactus1.width, cactus1.height);
     rect(cactus2.x, cactus2.y, cactus2.width, cactus2.height);
+    rect(cactusLeft.x, cactusLeft.y, cactusLeft.width, cactusLeft.height);
+    rect(cactus3.x, cactus3.y, cactus3.width, cactus3.height);
+    rect(cactus4.x, cactus4.y, cactus4.width, cactus4.height);
+    rect(cactus5.x, cactus5.y, cactus5.width, cactus5.height);
     pop();
 
     if (user.x + user.size / 2 > width) {
@@ -213,7 +250,7 @@ function checkOverlapCactus(cactus) {
         user.y + user.size / 2 >= cactus.y &&
         user.y - user.size / 2 <= cactus.y + cactus.height
     ) {
-        user.x = 30;
+        user.x = 60;
         user.y = 200;
     }
 }
