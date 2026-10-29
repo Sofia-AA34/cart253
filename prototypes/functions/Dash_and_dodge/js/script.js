@@ -89,6 +89,7 @@ function draw() {
     }
 
     checkOverlap(cactus1);
+    checkOverlap(cactus2);
 }
 
 
@@ -147,7 +148,10 @@ function firstFrame() {
 
 function checkOverlap(cactus) {
     if (
-        user.x + (user.size / 2) >= cactus.x
+        user.x + user.size / 2 >= cactus.x &&
+        user.x - user.size / 2 <= cactus.x + cactus.width &&
+        user.y + user.size / 2 >= cactus.y &&
+        user.y - user.size / 2 <= cactus.y + cactus.height
     ) {
         user.x = 30
         user.y = 200;
