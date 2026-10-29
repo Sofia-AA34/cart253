@@ -9,7 +9,7 @@
 "use strict";
 
 // First state shown when the prototype runs
-let state = "firstFrame"
+let state = "secondFrame"
 
 const gravity = 0.5;
 
@@ -148,6 +148,10 @@ function draw() {
         checkOverlapMeteor(meteor4);
     }
 
+    if (state === "endFrame") {
+        endFrame();
+    }
+
     forceGravity();
     forceLand();
 
@@ -279,8 +283,10 @@ function secondFrame() {
     meteor4.x += meteor4.velocity.x;
     meteor4.y += meteor4.velocity.y;
 
-    push();
-    fill("#7fbd13");
+    if (user.x + user.size / 2 > width) {
+        state = "endFrame";
+        user.x = -user.size / 2;
+    }
 }
 
 function checkOverlapMeteor(meteor) {
@@ -290,4 +296,8 @@ function checkOverlapMeteor(meteor) {
     if (d < meteor.size / 2 + user.size / 2) {
         state = "firstFrame";
     }
+}
+
+function endFrame() {
+    background('pink');
 }
