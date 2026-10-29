@@ -11,6 +11,20 @@
 // First state shown when the prototype runs
 let state = "firstFrame"
 
+const gravity = 0.5;
+
+// user 
+const user = {
+    fill: ('black'),
+    x: 30,
+    y: 200,
+    size: 50,
+    velocity: {
+        x: 2,
+        y: 0,
+    },
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -35,5 +49,19 @@ function draw() {
  * The first state - "firstFrame"
  */
 function firstFrame() {
-    background("#7d5a5a"); // red-gray 
+    background("#b29898"); // red-gray 
+
+    // ground 
+    push();
+    fill("#93370d");
+    noStroke();
+    rect(0, 225, width, 75);
+    pop();
+
+    // user 
+    push();
+    fill(user.fill);
+    ellipse(user.x, user.y, user.size);
+    pop();
 }
+
