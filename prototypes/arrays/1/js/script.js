@@ -6,7 +6,7 @@
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
 
-"use strict";
+
 // will create it with createGum()
 let gums = [];
 
@@ -15,6 +15,8 @@ let gums = [];
 */
 function setup() {
     createCanvas(500, 500);
+
+    gum = createGum();
 }
 
 function createGum() {
@@ -26,7 +28,7 @@ function createGum() {
             r: random(0, 255),
             g: random(0, 255),
             b: random(0, 255),
-        }
+        },
     };
     return newGum;
 }
@@ -40,7 +42,7 @@ function draw() {
 
     // loop to add infinite gum 
     for (let gum of gums) {
-        draeGum();
+        drawGum(gum);
     }
 }
 
@@ -50,4 +52,9 @@ function drawGum(gum) {
     fill(gum.fill.r, gum.fill.g, gum.fill.b);
     ellipse(gum.x, gum.y, gum.size);
     pop();
+}
+
+function mouseClicked() {
+    let gum = createGum();
+    gums.push(gum);
 }
