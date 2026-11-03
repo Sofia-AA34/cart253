@@ -56,3 +56,18 @@ In my next prototypes, I will use more abstract shapes and ideas, because I feel
 
 ## Thursday, October 29, 2026
 
+I really enjoyed making this week’s prototypes. I think that was partly because I decided to create my games using basic shapes such as ellipses and rectangles rather than more complex structures. This gave me more freedom in how the user could interact with the game and how the shapes could interact with one another. Within the same prototype, I was able to use elements such as speed, conditionals, wrapping, and interactive components, which would have been harder to implement if I had used intricate designs like I had in previous prototypes. 
+
+By using functions, the code became much more organized, and there was less room for mistakes because it was significantly shorter than it would have been without them. For example, in my “Don’t let them eat you” prototype, I would have needed to repeat the code for drawing, growing, shrinking and checking overlaps between the user and the seaweed five different times. Initially, I tried making the fish out of triangles (in basic shapes, a fish looks like a triangle to me), but I could not figure out how to check for an overlap of a triangle, so I changed them to circles, which made the calculations much simpler. 
+
+In the second prototype, I had a hard time randomizing the appearance of the candy, because I wanted it to appear at the coordinates I had already set. Without realizing it, I had already used a form of arrays from an example I found online. Now I understand how the code works and why it confused me at first. 
+
+For the third prototype, “Dash and Dodge”, I mainly struggled with gravity. Once I found a tutorial showing a rectangle jumping and landing back on a set ground, it became quite easy to implement gravity in my own game. Another issue came with checking the overlaps. Since I used multiple states, the overlaps for the cactuses and meteors needed to be stored within the appropriate state to work as they were supposed to. 
+
+The only difficulty I had with all three of my prototypes was the speed. When I ran them “live”, they worked just fine, but on GitHub they appeared to run much faster, impacting both the velocity and gravity of my objects. 
+
+<img style="width: 60%; margin: auto;" src="images/SS_events1.png">
+
+<img style="width: 60%; margin: auto;" src="images/SS_events2.png">
+
+
