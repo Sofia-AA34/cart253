@@ -40,10 +40,27 @@ function createGum() {
 function draw() {
     background('pink');
 
+    drawMachine();
+
     // loop to add infinite gum 
     for (let gum of gums) {
         drawGum(gum);
     }
+}
+
+function drawMachine() {
+    push();
+    noStroke();
+    fill('red');
+    quad(330, 300, 170, 300, 100, 480, 400, 480);
+    pop();
+
+    push();
+    fill('pink');
+    stroke('black');
+    strokeWeight(4);
+    ellipse(250, 170, 300);
+    pop();
 }
 
 function drawGum(gum) {
