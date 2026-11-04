@@ -22,12 +22,18 @@ function setup() {
 /**
  * Creates a target
  */
+function addTarget() {
+    //create and add a target
+    const target = createTarget();
+    targets.push(target);
+}
+
 function createTarget() {
     // create a target object with appropriate properties
     const target = {
         // Position and dimensions
         x: random(0, width),
-        y: -20,
+        y: -10,
         size: random(25, 50),
         // color
         fill: ('red'),
@@ -46,8 +52,9 @@ function createTarget() {
 function draw() {
     background('lightgray');
 
-    // draw the bug 
+    // draws and moves the target
     for (let target of targets) {
+        moveTarget(target);
         drawTarget(target);
     }
 }
@@ -60,6 +67,11 @@ function drawTarget(target) {
     fill(target.fill);
     ellispe(target.x, target.y, target.size);
     pop();
+}
+
+function moveTarget(target) {
+    target.x += target.velocity.x;
+    target.y += target.velocity.y;
 }
 
 
