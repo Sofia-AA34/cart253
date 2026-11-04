@@ -33,7 +33,7 @@ function createTarget() {
     const target = {
         // Position and dimensions
         x: random(0, width),
-        y: -10,
+        y: -20,
         size: random(25, 50),
         // color
         fill: ('red'),
@@ -65,7 +65,7 @@ function draw() {
 function drawTarget(target) {
     push();
     fill(target.fill);
-    ellispe(target.x, target.y, target.size);
+    ellipse(target.x, target.y, target.size);
     pop();
 }
 
