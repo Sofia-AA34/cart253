@@ -78,8 +78,12 @@ function drawFood(food) {
 }
 
 function checkOverlap(food) {
-    const d = dist(user.x, user.y, food.x, food.y);
-    if (d < user.size / 2 + food.size) {
-        user.size += food.size;
+    for (let food of foods) {
+        const d = dist(user.x, user.y, food.x, food.y);
+        if (d < user.size / 2 + food.size) {
+            const index = foods.indexOf(food);
+            foods.splice(index, 1);
+            user.size += food.size / 2;
+        }
     }
 }
