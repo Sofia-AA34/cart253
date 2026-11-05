@@ -154,6 +154,10 @@ function checkTouched(leftMonster) {
             const index = leftMonsters.indexOf(leftMonster);
             user.size -= leftMonster.size;
         }
+
+        if (leftMonster.size > user.size) {
+            user.size *= -1;
+        }
     }
 }
 
@@ -176,6 +180,10 @@ function checkEaten(rightMonster) {
         if (d < user.size / 2 + rightMonster.size) {
             const index = rightMonsters.indexOf(rightMonster);
             user.size -= rightMonster.size;
+        }
+
+        if (rightMonster.size > user.size) {
+            user.size *= -1;
         }
     }
 }
