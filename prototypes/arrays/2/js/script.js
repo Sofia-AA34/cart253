@@ -98,6 +98,7 @@ function draw() {
     }
 
     for (let rightMonster of rightMonsters) {
+        checkTouched(rightMonster);
         moveRightMonster(rightMonster);
         drawRightMonster(rightMonster);
     }
@@ -146,6 +147,16 @@ function moveLeftMonster(leftMonster) {
     leftMonster.y += leftMonster.velocity.y;
 }
 
+function checkTouched(leftMonster) {
+    for (let leftMonster of leftMonsters) {
+        const d = dist(user.x, user.y, leftMonster.x, leftMonster.y);
+        if (d < user.size / 2 + leftMonster.size) {
+            const index = leftMonsters.indexOf(leftMonster);
+            user.size -= leftMonster.size;
+        }
+    }
+}
+
 function drawRightMonster(rightMonster) {
     push();
     noStroke();
@@ -159,12 +170,13 @@ function moveRightMonster(rightMonster) {
     rightMonster.y += rightMonster.velocity.y;
 }
 
-function checkTouched(leftMonster) {
-    for (let leftMonster of leftMonsters) {
-        const d = dist(user.x, user.y, leftMonster.x, leftMonster.y);
-        if (d < user.size / 2 + leftMonster.size) {
-            const index = leftMonsters.indexOf(leftMonster);
-            user.size -= leftMonster.size;
+function checkTouched(rightMonster) {
+    for (let rightMonster of rightMonsters) {
+        const d = dist(user.x, user.y, rightMonster.x, rightMonster.y);
+        if (d < user.size / 2 + rightMonster.size) {
+            const index = rightMonsters.indexOf(rightMonster);
+            user.size -= righttMonster.size;
         }
     }
 }
+
