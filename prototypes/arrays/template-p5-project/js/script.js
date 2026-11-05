@@ -57,12 +57,17 @@ function addTarget() {
 */
 function draw() {
     background('lightgray');
+
+    // set the cursor to crosshairs: +
+    cursor(CROSS);
+
     // draws and moves the target
     for (let target of targets) {
         bounceTarget(target);
         moveTarget(target);
         drawTarget(target);
     }
+
 }
 
 /**
@@ -91,4 +96,6 @@ function bounceTarget(target) {
         target.velocity.x *= -1;
     }
 }
+
+
 
