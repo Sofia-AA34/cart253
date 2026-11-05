@@ -80,6 +80,12 @@ function drawTarget(target) {
     fill(target.fill);
     ellipse(target.x, target.y, target.size);
     pop();
+
+    push();
+    noStroke();
+    fill('white');
+    ellipse(target.x, target.y, target.size / 2);
+    pop();
 }
 
 function moveTarget(target) {
@@ -94,6 +100,16 @@ function moveTarget(target) {
 function bounceTarget(target) {
     if (target.x - (target.size / 2) < 0 || target.x + (target.size / 2) > width) {
         target.velocity.x *= -1;
+    }
+}
+
+function mouseClicked() {
+    for (let target of targets) {
+        const d = dist(mouseX, mouseY, target.x, target.y);
+        if (d < target.size * 1.5) {
+            const index = targets.indexOf(target);
+            targets.splice(index, 1);
+        }
     }
 }
 
