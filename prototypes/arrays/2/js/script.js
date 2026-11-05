@@ -84,6 +84,7 @@ function checkOverlap(food) {
             const index = foods.indexOf(food);
             foods.splice(index, 1);
             user.size += food.size / 2;
+            foods.push(createFood());
         }
     }
 }
