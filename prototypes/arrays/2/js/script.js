@@ -16,7 +16,10 @@ let foods = [];
 function setup() {
     createCanvas(600, 600);
 
-    food = createFood();
+    for (let i = 0; i < 10; i++) {
+        foods.push(createFood());
+    }
+
 }
 
 const user = {
@@ -30,7 +33,7 @@ function createFood() {
     const newFood = {
         x: random(0, width),
         y: random(0, height),
-        size: random(5, 15),
+        size: random(10, 40),
         fill: {
             r: random(0, 255),
             g: random(0, 255),
@@ -45,7 +48,7 @@ function createFood() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background('pink');
+    background("#f6eaf4");
 
     user.x = mouseX;
     user.y = mouseY;
