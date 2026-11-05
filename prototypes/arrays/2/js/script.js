@@ -19,8 +19,8 @@ function setup() {
 }
 
 const user = {
-    x: 300,
-    y: 300,
+    x: undefined,
+    y: undefined,
     size: 50,
     fill: ('blue'),
 }
@@ -31,6 +31,9 @@ const user = {
 */
 function draw() {
     background('pink');
+
+    user.x = mouseX;
+    user.y = mouseY;
 
     createUser();
 }
