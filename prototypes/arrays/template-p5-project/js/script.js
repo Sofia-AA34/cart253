@@ -96,6 +96,12 @@ function draw() {
     // set the cursor to crosshairs: +
     cursor(CROSS);
 
+    for (let harmlessGuy of harmlessGuys) {
+        bounceHarmlessGuy(harmlessGuy);
+        moveHarmlessGuy(harmlessGuy);
+        drawHarmlessGuy(harmlessGuy);
+    }
+
     // draws and moves the target
     for (let target of targets) {
         bounceTarget(target);
@@ -103,11 +109,7 @@ function draw() {
         drawTarget(target);
     }
 
-    for (let harmlessGuy of harmlessGuys) {
-        bounceHarmlessGuy(harmlessGuy);
-        moveHarmlessGuy(harmlessGuy);
-        drawHarmlessGuy(harmlessGuy);
-    }
+
 
 }
 
