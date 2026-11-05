@@ -10,7 +10,6 @@ let foods = [];
 let leftMonsters = [];
 let rightMonsters = [];
 
-
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -51,7 +50,7 @@ function createFood() {
 
 function createLeftMonster() {
     const newLeftMonster = {
-        x: 10,
+        x: -100,
         y: random(0, height),
         size: 30,
         fill: ('black'),
@@ -65,7 +64,7 @@ function createLeftMonster() {
 
 function createRightMonster() {
     const newRightMonster = {
-        x: 590,
+        x: 600,
         y: random(0, height),
         size: 30,
         fill: ('black'),
@@ -93,6 +92,7 @@ function draw() {
     }
 
     for (let leftMonster of leftMonsters) {
+        checkTouched(leftMonster);
         moveLeftMonster(leftMonster);
         drawLeftMonster(leftMonster);
     }
@@ -157,4 +157,14 @@ function drawRightMonster(rightMonster) {
 function moveRightMonster(rightMonster) {
     rightMonster.x += rightMonster.velocity.x;
     rightMonster.y += rightMonster.velocity.y;
+}
+
+function checkTouched(leftMonster) {
+    for (let leftMonster of leftMonsters) {
+        const d = dist(user.x, user.y, leftMonster.x, leftMonster.y);
+        if (d < user.size / 2 + leftMonster.size) {
+            const index = leftMonsters.indexOf(leftMonster);
+            user.size -= leftMonster.size;
+        }
+    }
 }
