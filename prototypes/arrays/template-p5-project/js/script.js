@@ -5,12 +5,10 @@
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
-
+"use strict";
 
 // Will create it with createTarget()
 let targets = [];
-let target = undefined;
-
 
 /**
  * creates the canvas and the target
@@ -18,14 +16,11 @@ let target = undefined;
 function setup() {
     // creates the canvas 
     createCanvas(600, 400);
-    target = createTarget();
-    targets.push(target);
 }
 
 function createTarget() {
-
     // create a target object with appropriate properties
-    const newTarget = {
+    const target = {
         // Position and dimensions
         x: random(0, width),
         y: -20,
@@ -38,7 +33,16 @@ function createTarget() {
             y: random(3, 10),
         }
     };
-    return newTarget;
+    return target;
+}
+
+/**
+ * adds a bug to the array
+ */
+function addTarget(target) {
+    const target = createTarget();
+    target.push(target);
+
 }
 
 /**
@@ -46,9 +50,6 @@ function createTarget() {
 */
 function draw() {
     background('lightgray');
-
-
-
     // draws and moves the target
     for (let target of targets) {
         moveTarget(target);
