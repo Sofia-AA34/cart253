@@ -53,6 +53,10 @@ function createHarmlessGuy() {
         size: random(40, 50),
         // color
         fill: ('yellow'),
+        fills: {
+            alive: ('yellow'),
+            dead: ('red'),
+        },
         // movement
         velocity: {
             x: random(-2, 3),
@@ -174,7 +178,20 @@ function mouseClicked() {
             targets.splice(index, 1);
         }
     }
+
+    for (let harmlessGuy of harmlessGuys) {
+        const d = dist(mouseX, mouseY, harmlessGuy.x, harmlessGuy.y);
+        const overlap = (d < harmlessGuy.size * 1.5)
+        if (overlap) {
+            harmlessGuy.fill = harmlessGuy.fills.dead;
+            harmlessGuy.velocity.x = harmlessGuy.velocity.x * 0;
+            harmlessGuy.velocity.y = harmlessGuy.velocity.y * 0;
+        }
+    }
 }
+
+
+
 
 
 
