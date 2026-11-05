@@ -10,12 +10,17 @@
 // Will create it with createTarget()
 let targets = [];
 
+// time between targets
+let targetDelay = 0.5 * 1000;
+
 /**
  * creates the canvas and the target
 */
 function setup() {
     // creates the canvas 
     createCanvas(600, 400);
+
+    setTimeout(addTarget, targetDelay);
 }
 
 function createTarget() {
@@ -39,9 +44,12 @@ function createTarget() {
 /**
  * adds a bug to the array
  */
-function addTarget(target) {
+function addTarget() {
     const target = createTarget();
-    target.push(target);
+    targets.push(target);
+
+    // set the new timeout 
+    setTimeout(addTarget, targetDelay);
 
 }
 
