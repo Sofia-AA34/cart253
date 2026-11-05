@@ -9,9 +9,11 @@
 
 // Will create it with createTarget()
 let targets = [];
+let harmlessGuys = [];
 
 // time between targets
 let targetDelay = 0.7 * 1000;
+let harmlessGuyDelay = 0.7 * 1000;
 
 /**
  * creates the canvas and the target
@@ -21,6 +23,7 @@ function setup() {
     createCanvas(600, 400);
 
     setTimeout(addTarget, targetDelay);
+    setTimeout(addHarmlessGuy, harmlessGuyDelay);
 }
 
 function createTarget() {
@@ -41,6 +44,24 @@ function createTarget() {
     return target;
 }
 
+function createHarmlessGuy() {
+    // create a target object with appropriate properties
+    const harmlessGuy = {
+        // Position and dimensions
+        x: random(50, width - 50),
+        y: -200,
+        size: random(40, 50),
+        // color
+        fill: ('yellow'),
+        // movement
+        velocity: {
+            x: random(-2, 3),
+            y: random(1, 5),
+        }
+    };
+    return harmlessGuy;
+}
+
 /**
  * adds a bug to the array
  */
@@ -50,6 +71,16 @@ function addTarget() {
 
     // set the new timeout 
     setTimeout(addTarget, targetDelay);
+}
+
+/**
+ * adds a bug to the array
+ */
+function addHarmlessGuy() {
+    const harmlessGuy = createHarmlessGuy();
+    harmlessGuys.push(harmlessGuy);
+
+    setTimeout(addHarmlessGuy, harmlessGuyDelay);
 }
 
 /**
@@ -66,6 +97,12 @@ function draw() {
         bounceTarget(target);
         moveTarget(target);
         drawTarget(target);
+    }
+
+    for (let harmlessGuy of harmlessGuys) {
+        bounceHarmlessGuy(harmlessGuy);
+        moveHarmlessGuy(harmlessGuy);
+        drawHarmlessGuy(harmlessGuy);
     }
 
 }
@@ -100,6 +137,32 @@ function moveTarget(target) {
 function bounceTarget(target) {
     if (target.x - (target.size / 2) < 0 || target.x + (target.size / 2) > width) {
         target.velocity.x *= -1;
+    }
+}
+
+/**
+ * Draws a target according to its properties
+ */
+function drawHarmlessGuy(harmlessGuy) {
+    push();
+    noStroke();
+    fill(harmlessGuy.fill);
+    ellipse(harmlessGuy.x, harmlessGuy.y, harmlessGuy.size);
+    pop();
+}
+
+function moveHarmlessGuy(harmlessGuy) {
+    harmlessGuy.x += harmlessGuy.velocity.x;
+    harmlessGuy.y += harmlessGuy.velocity.y;
+}
+
+/**
+ * makes the target bounce off the canvas walls - keeps it from going outside the canvas 
+ * left and right
+ */
+function bounceHarmlessGuy(harmlessGuy) {
+    if (harmlessGuy.x - (harmlessGuy.size / 2) < 0 || harmlessGuy.x + (harmlessGuy.size / 2) > width) {
+        harmlessGuy.velocity.x *= -1;
     }
 }
 
