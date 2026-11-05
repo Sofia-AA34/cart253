@@ -8,12 +8,21 @@
 
 "use strict";
 
+
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(600, 600);
 
+}
+
+const user = {
+    x: 300,
+    y: 300,
+    size: 50,
+    fill: ('blue'),
 }
 
 
@@ -23,4 +32,13 @@ function setup() {
 function draw() {
     background('pink');
 
+    createUser();
+}
+
+function createUser() {
+    push();
+    noStroke();
+    fill(user.fill);
+    ellipse(user.x, user.y, user.size);
+    pop();
 }
