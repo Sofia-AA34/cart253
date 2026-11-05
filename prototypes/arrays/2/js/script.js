@@ -6,7 +6,7 @@
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
 
-"use strict";
+let foods = [];
 
 
 
@@ -16,6 +16,7 @@
 function setup() {
     createCanvas(600, 600);
 
+    food = createFood();
 }
 
 const user = {
@@ -23,6 +24,20 @@ const user = {
     y: undefined,
     size: 50,
     fill: ('blue'),
+}
+
+function createFood() {
+    const newFood = {
+        x: random(0, width),
+        y: random(0, height),
+        size: random(5, 15),
+        fill: {
+            r: random(0, 255),
+            g: random(0, 255),
+            b: random(0, 255),
+        },
+    };
+    return newFood;
 }
 
 
@@ -36,6 +51,10 @@ function draw() {
     user.y = mouseY;
 
     createUser();
+    for (let food of foods) {
+        drawFood(food);
+    }
+
 }
 
 function createUser() {
@@ -43,5 +62,13 @@ function createUser() {
     noStroke();
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
+    pop();
+}
+
+function drawFood(food) {
+    push();
+    noStroke();
+    fill(food.fill.r, food.fill.g, food.fill.b);
+    ellipse(food.x, food.y, food.size);
     pop();
 }
