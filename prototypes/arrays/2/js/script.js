@@ -7,8 +7,7 @@
  */
 
 let foods = [];
-
-
+let leftMonsters = [];
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -20,12 +19,15 @@ function setup() {
         foods.push(createFood());
     }
 
+    for (let i = 0; i < 5; i++) {
+        leftMonsters.push(createLeftMonster());
+    }
 }
 
 const user = {
     x: undefined,
     y: undefined,
-    size: 50,
+    size: 25,
     fill: ('blue'),
 }
 
@@ -33,7 +35,7 @@ function createFood() {
     const newFood = {
         x: random(0, width),
         y: random(0, height),
-        size: random(10, 40),
+        size: random(5, 30),
         fill: {
             r: random(0, 255),
             g: random(0, 255),
@@ -43,6 +45,19 @@ function createFood() {
     return newFood;
 }
 
+function createLeftMonster() {
+    const newLeftMonster = {
+        x: 10,
+        y: random(0, height),
+        size: 30,
+        fill: ('black'),
+        velocity: {
+            x: random(1, 7),
+            y: random(-5, 5),
+        },
+    };
+    return newLeftMonster;
+}
 
 /**
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
@@ -57,6 +72,10 @@ function draw() {
     for (let food of foods) {
         checkOverlap(food);
         drawFood(food);
+    }
+
+    for (let leftMonster of leftMonsters) {
+        drawLeftMonster(leftMonster);
     }
 
 }
@@ -87,4 +106,12 @@ function checkOverlap(food) {
             foods.push(createFood());
         }
     }
+}
+
+function drawLeftMonster(leftMonster) {
+    push();
+    noStroke();
+    fill(leftMonster.fill);
+    ellipse(leftMonster.x, leftMonster.y, leftMonster.size);
+    pop();
 }
