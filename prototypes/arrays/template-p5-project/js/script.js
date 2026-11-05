@@ -29,7 +29,7 @@ function createTarget() {
         // Position and dimensions
         x: random(50, width - 50),
         y: -20,
-        size: random(25, 50),
+        size: random(35, 60),
         // color
         fill: ('red'),
         // movement
@@ -50,7 +50,6 @@ function addTarget() {
 
     // set the new timeout 
     setTimeout(addTarget, targetDelay);
-
 }
 
 /**
@@ -60,6 +59,7 @@ function draw() {
     background('lightgray');
     // draws and moves the target
     for (let target of targets) {
+        bounceTarget(target);
         moveTarget(target);
         drawTarget(target);
     }
@@ -70,6 +70,8 @@ function draw() {
  */
 function drawTarget(target) {
     push();
+    stroke('black');
+    strokeWeight(5);
     fill(target.fill);
     ellipse(target.x, target.y, target.size);
     pop();
@@ -80,4 +82,13 @@ function moveTarget(target) {
     target.y += target.velocity.y;
 }
 
+/**
+ * makes the target bounce off the canvas walls - keeps it from going outside the canvas 
+ * left and right
+ */
+function bounceTarget(target) {
+    if (target.x - (target.size / 2) < 0 || target.x + (target.size / 2) > width) {
+        target.velocity.x *= -1;
+    }
+}
 
