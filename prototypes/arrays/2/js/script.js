@@ -52,7 +52,7 @@ function createLeftMonster() {
         size: 30,
         fill: ('black'),
         velocity: {
-            x: random(1, 7),
+            x: random(1, 5),
             y: random(-5, 5),
         },
     };
@@ -75,6 +75,7 @@ function draw() {
     }
 
     for (let leftMonster of leftMonsters) {
+        moveLeftMonster(leftMonster);
         drawLeftMonster(leftMonster);
     }
 
@@ -108,10 +109,16 @@ function checkOverlap(food) {
     }
 }
 
+
 function drawLeftMonster(leftMonster) {
     push();
     noStroke();
     fill(leftMonster.fill);
     ellipse(leftMonster.x, leftMonster.y, leftMonster.size);
     pop();
+}
+
+function moveLeftMonster(leftMonster) {
+    leftMonster.x += leftMonster.velocity.x;
+    leftMonster.y += leftMonster.velocity.y;
 }
