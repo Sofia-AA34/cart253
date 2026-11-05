@@ -8,6 +8,8 @@
 
 let foods = [];
 let leftMonsters = [];
+let rightMonsters = [];
+
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -21,7 +23,9 @@ function setup() {
 
     for (let i = 0; i < 5; i++) {
         leftMonsters.push(createLeftMonster());
+        rightMonsters.push(createRightMonster());
     }
+
 }
 
 const user = {
@@ -59,6 +63,20 @@ function createLeftMonster() {
     return newLeftMonster;
 }
 
+function createRightMonster() {
+    const newRightMonster = {
+        x: 590,
+        y: random(0, height),
+        size: 30,
+        fill: ('black'),
+        velocity: {
+            x: random(-1, -5),
+            y: random(-5, 5),
+        },
+    };
+    return newRightMonster;
+}
+
 /**
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
@@ -77,6 +95,11 @@ function draw() {
     for (let leftMonster of leftMonsters) {
         moveLeftMonster(leftMonster);
         drawLeftMonster(leftMonster);
+    }
+
+    for (let rightMonster of rightMonsters) {
+        moveRightMonster(rightMonster);
+        drawRightMonster(rightMonster);
     }
 
 }
@@ -121,4 +144,17 @@ function drawLeftMonster(leftMonster) {
 function moveLeftMonster(leftMonster) {
     leftMonster.x += leftMonster.velocity.x;
     leftMonster.y += leftMonster.velocity.y;
+}
+
+function drawRightMonster(rightMonster) {
+    push();
+    noStroke();
+    fill(rightMonster.fill);
+    ellipse(rightMonster.x, rightMonster.y, rightMonster.size);
+    pop();
+}
+
+function moveRightMonster(rightMonster) {
+    rightMonster.x += rightMonster.velocity.x;
+    rightMonster.y += rightMonster.velocity.y;
 }
