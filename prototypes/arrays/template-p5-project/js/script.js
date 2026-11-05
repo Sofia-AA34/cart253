@@ -11,7 +11,7 @@
 let targets = [];
 
 // time between targets
-let targetDelay = 0.5 * 1000;
+let targetDelay = 0.7 * 1000;
 
 /**
  * creates the canvas and the target
@@ -27,15 +27,15 @@ function createTarget() {
     // create a target object with appropriate properties
     const target = {
         // Position and dimensions
-        x: random(0, width),
+        x: random(50, width - 50),
         y: -20,
         size: random(25, 50),
         // color
         fill: ('red'),
         // movement
         velocity: {
-            x: random(-5, 5),
-            y: random(3, 10),
+            x: random(-4, 5),
+            y: random(3, 8),
         }
     };
     return target;
