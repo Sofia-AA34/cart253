@@ -55,6 +55,7 @@ function draw() {
 
     createUser();
     for (let food of foods) {
+        checkOverlap(food);
         drawFood(food);
     }
 
@@ -74,4 +75,11 @@ function drawFood(food) {
     fill(food.fill.r, food.fill.g, food.fill.b);
     ellipse(food.x, food.y, food.size);
     pop();
+}
+
+function checkOverlap(food) {
+    const d = dist(user.x, user.y, food.x, food.y);
+    if (d < user.size / 2 + food.size) {
+        user.size += food.size;
+    }
 }
