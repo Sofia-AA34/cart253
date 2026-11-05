@@ -6,10 +6,11 @@
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
 
-"use strict";
 
 // Will create it with createTarget()
 let targets = [];
+let target = undefined;
+
 
 /**
  * creates the canvas and the target
@@ -17,20 +18,14 @@ let targets = [];
 function setup() {
     // creates the canvas 
     createCanvas(600, 400);
-}
-
-/**
- * Creates a target
- */
-function addTarget() {
-    //create and add a target
-    const target = createTarget();
+    target = createTarget();
     targets.push(target);
 }
 
 function createTarget() {
+
     // create a target object with appropriate properties
-    const target = {
+    const newTarget = {
         // Position and dimensions
         x: random(0, width),
         y: -20,
@@ -43,7 +38,7 @@ function createTarget() {
             y: random(3, 10),
         }
     };
-    return target;
+    return newTarget;
 }
 
 /**
@@ -51,6 +46,8 @@ function createTarget() {
 */
 function draw() {
     background('lightgray');
+
+
 
     // draws and moves the target
     for (let target of targets) {
