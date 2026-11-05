@@ -13,7 +13,7 @@ let harmlessGuys = [];
 
 // time between targets
 let targetDelay = 0.7 * 1000;
-let harmlessGuyDelay = 0.7 * 1000;
+let harmlessGuyDelay = 0.8 * 1000;
 
 /**
  * creates the canvas and the target
@@ -50,7 +50,7 @@ function createHarmlessGuy() {
         // Position and dimensions
         x: random(50, width - 50),
         y: -200,
-        size: random(40, 50),
+        size: random(30, 70),
         // color
         fill: ('yellow'),
         fills: {
@@ -181,7 +181,7 @@ function mouseClicked() {
 
     for (let harmlessGuy of harmlessGuys) {
         const d = dist(mouseX, mouseY, harmlessGuy.x, harmlessGuy.y);
-        const overlap = (d < harmlessGuy.size * 1.5)
+        const overlap = (d < harmlessGuy.size / 2)
         if (overlap) {
             harmlessGuy.fill = harmlessGuy.fills.dead;
             harmlessGuy.velocity.x = harmlessGuy.velocity.x * 0;
