@@ -9,6 +9,8 @@
 let foods = [];
 let leftMonsters = [];
 let rightMonsters = [];
+let leftMonsterDelay = 0.8 * 1000;
+let rightMonsterDelay = 0.8 * 1000;
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -16,7 +18,7 @@ let rightMonsters = [];
 function setup() {
     createCanvas(600, 600);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         foods.push(createFood());
     }
 
@@ -25,6 +27,8 @@ function setup() {
         rightMonsters.push(createRightMonster());
     }
 
+    setTimeout(addLeftMonster, leftMonsterDelay);
+    setTimeout(addRightMonster, rightMonsterDelay);
 }
 
 const user = {
@@ -48,6 +52,12 @@ function createFood() {
     return newFood;
 }
 
+function addLeftMonster() {
+    const leftMonster = createLeftMonster();
+    leftMonsters.push(leftMonster);
+    setTimeout(addLeftMonster, leftMonsterDelay);
+}
+
 function createLeftMonster() {
     const newLeftMonster = {
         x: -100,
@@ -60,6 +70,12 @@ function createLeftMonster() {
         },
     };
     return newLeftMonster;
+}
+
+function addRightMonster() {
+    const rightMonster = createRightMonster();
+    rightMonsters.push(rightMonster);
+    setTimeout(addRightMonster, rightMonsterDelay);
 }
 
 function createRightMonster() {
