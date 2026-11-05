@@ -98,7 +98,7 @@ function draw() {
     }
 
     for (let rightMonster of rightMonsters) {
-        checkTouched(rightMonster);
+        checkEaten(rightMonster);
         moveRightMonster(rightMonster);
         drawRightMonster(rightMonster);
     }
@@ -170,12 +170,12 @@ function moveRightMonster(rightMonster) {
     rightMonster.y += rightMonster.velocity.y;
 }
 
-function checkTouched(rightMonster) {
+function checkEaten(rightMonster) {
     for (let rightMonster of rightMonsters) {
         const d = dist(user.x, user.y, rightMonster.x, rightMonster.y);
         if (d < user.size / 2 + rightMonster.size) {
             const index = rightMonsters.indexOf(rightMonster);
-            user.size -= righttMonster.size;
+            user.size -= rightMonster.size;
         }
     }
 }
