@@ -10,6 +10,8 @@
 // Will create it with createTarget()
 let targets = [];
 let harmlessGuys = [];
+let startButton;
+let stopButton;
 
 // time between targets
 let targetDelay = 0.7 * 1000;
@@ -108,9 +110,6 @@ function draw() {
         moveTarget(target);
         drawTarget(target);
     }
-
-
-
 }
 
 /**
