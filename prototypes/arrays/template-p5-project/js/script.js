@@ -1,24 +1,28 @@
 /**
- * Title of Project
- * Author Name
+ * Pew Pew Pew 
+ * Sofia Allashukurova 
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * You are an agent of a top secret security organization. Your goal is to shoot the 
+ * bad guys, the ones that look like running targets. Be carfeful not to harm the yellow 
+ * civilians. Use your mouse to shoot! 
  */
+
 "use strict";
 
-// Will create it with createTarget()
+// The targets - red and white ellipses
 let targets = [];
-let harmlessGuys = [];
-let startButton;
-let stopButton;
 
-// time between targets
+// The civilians (harmless guys) - yellow ellipses 
+let harmlessGuys = [];
+
+// Time between the targets 
 let targetDelay = 0.7 * 1000;
-let harmlessGuyDelay = 0.8 * 1000;
+
+// Time between the civilians
+let harmlessGuyDelay = 0.5 * 1000; // so there are more civilians than targets
 
 /**
- * creates the canvas and the target
+ * Creates the canvas and adds the targets and civilians according to the the setTimeout
 */
 function setup() {
     // creates the canvas 
@@ -28,11 +32,25 @@ function setup() {
     setTimeout(addHarmlessGuy, harmlessGuyDelay);
 }
 
+/**
+ * Adds a target to the array
+ */
+function addTarget() {
+    // Create and add a target 
+    const target = createTarget();
+    targets.push(target);
+
+    // set the new timeout 
+    setTimeout(addTarget, targetDelay);
+}
+
+/**
+ * Creates and returns a randomized target that will start at the top of the canvas and move down 
+ */
 function createTarget() {
-    // create a target object with appropriate properties
     const target = {
-        // Position and dimensions
-        x: random(50, width - 50),
+        // Position and dimension
+        x: random(50, width - 50), // not too close to the edges of the canavs (right and left) 
         y: -20,
         size: random(35, 60),
         // color
@@ -46,12 +64,26 @@ function createTarget() {
     return target;
 }
 
+/**
+ * Adds a civilian to the array
+ */
+function addHarmlessGuy() {
+    // create and add a civilian 
+    const harmlessGuy = createHarmlessGuy();
+    harmlessGuys.push(harmlessGuy);
+
+    // set the new timeout 
+    setTimeout(addHarmlessGuy, harmlessGuyDelay);
+}
+
+/**
+ * Creates and returns a randomized civilian that will start at the top of the canvas and move down 
+ */
 function createHarmlessGuy() {
-    // create a target object with appropriate properties
     const harmlessGuy = {
-        // Position and dimensions
+        // Position and dimension
         x: random(50, width - 50),
-        y: -200,
+        y: -200, // come a bit later than the targets 
         size: random(30, 70),
         // color
         fill: ('yellow'),
@@ -69,31 +101,11 @@ function createHarmlessGuy() {
 }
 
 /**
- * adds a bug to the array
- */
-function addTarget() {
-    const target = createTarget();
-    targets.push(target);
-
-    // set the new timeout 
-    setTimeout(addTarget, targetDelay);
-}
-
-/**
- * adds a bug to the array
- */
-function addHarmlessGuy() {
-    const harmlessGuy = createHarmlessGuy();
-    harmlessGuys.push(harmlessGuy);
-
-    setTimeout(addHarmlessGuy, harmlessGuyDelay);
-}
-
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draw and move the targets and civilians
+ * Make them bounce off the edges of the canvas (right and left)
 */
 function draw() {
-    background('lightgray');
+    background("#cddff3");
 
     // set the cursor to crosshairs: +
     cursor(CROSS);
@@ -104,7 +116,6 @@ function draw() {
         drawHarmlessGuy(harmlessGuy);
     }
 
-    // draws and moves the target
     for (let target of targets) {
         bounceTarget(target);
         moveTarget(target);
@@ -123,6 +134,7 @@ function drawTarget(target) {
     ellipse(target.x, target.y, target.size);
     pop();
 
+    // white ellispe in the middle of the target - makes it look more accurate 
     push();
     noStroke();
     fill('white');
@@ -130,13 +142,16 @@ function drawTarget(target) {
     pop();
 }
 
+/**
+ * Moves a target according to its velocity 
+ */
 function moveTarget(target) {
     target.x += target.velocity.x;
     target.y += target.velocity.y;
 }
 
 /**
- * makes the target bounce off the canvas walls - keeps it from going outside the canvas 
+ * Makes a target bounce off the canvas walls - keeps it from going outside the canvas 
  * left and right
  */
 function bounceTarget(target) {
@@ -146,7 +161,7 @@ function bounceTarget(target) {
 }
 
 /**
- * Draws a target according to its properties
+ * Draws a civilian according to its properties
  */
 function drawHarmlessGuy(harmlessGuy) {
     push();
@@ -156,13 +171,16 @@ function drawHarmlessGuy(harmlessGuy) {
     pop();
 }
 
+/**
+ * Moves a civilian according to its velocity 
+ */
 function moveHarmlessGuy(harmlessGuy) {
     harmlessGuy.x += harmlessGuy.velocity.x;
     harmlessGuy.y += harmlessGuy.velocity.y;
 }
 
 /**
- * makes the target bounce off the canvas walls - keeps it from going outside the canvas 
+ * Makes a civilian bounce off the canvas walls - keeps it from going outside the canvas 
  * left and right
  */
 function bounceHarmlessGuy(harmlessGuy) {
@@ -171,21 +189,28 @@ function bounceHarmlessGuy(harmlessGuy) {
     }
 }
 
+/**
+ * Removes targets if user clicks on them 
+ * Stops and turns red the civilians user has clicked on
+ */
 function mouseClicked() {
+    // mouse clicked for the targets 
     for (let target of targets) {
         const d = dist(mouseX, mouseY, target.x, target.y);
+        // checks if the user clicks close enough to the target - since it is very fast 
         if (d < target.size * 1.5) {
+            // removes the clicked target 
             const index = targets.indexOf(target);
             targets.splice(index, 1);
         }
     }
-
+    // mouse clicked for the civilians 
     for (let harmlessGuy of harmlessGuys) {
         const d = dist(mouseX, mouseY, harmlessGuy.x, harmlessGuy.y);
         const overlap = (d < harmlessGuy.size / 2)
         if (overlap) {
-            harmlessGuy.fill = harmlessGuy.fills.dead;
-            harmlessGuy.velocity.x = harmlessGuy.velocity.x * 0;
+            harmlessGuy.fill = harmlessGuy.fills.dead; // turns red 
+            harmlessGuy.velocity.x = harmlessGuy.velocity.x * 0; // stops the movement 
             harmlessGuy.velocity.y = harmlessGuy.velocity.y * 0;
         }
     }
