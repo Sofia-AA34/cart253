@@ -70,4 +70,6 @@ The only difficulty I had with all three of my prototypes was the speed. When I 
 
 <img style="width: 60%; margin: auto;" src="images/SS_events2.png">
 
+## Thursday, November 5, 2026
+
 
