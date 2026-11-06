@@ -70,4 +70,19 @@ The only difficulty I had with all three of my prototypes was the speed. When I 
 
 <img style="width: 60%; margin: auto;" src="images/SS_events2.png">
 
+## Thursday, November 5, 2026
+
+Working with arrays was both rewarding, and extremely frustrating. At first, I genuinely couldn’t figure out where I had gone wrong because my arrays simply weren’t showing up and the console didn't show any errors. “Pew, Pew, Pew”, my first prototype, was the one that took me the longest to complete, even though it wasn’t particularly complicated for that very reason. However, it was also the prototype that helped me understand how arrays work and gave me more ideas about how I could implement them in my other prototypes. 
+
+In the end, I realised that my mistake was that I wasn’t calling the functions or variables I had created, specifically “AddSomething”. Arrays were really useful for creating many elements with only a few lines of code and they allowed me to experiment with things I had wanted to try for a while, like making users escape an infinite number of obstacles. 
+
+For “Under the Microscope”, I wanted to make a game similar to “Sliher.io “, but where the user grows in size instead of length. It was a bit confusing to check for overlaps, make the user grow, make the food disappear and create a new piece of food to replace it. In the end, I think it worked out quite nicely once I added constraints. I really wanted to create something that was interactive but relaxing at the same time, like a game where you could just shut your brain off.
+
+For “Be Bird, Be Free”, I used elements similar to those in “Dash and Dodge” because I noticed that the double jumps created the illusion of the user flying. At first, I wasn’t sure which direction I should take: create multiple states once the user reached the edge of the canvas, or make the canvas extremely long. However, keeping the user’s x coordinate the same was by far the best and easiest solution. Making the arrays of obstacles move towards the user created the illusion of a never ending corridor. The only thing I still don't like is that the user is affected by gravity from the very beginning. I wasn't sure how to delay gravity, or what kind of key, constraint or condition I should use to make the user start falling only after they press the space bar for the first time. 
+
+It was a really cool experience, to begin understanding the structure of the games I used to play so often and to create something similar myself. 
+
+<img style="width: 60%; margin: auto;" src="images/SS_arrays.png">
+
+
 
