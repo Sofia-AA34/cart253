@@ -1,5 +1,5 @@
 /**
- * Be Free. Be Bird
+ * Be Bird, Be Free
  * Sofia Allashukurova
  * 
  * Have you ever wished that you could fly? Test your ability 
