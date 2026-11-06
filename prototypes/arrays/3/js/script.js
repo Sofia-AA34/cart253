@@ -10,15 +10,15 @@
 
 let obstacles = [];
 
+const obstacleDelay = 1 * 1000;
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
     createCanvas(600, 400);
 
-    for (let i = 0; i < 2; i++) {
-        obstacles.push(createObstacle());
-    }
+    setTimeout(addObstacle, obstacleDelay);
 }
 
 const user = {
@@ -31,6 +31,13 @@ const user = {
     },
     gravity: 0.5,
     gravitySpeed: 0,
+}
+
+function addObstacle() {
+    const obstacle = createObstacle();
+    obstacles.push(obstacle);
+
+    setTimeout(addObstacle, obstacleDelay);
 }
 
 function createObstacle() {
