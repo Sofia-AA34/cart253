@@ -50,3 +50,9 @@ function forceGravity() {
     user.gravitySpeed += user.gravity;
     user.y += user.velocity.y + user.gravitySpeed;
 }
+
+function keyPressed() {
+    if (keyCode === 32) {
+        user.gravitySpeed = -7;
+    }
+}
