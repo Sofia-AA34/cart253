@@ -40,6 +40,9 @@ function createObstacle() {
         width: random(40, 150),
         height: 40,
         fill: ('green'),
+        velocity: {
+            x: -5,
+        }
     };
     return newObstacle;
 }
@@ -52,6 +55,7 @@ function draw() {
     background('lightblue');
 
     for (let obstacle of obstacles) {
+        moveObstacle(obstacle);
         drawObstacle(obstacle);
     };
 
@@ -84,4 +88,8 @@ function drawObstacle(obstacle) {
     fill(obstacle.fill);
     rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
     pop();
+}
+
+function moveObstacle(obstacle) {
+    obstacle.x += obstacle.velocity.x;
 }
