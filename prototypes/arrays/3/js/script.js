@@ -8,11 +8,17 @@
 
 "use strict";
 
+let obstacles = [];
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
     createCanvas(600, 400);
+
+    for (let i = 0; i < 2; i++) {
+        obstacles.push(createObstacle());
+    }
 }
 
 const user = {
@@ -27,12 +33,27 @@ const user = {
     gravitySpeed: 0,
 }
 
+function createObstacle() {
+    const newObstacle = {
+        x: 400,
+        y: random(0, 360),
+        width: random(40, 150),
+        height: 40,
+        fill: ('green'),
+    };
+    return newObstacle;
+}
+
 
 /**
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
     background('lightblue');
+
+    for (let obstacle of obstacles) {
+        drawObstacle(obstacle);
+    };
 
     forceGravity();
     createUser();
@@ -55,4 +76,12 @@ function keyPressed() {
     if (keyCode === 32) {
         user.gravitySpeed = -7;
     }
+}
+
+function drawObstacle(obstacle) {
+    push();
+    noStroke();
+    fill(obstacle.fill);
+    rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+    pop();
 }
