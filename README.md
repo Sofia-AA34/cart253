@@ -160,6 +160,36 @@ This website is designed to collect and showcase my prototyping work in CART253.
 
 [Reflective Journal](journal.md)
 
+## Prototyping: Arrays
+
+### Pew, Pew, Pew
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Pew_Pew_Pew.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/arrays/Pew_Pew_Pew/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/arrays/Pew_Pew_Pew)
+
+### Under the Microscope
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Under_the_microscope.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/arrays/Under_the_microscope/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/arrays/Under_the_microscope)
+
+### Be Bird, Be Free
+
+<img style="width: 60%; margin: auto;" src="images/Screenshot_Be_Bird_Be_Free.png">
+
+[View online](https://sofia-aa34.github.io/cart253/prototypes/arrays/Be_Bird_Be_Free/)
+
+[View code](https://github.com/Sofia-AA34/cart253/tree/main/prototypes/arrays/Be_Bird_Be_Free)
+
+## Journal Entry 
+
+[Reflective Journal](journal.md)
+
 
 
 
