@@ -20,6 +20,11 @@ const user = {
     y: 200,
     size: 60,
     fill: ('orange'),
+    velocity: {
+        y: 0,
+    },
+    gravity: 0.5,
+    gravitySpeed: 0,
 }
 
 
@@ -29,6 +34,7 @@ const user = {
 function draw() {
     background('lightblue');
 
+    forceGravity();
     createUser();
 }
 
@@ -38,4 +44,9 @@ function createUser() {
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
     pop();
+}
+
+function forceGravity() {
+    user.gravitySpeed += user.gravity;
+    user.y += user.velocity.y + user.gravitySpeed;
 }
