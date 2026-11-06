@@ -10,7 +10,7 @@
 
 let obstacles = [];
 
-const obstacleDelay = 1 * 1000;
+const obstacleDelay = 0.5 * 1000;
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -25,7 +25,7 @@ function setup() {
 const user = {
     x: 100,
     y: 200,
-    size: 60,
+    size: 50,
     fill: ('orange'),
     velocity: {
         x: 0,
@@ -108,6 +108,7 @@ function moveObstacle(obstacle) {
 function checkTouch(obstacle) {
     if (
         user.x + user.size / 2 > obstacle.x &&
+        user.x - user.size / 2 < obstacle.x + obstacle.width &&
         user.y + user.size / 2 > obstacle.y &&
         user.y - user.size / 2 < obstacle.y + obstacle.height) {
         noLoop();
