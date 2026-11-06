@@ -18,6 +18,7 @@ const obstacleDelay = 1 * 1000;
 function setup() {
     createCanvas(600, 400);
 
+
     setTimeout(addObstacle, obstacleDelay);
 }
 
@@ -27,6 +28,7 @@ const user = {
     size: 60,
     fill: ('orange'),
     velocity: {
+        x: 0,
         y: 0,
     },
     gravity: 0.5,
@@ -62,6 +64,7 @@ function draw() {
     background('lightblue');
 
     for (let obstacle of obstacles) {
+        checkTouch(obstacle);
         moveObstacle(obstacle);
         drawObstacle(obstacle);
     };
@@ -80,6 +83,7 @@ function createUser() {
 
 function forceGravity() {
     user.gravitySpeed += user.gravity;
+    user.x += user.velocity.x;
     user.y += user.velocity.y + user.gravitySpeed;
 }
 
@@ -99,4 +103,13 @@ function drawObstacle(obstacle) {
 
 function moveObstacle(obstacle) {
     obstacle.x += obstacle.velocity.x;
+}
+
+function checkTouch(obstacle) {
+    if (
+        user.x + user.size / 2 > obstacle.x &&
+        user.y + user.size / 2 > obstacle.y &&
+        user.y - user.size / 2 < obstacle.y + obstacle.height) {
+        noLoop();
+    }
 }
