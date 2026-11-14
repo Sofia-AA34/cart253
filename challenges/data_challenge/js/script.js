@@ -1,6 +1,6 @@
 /**
  * Terrible New Car
- * Pippin Barr
+ * Sofia Allashukurova
  * 
  * A program to generate new car model names using dinosaurs.
  * 
@@ -26,6 +26,7 @@ let dinosaurs = [];
  * Load the car and dinosaur data
  */
 async function preload() {
+    // loads the car and dinosaur data 
     carData = await loadJSON("assets/data/cars.json");
     dinosaurData = await loadJSON("assets/data/dinosaurs.json");
 }
@@ -57,7 +58,10 @@ function draw() {
  * Generate a new car name
  */
 function mousePressed() {
+    // random car manufacturer
     let car = random(carData.cars);
+    // random dinosaur
     let dinosaur = random(dinosaurData.dinosaurs);
+    // creates a car name with a random car manufacturer and a random dinosaur
     carName = [car] + [dinosaur];
 }
