@@ -12,6 +12,7 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
+    createCanvas(1400, 900);
 
 }
 
@@ -20,5 +21,6 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background("pink");
 
 }
