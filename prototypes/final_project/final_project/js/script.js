@@ -10,6 +10,7 @@
 
 const traveler = {
     fill: ('black'),
+    // position
     x: 200,
     y: 100,
     size: 100,
