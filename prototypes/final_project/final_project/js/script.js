@@ -23,6 +23,14 @@ const traveler = {
     gravitySpeed: 0,
 }
 
+const ground = {
+    fill: ('darkgreen'),
+    x: 0,
+    y: 700,
+    width: 1400,
+    height: 200,
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -41,6 +49,8 @@ function draw() {
     background('pink');
 
     forceGravity();
+    drawGround();
+
     createTraveler();
 
     // move the traveler left and right
@@ -87,4 +97,13 @@ function keyPressed() {
 // resume the draw loop when the user clicks
 function mouseClicked() {
     loop();
+}
+
+// draws the ground the traveler will land on
+function drawGround() {
+    push();
+    noStroke();
+    fill(ground.fill);
+    rect(ground.x, ground.y, ground.width, ground.height);
+    pop();
 }
