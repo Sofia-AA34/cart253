@@ -12,7 +12,14 @@ const traveler = {
     fill: ('black'),
     x: 100,
     y: 100,
-    size: 100
+    size: 100,
+    // movement - does not move at first
+    velocity: {
+        x: 0,
+        y: 0,
+    },
+    gravity: 0.5,
+    gravitySpeed: 0,
 }
 
 /**
@@ -30,10 +37,12 @@ function setup() {
 function draw() {
     background("pink");
 
+    forceGravity();
     createTraveler();
 
 }
 
+// user 
 function createTraveler() {
     push();
     stroke("white");
@@ -41,4 +50,12 @@ function createTraveler() {
     fill(traveler.fill);
     ellipse(traveler.x, traveler.y, traveler.size);
     pop();
+}
+
+// implements gravity on user (traveler)
+function forceGravity() {
+    traveler.gravitySpeed += traveler.gravity;
+    traveler.x += traveler.velocity.x;
+    traveler.y += traveler.velocity.y + traveler.gravitySpeed;
+
 }
