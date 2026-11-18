@@ -8,9 +8,6 @@
 
 "use strict";
 
-// turn off the draw loop
-noLoop();
-
 const traveler = {
     fill: ('black'),
     // position
@@ -31,6 +28,9 @@ const traveler = {
 */
 function setup() {
     createCanvas(1400, 900);
+
+    // turn off the draw loop
+    noLoop();
 }
 
 
