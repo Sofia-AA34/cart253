@@ -8,6 +8,13 @@
 
 "use strict";
 
+const traveler = {
+    fill: ('black'),
+    x: 100,
+    y: 100,
+    size: 100
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -23,4 +30,15 @@ function setup() {
 function draw() {
     background("pink");
 
+    createTraveler();
+
+}
+
+function createTraveler() {
+    push();
+    stroke("white");
+    strokeWeight(5);
+    fill(traveler.fill);
+    ellipse(traveler.x, traveler.y, traveler.size);
+    pop();
 }
