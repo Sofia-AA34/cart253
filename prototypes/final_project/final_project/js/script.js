@@ -45,6 +45,10 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW)) {
         traveler.x += 3;
     }
+    // to the left
+    if (keyIsDown(LEFT_ARROW)) {
+        traveler.x -= 3;
+    }
 
 }
 
