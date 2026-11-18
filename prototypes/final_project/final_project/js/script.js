@@ -49,6 +49,7 @@ function draw() {
     background('pink');
 
     forceGravity();
+    forceLand();
     drawGround();
 
     createTraveler();
@@ -107,3 +108,12 @@ function drawGround() {
     rect(ground.x, ground.y, ground.width, ground.height);
     pop();
 }
+
+function forceLand() {
+    const land = height - ground.height;
+    if (traveler.y + traveler.size / 2 > land) {
+        traveler.y = land = traveler.size / 2;
+    }
+}
+
+
