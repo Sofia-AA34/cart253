@@ -10,7 +10,7 @@
 
 const traveler = {
     fill: ('black'),
-    x: 100,
+    x: 200,
     y: 100,
     size: 100,
     // movement - does not move at first
@@ -27,7 +27,6 @@ const traveler = {
 */
 function setup() {
     createCanvas(1400, 900);
-
 }
 
 
@@ -35,10 +34,16 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background("pink");
+    background('pink');
 
     forceGravity();
     createTraveler();
+
+    // move the traveler left and right
+    // right
+    if (keyIsDown(RIGHT_ARROW)) {
+        traveler.x += 3;
+    }
 
 }
 
