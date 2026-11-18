@@ -8,6 +8,9 @@
 
 "use strict";
 
+// turn off the draw loop
+noLoop();
+
 const traveler = {
     fill: ('black'),
     // position
@@ -79,4 +82,9 @@ function keyPressed() {
     if (keyCode === 40) {
         traveler.gravitySpeed = 5;
     }
+}
+
+// resume the draw loop when the user clicks
+function mouseClicked() {
+    loop();
 }
