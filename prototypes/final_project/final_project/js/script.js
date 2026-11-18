@@ -52,10 +52,21 @@ function createTraveler() {
     pop();
 }
 
-// implements gravity on user (traveler)
+// implements gravity on the traveler (user)
 function forceGravity() {
     traveler.gravitySpeed += traveler.gravity;
     traveler.x += traveler.velocity.x;
     traveler.y += traveler.velocity.y + traveler.gravitySpeed;
+}
 
+// makes the traveler move with the keyboards arrows
+function keyPressed() {
+    // arrow up
+    if (keyCode === 38) {
+        traveler.gravitySpeed = -10;
+    }
+    // arrow down
+    if (keyCode === 40) {
+        traveler.gravitySpeed = 5;
+    }
 }
