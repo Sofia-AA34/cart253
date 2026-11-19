@@ -11,8 +11,8 @@
 const traveler = {
     fill: ('black'),
     // position
-    x: 200,
-    y: 200,
+    x: 50,
+    y: 700,
     size: 100,
     // movement - does not move at first
     velocity: {
@@ -39,6 +39,21 @@ const wallCeilling = {
     height: 100,
 }
 
+const block1 = {
+    fill: ('black'),
+    x: 0,
+    y: 540,
+    width: 200,
+    height: 50,
+}
+
+const block2 = {
+    x: 350,
+    y: 400,
+    width: 50,
+    height: 300,
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -55,6 +70,9 @@ function setup() {
 */
 function draw() {
     background("#BF9373");
+
+    createBlock(block1);
+    createBlock(block2);
 
     forceGravity();
     forceLand();
@@ -128,6 +146,19 @@ function forceLand() {
     if (traveler.y + traveler.size / 2 >= land) {
         traveler.y = land - traveler.size / 2;
     }
+}
+
+function createBlock(block) {
+    push();
+    fill(block.fill);
+    rect(block.x, block.y, block.width, block.height);
+    pop();
+
+    // x of the blocks (left side)
+    if (traveler.x + traveler.size / 2 >= block.x)
+        traveler.gravitySpeed *= -1;
+
+    else { traveler.gravitySpeed * -1 }
 }
 
 
