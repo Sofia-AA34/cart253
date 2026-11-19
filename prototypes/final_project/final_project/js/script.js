@@ -24,7 +24,7 @@ const traveler = {
 }
 
 const ground = {
-    fill: ('darkgreen'),
+    fill: ("#2B1700"),
     x: 0,
     y: 700,
     width: 1400,
@@ -46,7 +46,7 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background('pink');
+    background("#BF9373");
 
     forceGravity();
     forceLand();
@@ -116,5 +116,7 @@ function forceLand() {
         traveler.y = land - traveler.size / 2;
     }
 }
+
+
 
 
