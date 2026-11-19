@@ -12,7 +12,7 @@ const traveler = {
     fill: ('black'),
     // position
     x: 200,
-    y: 100,
+    y: 200,
     size: 100,
     // movement - does not move at first
     velocity: {
@@ -23,12 +23,20 @@ const traveler = {
     gravitySpeed: 0,
 }
 
-const ground = {
+const wallGround = {
     fill: ("#2B1700"),
     x: 0,
     y: 700,
     width: 1400,
     height: 200,
+}
+
+const wallCeilling = {
+    fill: ("#0e0700"),
+    x: 0,
+    y: 0,
+    width: 1400,
+    height: 100,
 }
 
 /**
@@ -51,7 +59,9 @@ function draw() {
     forceGravity();
     forceLand();
 
-    drawGround();
+    // walls - draw ground and ceiling
+    drawWall(wallGround);
+    drawWall(wallCeilling);
 
     createTraveler();
 
@@ -64,7 +74,6 @@ function draw() {
     if (keyIsDown(LEFT_ARROW)) {
         traveler.x -= 3;
     }
-
 }
 
 // user 
@@ -75,6 +84,10 @@ function createTraveler() {
     fill(traveler.fill);
     ellipse(traveler.x, traveler.y, traveler.size);
     pop();
+
+    // constrain the y of the traveler for the ceilling
+    if (traveler.y - (traveler.size / 2) < (wallCeilling.y + wallCeilling.height))
+        traveler.gravitySpeed *= -1;
 }
 
 // implements gravity on the traveler (user)
@@ -102,20 +115,24 @@ function mouseClicked() {
 }
 
 // draws the ground the traveler will land on
-function drawGround() {
+function drawWall(wall) {
     push();
     noStroke();
-    fill(ground.fill);
-    rect(ground.x, ground.y, ground.width, ground.height);
+    fill(wall.fill);
+    rect(wall.x, wall.y, wall.width, wall.height);
     pop();
 }
 
 function forceLand() {
-    const land = height - ground.height;
+    const land = (height - wallGround.height)
     if (traveler.y + traveler.size / 2 >= land) {
         traveler.y = land - traveler.size / 2;
     }
 }
+
+
+
+
 
 
 
