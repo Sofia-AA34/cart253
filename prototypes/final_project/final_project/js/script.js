@@ -50,6 +50,7 @@ function draw() {
 
     forceGravity();
     forceLand();
+
     drawGround();
 
     createTraveler();
@@ -111,8 +112,8 @@ function drawGround() {
 
 function forceLand() {
     const land = height - ground.height;
-    if (traveler.y + traveler.size / 2 > land) {
-        traveler.y = land = traveler.size / 2;
+    if (traveler.y + traveler.size / 2 >= land) {
+        traveler.y = land - traveler.size / 2;
     }
 }
 
