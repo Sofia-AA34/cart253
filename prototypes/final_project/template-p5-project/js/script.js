@@ -24,7 +24,7 @@ const traveler = {
 }
 
 const wallGround = {
-    fill: ("#2B1700"),
+    fill: ("#2d2114"),
     x: 0,
     y: 700,
     width: 1400,
@@ -32,27 +32,28 @@ const wallGround = {
 }
 
 const wallCeilling = {
-    fill: ("#0e0700"),
+    fill: ("#000000"),
     x: 0,
     y: 0,
     width: 1400,
     height: 100,
 }
 
-const block1 = {
-    fill: ('black'),
-    x: 0,
-    y: 540,
+const lava1 = {
+    fill: ("#d4250b"),
+    x: 200,
+    y: 700,
     width: 200,
-    height: 50,
-}
-
-const block2 = {
-    x: 350,
-    y: 400,
-    width: 50,
     height: 300,
 }
+
+// const block1 = {
+//     fill: ("#000000"),
+//     x: 150,
+//     y: 500,
+//     width: 50,
+//     height: 200,
+// }
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -69,17 +70,20 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background("#BF9373");
-
-    createBlock(block1);
-    createBlock(block2);
+    background("#937d6e");
 
     forceGravity();
     forceLand();
 
+    // createBlock(block1);
+
+
     // walls - draw ground and ceiling
     drawWall(wallGround);
     drawWall(wallCeilling);
+
+    // lava 
+    createLava(lava1);
 
     createTraveler();
 
@@ -147,6 +151,22 @@ function forceLand() {
         traveler.y = land - traveler.size / 2;
     }
 }
+
+function createLava(lava) {
+    push();
+    noStroke();
+    fill(lava.fill);
+    rect(lava.x, lava.y, lava.width, lava.height);
+    pop();
+}
+
+// function createBlock(block) {
+//     push();
+//     fill(block);
+//     rect(block.x, block.y, block.width, block.height);
+//     pop();
+// }
+
 
 
 
