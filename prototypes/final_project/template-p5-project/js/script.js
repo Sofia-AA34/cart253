@@ -73,13 +73,13 @@ const lava4 = {
     height: 120,
 }
 
-// const block1 = {
-//     fill: ("#000000"),
-//     x: 150,
-//     y: 500,
-//     width: 50,
-//     height: 200,
-// }
+const block1 = {
+    fill: ("#d1fb3b"),
+    x: 350,
+    y: 500,
+    width: 100,
+    height: 30,
+}
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
@@ -107,6 +107,8 @@ function draw() {
         createLava(lava2);
         createLava(lava3);
         createLava(lava4);
+
+        createBlock(block1);
     }
 
     if (state === "deadLavaLevel") {
@@ -115,8 +117,6 @@ function draw() {
 
     forceGravity();
     forceLand();
-
-    // createBlock(block1);
 
     createTraveler();
 
@@ -217,12 +217,13 @@ function deadLavaLevel() {
 }
 
 
-// function createBlock(block) {
-//     push();
-//     fill(block);
-//     rect(block.x, block.y, block.width, block.height);
-//     pop();
-// }
+function createBlock(block) {
+    push();
+    noStroke()
+    fill(block.fill);
+    rect(block.x, block.y, block.width, block.height);
+    pop();
+}
 
 
 
