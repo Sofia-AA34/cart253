@@ -8,6 +8,8 @@
 
 "use strict";
 
+let state = "lavaLevel";
+
 const traveler = {
     fill: ('black'),
     // position
@@ -94,23 +96,27 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background("#937d6e");
+
+    if (state === "lavaLevel" || state === "deadLavaLevel") {
+        background("#937d6e");
+        // walls - draw ground and ceiling
+        drawWall(wallGround);
+        drawWall(wallCeilling);
+        // lava 
+        createLava(lava1);
+        createLava(lava2);
+        createLava(lava3);
+        createLava(lava4);
+    }
+
+    if (state === "deadLavaLevel") {
+        deadLavaLevel();
+    }
 
     forceGravity();
     forceLand();
 
     // createBlock(block1);
-
-
-    // walls - draw ground and ceiling
-    drawWall(wallGround);
-    drawWall(wallCeilling);
-
-    // lava 
-    createLava(lava1);
-    createLava(lava2);
-    createLava(lava3);
-    createLava(lava4);
 
     createTraveler();
 
@@ -185,7 +191,31 @@ function createLava(lava) {
     fill(lava.fill);
     rect(lava.x, lava.y, lava.width, lava.height);
     pop();
+
+    // check if the traveler touches the lava blocks
+    if (
+        state === "lavaLevel" &&
+        traveler.x + traveler.size / 2 >= lava.x && // left side
+        traveler.x - traveler.size / 2 <= lava.x + lava.width && // right side
+        traveler.y + traveler.size / 2 >= lava.y && // top
+        traveler.y - traveler.size / 2 <= lava.y + lava.y + lava.height) { // bottom
+        deadLavaLevel();
+    }
 }
+
+function deadLavaLevel() {
+    state = "deadLavaLevel";
+    traveler.fill = "#ff2200"; // changes to red
+    traveler.x = random(traveler.x - 5, traveler.x + 5); // makes the traveler shake
+
+    setTimeout(function () {
+        traveler.x = 50; // original spot
+        traveler.y = 700;
+        traveler.fill = 'black' // fill turns back to black
+        state = "lavaLevel"; // back to the lavaLevel / alive state again
+    }, 1500); // ... 1.5s later 
+}
+
 
 // function createBlock(block) {
 //     push();
