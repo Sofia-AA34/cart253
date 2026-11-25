@@ -223,6 +223,15 @@ function createBlock(block) {
     fill(block.fill);
     rect(block.x, block.y, block.width, block.height);
     pop();
+
+    if (traveler.x + traveler.size / 2 >= block.x && // left side
+        traveler.x - traveler.size / 2 <= block.x + block.width && // right side
+        traveler.y + traveler.size / 2 >= block.y && // top
+        traveler.y - traveler.size / 2 <= block.y + block.y + block.height) { // bottom side
+
+        traveler.y = block.y - traveler.size / 2
+        traveler.gravitySpeed = 0;
+    }
 }
 
 
