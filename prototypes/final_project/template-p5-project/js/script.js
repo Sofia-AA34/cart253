@@ -148,18 +148,6 @@ function forceLand() {
     }
 }
 
-function createBlock(block) {
-    push();
-    fill(block.fill);
-    rect(block.x, block.y, block.width, block.height);
-    pop();
-
-    // x of the blocks (left side)
-    if (traveler.x + traveler.size / 2 >= block.x)
-        traveler.gravitySpeed *= -1;
-
-    else { traveler.gravitySpeed * -1 }
-}
 
 
 
