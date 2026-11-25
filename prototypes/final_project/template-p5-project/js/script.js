@@ -47,6 +47,30 @@ const lava1 = {
     height: 300,
 }
 
+const lava2 = {
+    fill: ("#d4250b"),
+    x: 600,
+    y: 700,
+    width: 150,
+    height: 100,
+}
+
+const lava3 = {
+    fill: ("#d4250b"),
+    x: 900,
+    y: 700,
+    width: 80,
+    height: 150,
+}
+
+const lava4 = {
+    fill: ("#d4250b"),
+    x: 1200,
+    y: 700,
+    width: 150,
+    height: 120,
+}
+
 // const block1 = {
 //     fill: ("#000000"),
 //     x: 150,
@@ -84,6 +108,9 @@ function draw() {
 
     // lava 
     createLava(lava1);
+    createLava(lava2);
+    createLava(lava3);
+    createLava(lava4);
 
     createTraveler();
 
