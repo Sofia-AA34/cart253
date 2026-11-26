@@ -10,6 +10,7 @@
 
 let state = "waterLevel";
 
+// ALL LEVELS
 const traveler = {
     fill: ('black'),
     // position
@@ -25,6 +26,7 @@ const traveler = {
     gravitySpeed: 0,
 }
 
+// LAVA LEVEL 
 const wallGround = {
     fill: ("#2d2114"),
     x: 0,
@@ -145,7 +147,15 @@ function addDrop() {
     drops.push(drop);
     // new timeout 
     setTimeout(addDrop, dropDelay);
+}
 
+// WATER LEVEL
+const sand = {
+    fill: ("#cab993"),
+    x: 0,
+    y: 800,
+    width: 1400,
+    height: 100,
 }
 
 /**
@@ -168,6 +178,9 @@ function draw() {
 
     if (state === "lavaLevel" || state === "deadLavaLevel") {
         background("#937d6e");
+
+        forceGravity();
+        forceLand();
         // walls - draw ground and ceiling
         drawWall(wallGround);
         drawWall(wallCeilling);
@@ -203,13 +216,12 @@ function draw() {
     }
 
     if (state === "waterLevel") {
-        background("#7066d9");
+        background("#8bace9");
+        forceGravity();
+        createSand();
     }
 
     // for all states
-    forceGravity();
-    forceLand();
-
     createTraveler();
 
     // move the traveler left and right
@@ -223,6 +235,7 @@ function draw() {
     }
 }
 
+// for all levels
 // user 
 function createTraveler() {
     push();
@@ -261,6 +274,8 @@ function mouseClicked() {
     loop();
 }
 
+
+// LEVEL 1 ---- lavaLevel
 // draws the ground the traveler will land on
 function drawWall(wall) {
     push();
@@ -371,6 +386,20 @@ function overlapBlockDrop(block, drop) {
         drop.y - drop.size / 2 <= block.y + block.y + block.height) {
         const index = drops.indexOf(drop);
         drops.splice(index, 1);
+    }
+}
+
+// LEVEL 2 - waterLevel 
+function createSand() {
+    push();
+    noStroke();
+    fill(sand.fill);
+    rect(sand.x, sand.y, sand.width, sand.height);
+    pop();
+
+    const surface = (height - sand.height)
+    if (traveler.y + traveler.size / 2 >= surface) {
+        traveler.y = surface - traveler.size / 2;
     }
 }
 
