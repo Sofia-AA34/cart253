@@ -8,7 +8,7 @@
 
 "use strict";
 
-let state = "lavaLevel";
+let state = "waterLevel";
 
 const traveler = {
     fill: ('black'),
@@ -196,14 +196,17 @@ function draw() {
             fallDrop(drop);
             drawDrops(drop);
         }
-
-
     }
 
     if (state === "deadLavaLevel") {
         deadLavaLevel();
     }
 
+    if (state === "waterLevel") {
+        background("#7066d9");
+    }
+
+    // for all states
     forceGravity();
     forceLand();
 
