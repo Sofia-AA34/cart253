@@ -185,6 +185,13 @@ function draw() {
         createBlock(block6);
         // lava drops 
         for (let drop of drops) {
+            // block x drop 
+            overlapBlockDrop(block1, drop);
+            overlapBlockDrop(block2, drop);
+            overlapBlockDrop(block3, drop);
+            overlapBlockDrop(block4, drop);
+            overlapBlockDrop(block5, drop);
+            overlapBlockDrop(block6, drop);
             overlapDrop(traveler, drop);
             fallDrop(drop);
             drawDrops(drop);
@@ -352,6 +359,18 @@ function overlapDrop(traveler, drop) {
         }
     }
 }
+
+function overlapBlockDrop(block, drop) {
+    if (
+        drop.x + drop.size / 2 >= block.x && // left side
+        drop.x - drop.size / 2 <= block.x + block.width && // right side
+        drop.y + drop.size / 2 >= block.y && // top
+        drop.y - drop.size / 2 <= block.y + block.y + block.height) {
+        const index = drops.indexOf(drop);
+        drops.splice(index, 1);
+    }
+}
+
 
 
 
