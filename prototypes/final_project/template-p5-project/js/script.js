@@ -121,6 +121,33 @@ const block6 = {
     height: 30,
 }
 
+// lava  drops 
+let drops = [];
+
+// time between the drops
+let dropDelay = 0.5 * 1000;
+
+// creates and returns a randomized lava drop that will fall down the ceilling (appear further on top)
+function createRain() {
+    const newDrop = {
+        x: random(0, width),
+        y: -50,
+        size: random(5, 30),
+        fill: ("#dd3502"),
+    };
+    return newDrop;
+}
+
+// adds a drop to the array 
+function addDrop() {
+    //create and add a drop
+    const drop = createRain();
+    drops.push(drop);
+    // new timeout 
+    setTimeout(addDrop, dropDelay);
+
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -129,6 +156,8 @@ function setup() {
 
     // turn off the draw loop
     noLoop();
+
+    setTimeout(addDrop, dropDelay);
 }
 
 
@@ -147,13 +176,20 @@ function draw() {
         createLava(lava2);
         createLava(lava3);
         createLava(lava4);
-
+        // blocks
         createBlock(block1);
         createBlock(block2);
         createBlock(block3);
         createBlock(block4);
         createBlock(block5);
         createBlock(block6);
+        // lava drops 
+        for (let drop of drops) {
+            fallDrop(drop);
+            drawDrops(drop);
+        }
+
+
     }
 
     if (state === "deadLavaLevel") {
@@ -294,6 +330,20 @@ function overlap(traveler, block) {
         traveler.y + traveler.size / 2 > block.y
     );
 }
+
+function drawDrops(drop) {
+    push();
+    noStroke();
+    fill(drop.fill);
+    ellipse(drop.x, drop.y, drop.size);
+    pop();
+}
+
+function fallDrop(drop) {
+    drop.y += 2;
+}
+
+
 
 
 
