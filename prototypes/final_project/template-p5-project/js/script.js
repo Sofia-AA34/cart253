@@ -38,7 +38,7 @@ const wallCeilling = {
     x: 0,
     y: 0,
     width: 1400,
-    height: 100,
+    height: 50,
 }
 
 const lava1 = {
@@ -81,6 +81,46 @@ const block1 = {
     height: 30,
 }
 
+const block2 = {
+    fill: ("#d1fb3b"),
+    x: 10,
+    y: 300,
+    width: 150,
+    height: 30,
+}
+
+const block3 = {
+    fill: ("#d1fb3b"),
+    x: 650,
+    y: 250,
+    width: 150,
+    height: 30,
+}
+
+const block4 = {
+    fill: ("#d1fb3b"),
+    x: 1300,
+    y: 50,
+    width: 100,
+    height: 30,
+}
+
+const block5 = {
+    fill: ("#d1fb3b"),
+    x: 800,
+    y: 550,
+    width: 100,
+    height: 30,
+}
+
+const block6 = {
+    fill: ("#d1fb3b"),
+    x: 1200,
+    y: 250,
+    width: 200,
+    height: 30,
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -109,6 +149,11 @@ function draw() {
         createLava(lava4);
 
         createBlock(block1);
+        createBlock(block2);
+        createBlock(block3);
+        createBlock(block4);
+        createBlock(block5);
+        createBlock(block6);
     }
 
     if (state === "deadLavaLevel") {
