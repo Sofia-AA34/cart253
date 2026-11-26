@@ -224,17 +224,23 @@ function createBlock(block) {
     rect(block.x, block.y, block.width, block.height);
     pop();
 
-    if (traveler.x >= block.x + block.width) {
-        return false;
-    } else if (traveler.x + traveler.size <= block.x) {
-        return false;
-    } else if (traveler.y + traveler.size <= block.y) {
-        return false;
-    } else {
-        return true;
+    if (overlap(traveler, block) &&
+        traveler.gravitySpeed > 0 &&
+        traveler.y < block.y) {
+        traveler.y = block.y - traveler.size / 2;
+        traveler.gravitySpeed = 0;
     }
-
 }
+
+function overlap(traveler, block) {
+    return (
+        traveler.x - traveler.size / 2 < block.x + block.width &&
+        traveler.x + traveler.size / 2 > block.x &&
+        traveler.y - traveler.size / 2 < block.y + block.height &&
+        traveler.y + traveler.size / 2 > block.y
+    );
+}
+
 
 
 
