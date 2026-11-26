@@ -127,7 +127,7 @@ const block6 = {
 let drops = [];
 
 // time between the drops
-let dropDelay = 0.5 * 1000;
+let dropDelay = 0.5 * 1000; // not too many, not too fast
 
 // creates and returns a randomized lava drop that will fall down the ceilling (appear further on top)
 function createRain() {
@@ -158,6 +158,22 @@ const sand = {
     height: 100,
 }
 
+let fishes = [];
+
+// creates and returns a randomized fish that will come from ...? random rectangle space?
+function createFish() {
+    const newFish = {
+        x: random(0, 200),
+        y: random(0, 200),
+        size: random(50, 100),
+        fill: {
+            r: random(0, 255),
+            g: random(0, 255),
+            b: random(0, 255),
+        },
+    };
+    return newFish;
+}
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -219,6 +235,15 @@ function draw() {
         background("#8bace9");
         forceGravity();
         createSand();
+
+        for (let fish of fishes) {
+            drawFish(fish);
+        }
+
+        for (let i = 0; i < 25; i++) {
+            fishes.push(createFish());
+        }
+
     }
 
     // for all states
@@ -401,6 +426,14 @@ function createSand() {
     if (traveler.y + traveler.size / 2 >= surface) {
         traveler.y = surface - traveler.size / 2;
     }
+}
+
+function drawFish(fish) {
+    push();
+    noStroke();
+    fill(fish.fill.r, fish.fill.g, fish.fill.b);
+    ellispe(fish.x, fish.y, fish.size);
+    pop();
 }
 
 
