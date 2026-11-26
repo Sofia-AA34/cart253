@@ -185,6 +185,7 @@ function draw() {
         createBlock(block6);
         // lava drops 
         for (let drop of drops) {
+            overlapDrop(traveler, drop);
             fallDrop(drop);
             drawDrops(drop);
         }
@@ -306,7 +307,7 @@ function createBlock(block) {
     pop();
 
     if (
-        overlap(traveler, block) &&
+        overlapBlock(traveler, block) &&
         traveler.gravitySpeed > 0 && // traveler going down 
         traveler.y < block.y) {
         traveler.y = block.y - traveler.size / 2;
@@ -314,7 +315,7 @@ function createBlock(block) {
     }
 
     else if (
-        overlap(traveler, block) &&
+        overlapBlock(traveler, block) &&
         traveler.gravitySpeed < 0 && // traveler going up
         traveler.y > block.y + block.height) {
         traveler.y = block.y + block.height + traveler.size / 2;
@@ -322,7 +323,7 @@ function createBlock(block) {
     }
 }
 
-function overlap(traveler, block) {
+function overlapBlock(traveler, block) {
     return (
         traveler.x - traveler.size / 2 < block.x + block.width &&
         traveler.x + traveler.size / 2 > block.x &&
@@ -343,6 +344,14 @@ function fallDrop(drop) {
     drop.y += 2;
 }
 
+function overlapDrop(traveler, drop) {
+    for (let drop of drops) {
+        const d = dist(traveler.x, traveler.y, drop.x, drop.y);
+        if (d < traveler.size / 2 + drop.size) {
+            deadLavaLevel();
+        }
+    }
+}
 
 
 
