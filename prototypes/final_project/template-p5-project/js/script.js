@@ -224,10 +224,19 @@ function createBlock(block) {
     rect(block.x, block.y, block.width, block.height);
     pop();
 
-    if (overlap(traveler, block) &&
-        traveler.gravitySpeed > 0 &&
+    if (
+        overlap(traveler, block) &&
+        traveler.gravitySpeed > 0 && // traveler going down 
         traveler.y < block.y) {
         traveler.y = block.y - traveler.size / 2;
+        traveler.gravitySpeed = 0; // stops moving up or down 
+    }
+
+    else if (
+        overlap(traveler, block) &&
+        traveler.gravitySpeed < 0 && // traveler going up
+        traveler.y > block.y + block.height) {
+        traveler.y = block.y + block.height + traveler.size / 2;
         traveler.gravitySpeed = 0;
     }
 }
